@@ -2,7 +2,7 @@
     <b-container class="self-center">
         <!--<b-row class="justify-content-center my-4 py-4">-->
         <!--</b-row>-->
-        <b-row class="justify-content-center">
+        <b-row class="justify-content-center" style="padding-top:56px;">
             <b-col cols="12" md="6">
                 <form v-on:submit.prevent="login" class="swat-form">
 

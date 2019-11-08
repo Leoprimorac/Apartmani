@@ -1,5 +1,5 @@
 <template>
-    <b-container class="self-center">
+    <b-container class="self-center" style="padding-top:56px;">
         <b-row class="justify-content-center">
             <b-col cols="12" md="6" class="auth">
                 <form v-on:submit.prevent="register" class="swat-form">

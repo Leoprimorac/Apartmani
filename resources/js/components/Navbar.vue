@@ -1,9 +1,10 @@
 <template>
-
-
 <div>
-  <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg">
-    <b-navbar-brand href="Index.vue#sushi">Početna</b-navbar-brand>
+<div class="container-fluid ">
+    <div class="row mx-auto">
+        <div class="col mx-auto">
+            <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg fixed-top">
+    <b-navbar-brand href="Index.vue">Početna</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" ></b-navbar-toggle>
 
@@ -48,10 +49,22 @@
     </b-navbar-nav>
 
   </b-navbar>
+        </div>
+    </div>
+</div>
+
+<div class="container-flud">
+    <div class="row ">
+        <div class="col justify-content-center">
+
+        </div>
+    </div>
 </div>
 
 
 
+
+</div>
 
 </template>
 
@@ -75,5 +88,6 @@
     .info-bg {
     background-color: #ffffffb4 !important;
 };
+
 
     </style>

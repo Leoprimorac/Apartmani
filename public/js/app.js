@@ -1895,6 +1895,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'navbar',
   methods: {
@@ -1926,6 +1939,37 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Navbar.vue */ "./resources/js/components/Navbar.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -30361,7 +30405,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".viewpoint {\n  background-image: url(" + escape(__webpack_require__(/*! ../../img/promajna.jpg */ "./resources/img/promajna.jpg")) + ");\n  height: 100vh;\n  background-size: cover;\n}\n.info-bg {\n  background-color: #ffffffb4 !important;\n}", ""]);
+exports.push([module.i, ".viewpoint {\n  padding-top: 56px;\n  background: url(" + escape(__webpack_require__(/*! ../../img/promajna.jpg */ "./resources/img/promajna.jpg")) + ") no-repeat center;\n  height: 100vh;\n  /* For WebKit*/\n  /* Mozilla*/\n  /* Opera*/\n  background-size: cover;\n}\n.info-bg {\n  background-color: #ffffffb4 !important;\n}\n.image-size {\n  max-width: 20%;\n  height: auto;\n}\n.image-size50 {\n  max-width: 100vh;\n  height: auto;\n}", ""]);
 
 // exports
 
@@ -30418,7 +30462,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.info-bg {\n    background-color: #ffffffb4 !important;\n};\n\n    ", ""]);
+exports.push([module.i, "\n.info-bg {\n    background-color: #ffffffb4 !important;\n};\n\n\n    ", ""]);
 
 // exports
 
@@ -52228,202 +52272,222 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-navbar",
-        {
-          staticClass: "info-bg",
-          attrs: { toggleable: "sm", type: "light", variant: "fadded" }
-        },
-        [
-          _c("b-navbar-brand", { attrs: { href: "Index.vue#sushi" } }, [
-            _vm._v("Početna")
-          ]),
-          _vm._v(" "),
-          _c("b-navbar-toggle", { attrs: { target: "nav-collapse" } }),
-          _vm._v(" "),
-          _c(
-            "b-collapse",
-            { attrs: { id: "nav-collapse", "is-nav": "" } },
-            [
-              _c(
-                "b-navbar-nav",
-                {
-                  staticClass: "padding",
-                  staticStyle: { color: "rgb(0, 0, 0) !important" }
-                },
-                [
-                  _c(
-                    "b-nav-item",
-                    {
-                      staticStyle: { color: "rgb(0, 0, 0)" },
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("O nama")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-nav-item-dropdown",
-                    {
-                      staticStyle: { color: "rgb(0, 0, 0)" },
-                      attrs: { text: "Apartmani" }
-                    },
-                    [
-                      _c(
-                        "b-dropdown-item",
-                        {
-                          staticStyle: { color: "rgb(0, 0, 0)" },
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("EN")]
-                      ),
-                      _vm._v(" "),
-                      _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                        _vm._v("ES")
-                      ]),
-                      _vm._v(" "),
-                      _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                        _vm._v("RU")
-                      ]),
-                      _vm._v(" "),
-                      _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                        _vm._v("FA")
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-nav-item",
-                    { staticClass: "padding", attrs: { href: "#" } },
-                    [_vm._v("Lokacija")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-nav-item",
-                    { staticClass: "padding", attrs: { href: "#" } },
-                    [_vm._v("Kontakt")]
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "b-navbar-nav",
-            { staticClass: "ml-auto" },
-            [
-              _c(
-                "b-collapse",
-                { attrs: { "is-nav": "", id: "nav_collapse" } },
-                [
-                  _c(
-                    "b-navbar-nav",
-                    { staticClass: "ml-auto text-center text-uppercase" },
-                    [
-                      _vm.$parent.isGuest
-                        ? [
+  return _c("div", [
+    _c("div", { staticClass: "container-fluid " }, [
+      _c("div", { staticClass: "row mx-auto" }, [
+        _c(
+          "div",
+          { staticClass: "col mx-auto" },
+          [
+            _c(
+              "b-navbar",
+              {
+                staticClass: "info-bg fixed-top",
+                attrs: { toggleable: "sm", type: "light", variant: "fadded" }
+              },
+              [
+                _c("b-navbar-brand", { attrs: { href: "Index.vue" } }, [
+                  _vm._v("Početna")
+                ]),
+                _vm._v(" "),
+                _c("b-navbar-toggle", { attrs: { target: "nav-collapse" } }),
+                _vm._v(" "),
+                _c(
+                  "b-collapse",
+                  { attrs: { id: "nav-collapse", "is-nav": "" } },
+                  [
+                    _c(
+                      "b-navbar-nav",
+                      {
+                        staticClass: "padding",
+                        staticStyle: { color: "rgb(0, 0, 0) !important" }
+                      },
+                      [
+                        _c(
+                          "b-nav-item",
+                          {
+                            staticStyle: { color: "rgb(0, 0, 0)" },
+                            attrs: { href: "#" }
+                          },
+                          [_vm._v("O nama")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-nav-item-dropdown",
+                          {
+                            staticStyle: { color: "rgb(0, 0, 0)" },
+                            attrs: { text: "Apartmani" }
+                          },
+                          [
                             _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/auth/login" }
-                                  },
-                                  [_vm._v("Prijava")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/auth/register" }
-                                  },
-                                  [_vm._v("Registracija")]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        : !_vm.$parent.isApp
-                        ? _c(
-                            "li",
-                            { staticClass: "nav-item" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "nav-link",
-                                  attrs: { to: "/app" }
-                                },
-                                [_vm._v("Nastavi")]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm.$parent.isApp
-                        ? [
-                            _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/index" }
-                                  },
-                                  [_vm._v("Profil")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "b-nav-item",
+                              "b-dropdown-item",
                               {
-                                staticClass: "nav-item",
-                                on: { click: _vm.logout }
+                                staticStyle: { color: "rgb(0, 0, 0)" },
+                                attrs: { href: "#" }
                               },
-                              [
-                                _vm._v(
-                                  "\n                            Odjava\n                        "
+                              [_vm._v("EN")]
+                            ),
+                            _vm._v(" "),
+                            _c("b-dropdown-item", { attrs: { href: "#" } }, [
+                              _vm._v("ES")
+                            ]),
+                            _vm._v(" "),
+                            _c("b-dropdown-item", { attrs: { href: "#" } }, [
+                              _vm._v("RU")
+                            ]),
+                            _vm._v(" "),
+                            _c("b-dropdown-item", { attrs: { href: "#" } }, [
+                              _vm._v("FA")
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-nav-item",
+                          { staticClass: "padding", attrs: { href: "#" } },
+                          [_vm._v("Lokacija")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-nav-item",
+                          { staticClass: "padding", attrs: { href: "#" } },
+                          [_vm._v("Kontakt")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "b-navbar-nav",
+                  { staticClass: "ml-auto" },
+                  [
+                    _c(
+                      "b-collapse",
+                      { attrs: { "is-nav": "", id: "nav_collapse" } },
+                      [
+                        _c(
+                          "b-navbar-nav",
+                          { staticClass: "ml-auto text-center text-uppercase" },
+                          [
+                            _vm.$parent.isGuest
+                              ? [
+                                  _c(
+                                    "li",
+                                    { staticClass: "nav-item" },
+                                    [
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "nav-link",
+                                          attrs: { to: "/auth/login" }
+                                        },
+                                        [_vm._v("Prijava")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "li",
+                                    { staticClass: "nav-item" },
+                                    [
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "nav-link",
+                                          attrs: { to: "/auth/register" }
+                                        },
+                                        [_vm._v("Registracija")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]
+                              : !_vm.$parent.isApp
+                              ? _c(
+                                  "li",
+                                  { staticClass: "nav-item" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "nav-link",
+                                        attrs: { to: "/app" }
+                                      },
+                                      [_vm._v("Nastavi")]
+                                    )
+                                  ],
+                                  1
                                 )
-                              ]
-                            )
-                          ]
-                        : _vm._e()
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+                              : _vm.$parent.isApp
+                              ? [
+                                  _c(
+                                    "li",
+                                    { staticClass: "nav-item" },
+                                    [
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "nav-link",
+                                          attrs: { to: "/index" }
+                                        },
+                                        [_vm._v("Profil")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-nav-item",
+                                    {
+                                      staticClass: "nav-item",
+                                      on: { click: _vm.logout }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                            Odjava\n                        "
+                                      )
+                                    ]
+                                  )
+                                ]
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-flud" }, [
+      _c("div", { staticClass: "row " }, [
+        _c("div", { staticClass: "col justify-content-center" })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -52469,30 +52533,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", [
-        _c("div", { staticClass: "row " }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "viewpoint" }, [
-              _c("div", { staticClass: "info-bg" }, [
-                _vm._v(
-                  "\n                    Villa Promajna\n\n                "
+  return _c(
+    "div",
+    [
+      _c(
+        "b-container",
+        { attrs: { fluid: "", id: "main" } },
+        [
+          _c(
+            "b-row",
+            [
+              _c("b-col", { attrs: { cols: "12" } }, [
+                _c("div", { staticClass: "viewpoint" }, [
+                  _c("div", { staticClass: "info-bg mx-auto" }, [
+                    _c("img", {
+                      staticClass: " image-size mx-auto d-block",
+                      attrs: { src: __webpack_require__(/*! ../../img/logo.png */ "./resources/img/logo.png"), alt: "logo" }
+                    })
+                  ])
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "b-row",
+            [
+              _c("b-col", { attrs: { sm: "", "offset-md": "1" } }, [
+                _c("blockquote", { staticClass: "blockquote" }, [
+                  _c("h1", [_vm._v("VILLA PROMAJNA")]),
+                  _vm._v(" "),
+                  _c("footer", { staticClass: "blockquote-footer" }, [
+                    _vm._v("Mjesto odmora i relaksacije")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "resize-center" }, [
+                  _vm._v(
+                    "\n                            Promajna je selo u općini Baška Voda, u Splitsko-dalmatinskoj županiji,\n                            smješteno između naselja Bratuš na istoku i Baška Voda na zapadu.\n                            Naselje u cijelosti leži ispod Jadranske magistrale.\n                            Prema popisu stanovništva iz 2011. godine, u Promajni živi 372 stanovnika.\n                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("b-col", { attrs: { sm: "" } }, [
+                _c(
+                  "div",
+                  { staticClass: "resize-center" },
+                  [
+                    _c(
+                      "b-carousel",
+                      {
+                        staticStyle: { "text-shadow": "0px 0px 2px #000" },
+                        attrs: {
+                          id: "carousel-1",
+                          fade: "",
+                          indicators: "",
+                          "img-width": "100vh",
+                          "img-height": "auto"
+                        }
+                      },
+                      [
+                        _c("b-carousel-slide", {
+                          attrs: {
+                            caption: "First slide",
+                            "img-src":
+                              "https://picsum.photos/1024/480/?image=10"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("b-carousel-slide", {
+                          attrs: {
+                            caption: "Second Slide",
+                            "img-src":
+                              "https://picsum.photos/1024/480/?image=12"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("b-carousel-slide", {
+                          attrs: {
+                            caption: "Third Slide",
+                            "img-src":
+                              "https://picsum.photos/1024/480/?image=22"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
                 )
               ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -52520,7 +52662,10 @@ var render = function() {
     [
       _c(
         "b-row",
-        { staticClass: "justify-content-center" },
+        {
+          staticClass: "justify-content-center",
+          staticStyle: { "padding-top": "56px" }
+        },
         [
           _c("b-col", { attrs: { cols: "12", md: "6" } }, [
             _c(
@@ -52615,7 +52760,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "b-container",
-    { staticClass: "self-center" },
+    { staticClass: "self-center", staticStyle: { "padding-top": "56px" } },
     [
       _c(
         "b-row",
@@ -68803,6 +68948,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/img/logo.png":
+/*!********************************!*\
+  !*** ./resources/img/logo.png ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?6ed73e5e049817d68982eba31c9be4c5";
+
+/***/ }),
+
 /***/ "./resources/img/promajna.jpg":
 /*!************************************!*\
   !*** ./resources/img/promajna.jpg ***!
@@ -68988,7 +69144,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('navbar-h', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
