@@ -1,0 +1,12 @@
+// Domain url
+export const apiDomain = 'http://localhost:8000/api/';
+
+// Auth
+export const login = 'login';
+export const register = 'register';
+export const logout = 'logout';
+
+// Users
+export const users =  'users/';
+export const logged = users + 'logged';
+
