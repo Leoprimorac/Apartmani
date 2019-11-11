@@ -13,3 +13,6 @@ Route::middleware('auth:api')->get('/users/logged', 'AuthController@getUser');
 Route::get('users/{user}/reservations', 'UserController@reservations');
 Route::resource('users', 'UserController')->except('update', 'create', 'edit', 'store');
 Route::post('users/{user}', 'UserController@update');
+
+//Apartments
+Route::resource('apartments', 'ApartmentsController')->except('create', 'edit');

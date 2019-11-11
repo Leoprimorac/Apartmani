@@ -10,3 +10,4 @@ export const logout = 'logout';
 export const users =  'users/';
 export const logged = users + 'logged';
 
+export const apartments = 'apartments/';

@@ -5,7 +5,8 @@ import App from './views/App'
 
 import Login from './views/auth/Login'
 import Register from './views/auth/Register'
-
+import NewApartment from './views/AppPanel/NewApartment'
+import EditApartment from './views/AppPanel/EditApartment'
 
 Vue.use(Router);
 
@@ -21,6 +22,21 @@ export default new Router({
             path: '/app',
             name: 'App',
             component: App
+        },
+        {
+            path: '/app/NewApartment',
+            name: 'NewApartment',
+            component: NewApartment
+        },
+        {
+            path: '/app/EditApartment',
+            name: 'EditApartment',
+            component: EditApartment
+        },
+        {
+            path: '/app/EditApartment/:id',
+            name: 'EditApartment',
+            component: EditApartment
         },
         {
             path : '/auth',

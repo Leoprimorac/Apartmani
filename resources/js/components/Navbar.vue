@@ -10,7 +10,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="padding" style="color: rgb(0, 0, 0) !important;">
-        <b-nav-item  href="#" style="color: rgb(0, 0, 0);">O nama</b-nav-item>
+        <b-nav-item  href="Index.vue#Onama" style="color: rgb(0, 0, 0);">O nama</b-nav-item>
           <b-nav-item-dropdown text="Apartmani" style="color: rgb(0, 0, 0);">
             <b-dropdown-item href="#" style="color: rgb(0, 0, 0);">EN</b-dropdown-item>
             <b-dropdown-item href="#">ES</b-dropdown-item>

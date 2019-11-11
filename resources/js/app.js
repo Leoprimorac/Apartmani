@@ -47,6 +47,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Navbar from './components/Navbar'
 
+import lightbox from 'vlightbox'
+Vue.component('lightbox', lightbox)
+
 
 
 
@@ -57,10 +60,12 @@ const app = new Vue({
     components: {
         Navbar
     },
+
     data() {
         return {
-            isGuest: true
-        }
+            isGuest: true,
+
+           }
     },
     methods: {
         setBearer() {

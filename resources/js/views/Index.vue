@@ -10,46 +10,68 @@
                         </div>
                     </b-col>
                 </b-row>
-                <b-row >
-                    <b-col sm  offset-md="1">
-                        <blockquote class="blockquote">
-                            <h1>VILLA PROMAJNA</h1>
-                            <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
-                        </blockquote>
+                <b-row id="Onama">
+                    <b-col sm  offset-sm="1" >
                         <div class="resize-center" >
+                            <blockquote class="blockquote">
+
+                                <h1>VILLA PROMAJNA</h1>
+
+                                <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
+
+                            </blockquote>
+
                                     Promajna je selo u općini Baška Voda, u Splitsko-dalmatinskoj županiji,
                                     smješteno između naselja Bratuš na istoku i Baška Voda na zapadu.
                                     Naselje u cijelosti leži ispod Jadranske magistrale.
                                     Prema popisu stanovništva iz 2011. godine, u Promajni živi 372 stanovnika.
                         </div>
                     </b-col >
-                        <b-col sm>
-                        <div class="resize-center" >
+
+                    <b-col sm>
+                        <div class="sort resize-center" >
                             <b-carousel
                                 id="carousel-1"
                                 style="text-shadow: 0px 0px 2px #000"
                                 fade
+                                :interval="3000"
+                                no-hover-pause
                                 indicators
-                                img-width="100vh"
-                                img-height="auto"
+                                img-width="1024"
+                                img-height="480"
                             >
-                                <b-carousel-slide
-                                caption="First slide"
-                                img-src="https://picsum.photos/1024/480/?image=10"
-                                ></b-carousel-slide>
-                                <b-carousel-slide
-                                caption="Second Slide"
-                                img-src="https://picsum.photos/1024/480/?image=12"
-                                ></b-carousel-slide>
-                                <b-carousel-slide
-                                caption="Third Slide"
-                                img-src="https://picsum.photos/1024/480/?image=22"
-                                ></b-carousel-slide>
+                                <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=10"></b-carousel-slide>
+                                <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
+                                <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=22" ></b-carousel-slide>
                             </b-carousel>
+
+
                         </div>
-                        </b-col>
+                        <div>
 
+                            <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
 
+                            <b-collapse id="collapse-1" class="mt-2">
+                                <b-card>
+                                    <gallery :images="images" :index="index" @close="index = null"></gallery>
+                                        <div
+                                        class="image"
+                                        v-for="(image, imageIndex) in images"
+                                        :key="imageIndex"
+                                        @click="index = imageIndex"
+                                        :style="{ backgroundImage: 'url(' + image + ')',
+                                        width: '10vh',
+                                        height: '10vh',
+                                        float:'left',
+                                        backgroundPosition: 'center center',
+                                        backgroundRepeat:'no-repeat',
+                                        backgroundSize:'cover'}">
+                                        </div>
+
+                                </b-card>
+                            </b-collapse>
+                        </div>
+                    </b-col>
                 </b-row>
             </b-container>
         </div>
@@ -61,12 +83,25 @@
 
 <script>
 import Navbar from '../components/Navbar.vue'
-
+import VueGallery from 'vue-gallery';
 export default {
-  name: 'app',
+
   components: {
-    Navbar
+    Navbar, 'gallery': VueGallery
   },
+  data: function () {
+      return {
+        images: [
+          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+          'https://picsum.photos/1024/480/?image=10',
+          'resources\img\logo.png'
+        ],
+        index: null
+      };
+    },
   computed: {
             user: function () {
                 return this.$store.getters.loggedUser;
@@ -103,7 +138,17 @@ padding-top:56px;
     height: auto;
     }
     .resize-center{
-        //height: 30%;
-        //width: 30%;
+        padding: 5% 0 5% 0;
     }
+    .offset-sm-1 {
+    margin-left: 3.333333% !important;
+}
+#Onama{
+    height:100vh;
+    width:auto;
+}
+.Apartments{
+    height:"70vh";
+}
+
 </style>
