@@ -1829,6 +1829,82 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Apartmentform.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Apartmentform.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(['apartment']),
+  methods: {
+    updateName: function updateName(e) {
+      this.$store.commit('SET_APARTMENT', {
+        name: e.target.value
+      });
+    },
+    updateDescription: function updateDescription(e) {
+      this.$store.commit('SET_APARTMENT', {
+        description: e.target.value
+      });
+    },
+    updateDetails: function updateDetails(e) {
+      this.$store.commit('SET_APARTMENT', {
+        details: e.target.value
+      });
+    },
+    updateAmenities: function updateAmenities(e) {
+      this.$store.commit('SET_APARTMENT', {
+        amenities: e.target.value
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Navbar.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Navbar.vue?vue&type=script&lang=js& ***!
@@ -1990,38 +2066,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-gallery */ "./node_modules/vue-gallery/dist/js/vue-gallery.js");
 /* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../store.js */ "./resources/js/store.js");
+/* harmony import */ var _components_Apartmentform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../components/Apartmentform */ "./resources/js/components/Apartmentform.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -2094,36 +2141,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'apartments',
+  store: _store_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_0___default.a
+    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_0___default.a,
+    'apartment-form': _components_Apartmentform__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       images: ['https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://picsum.photos/1024/480/?image=10', 'resources\img\logo.png'],
-      apartment: '',
-      index: null,
-      description: '',
-      details: '',
-      amenities: ''
+      index: null
     };
   },
-  mounted: function mounted() {
-    this.names = this.apartment.name;
-  },
-  computed: {
-    names: function names() {
-      return this.apartment.name;
-    }
-  },
-  watch: {
-    name: function name(value) {
-      this.names = value;
-    }
-  },
+  computed: vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(['apartment']),
   created: function created() {
-    this.getApartment();
+    this.$store.dispatch('GET_APARTMENT', this.$route.params.id);
   },
   methods: {
     getApartment: function getApartment() {
@@ -55975,6 +56010,160 @@ var e=function(){return(e=Object.assign||function(e){for(var t,r=1,s=arguments.l
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "b-container",
+    { attrs: { fluid: "" } },
+    [
+      _c(
+        "b-row",
+        [
+          _c("b-col", [
+            _c(
+              "form",
+              {
+                staticClass: "swat-form",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.createApartment($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group d-flex flex-column" }, [
+                  _c(
+                    "label",
+                    { staticClass: "text-center", attrs: { for: "name" } },
+                    [_vm._v("Ime:")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "name",
+                      type: "text",
+                      name: "name",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.apartment.name },
+                    on: { input: _vm.updateName }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group d-flex flex-column" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-center",
+                      attrs: { for: "description" }
+                    },
+                    [_vm._v("Opis:")]
+                  ),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "description",
+                      name: "description",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.apartment.description },
+                    on: { input: _vm.updateDescription }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group d-flex flex-column" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-center",
+                      attrs: { for: "description" }
+                    },
+                    [_vm._v("Detalji:")]
+                  ),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "details",
+                      name: "details",
+                      required: "",
+                      autofocus: "",
+                      rows: "8"
+                    },
+                    domProps: { value: _vm.apartment.details },
+                    on: { input: _vm.updateDetails }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group d-flex flex-column" }, [
+                  _c(
+                    "label",
+                    { staticClass: "text-center", attrs: { for: "amenities" } },
+                    [_vm._v("Dodatci sobi:")]
+                  ),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "amenities",
+                      name: "amenities",
+                      required: "",
+                      autofocus: "",
+                      rows: "8"
+                    },
+                    domProps: { value: _vm.apartment.amenities },
+                    on: { input: _vm.updateAmenities }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "b-btn",
+                  {
+                    staticClass: "mt-3 align-self-center w-50",
+                    attrs: { type: "submit", variant: "gold" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                                        Potvrdi\n                                    "
+                    )
+                  ]
+                )
+              ],
+              1
+            )
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b& ***!
@@ -56328,7 +56517,7 @@ var render = function() {
                             "b-col",
                             { attrs: { id: "MaliLijevi" } },
                             [
-                              _c("h1", [_vm._v(_vm._s(_vm.names))]),
+                              _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
                               _vm._v(" "),
                               _c(
                                 "b-card",
@@ -56346,8 +56535,8 @@ var render = function() {
                                 [
                                   _c("b-card-text", [
                                     _vm._v(
-                                      "\n                                    " +
-                                        _vm._s(_vm.description) +
+                                      "\n                                        " +
+                                        _vm._s(_vm.apartment.description) +
                                         "\n                                    "
                                     )
                                   ]),
@@ -56380,16 +56569,16 @@ var render = function() {
                           _c("b-col", { attrs: { id: "Malidesni" } }, [
                             _c("div", [
                               _vm._v(
-                                "\n                            " +
-                                  _vm._s(_vm.details) +
+                                "\n                                " +
+                                  _vm._s(_vm.apartment.details) +
                                   "\n                            "
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", [
                               _vm._v(
-                                "\n                            " +
-                                  _vm._s(_vm.amenities) +
+                                "\n                                    " +
+                                  _vm._s(_vm.apartment.amenities) +
                                   "\n                            "
                               )
                             ])
@@ -56456,232 +56645,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c(
-                "b-col",
-                { attrs: { id: "desni" } },
-                [
-                  _c(
-                    "b-container",
-                    { attrs: { fluid: "" } },
-                    [
-                      _c(
-                        "b-row",
-                        [
-                          _c("b-col", [
-                            _c(
-                              "form",
-                              {
-                                staticClass: "swat-form",
-                                on: {
-                                  submit: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.createApartment($event)
-                                  }
-                                }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "form-group d-flex flex-column"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "text-center",
-                                        attrs: { for: "name" }
-                                      },
-                                      [_vm._v("Ime:")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.names,
-                                          expression: "names"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        id: "name",
-                                        type: "text",
-                                        name: "name",
-                                        required: "",
-                                        autofocus: ""
-                                      },
-                                      domProps: { value: _vm.names },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.names = $event.target.value
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "form-group d-flex flex-column"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "text-center",
-                                        attrs: { for: "description" }
-                                      },
-                                      [_vm._v("Opis:")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("textarea", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.description,
-                                          expression: "description"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        id: "description",
-                                        name: "description",
-                                        required: "",
-                                        autofocus: ""
-                                      },
-                                      domProps: { value: _vm.description },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.description = $event.target.value
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "form-group d-flex flex-column"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "text-center",
-                                        attrs: { for: "details" }
-                                      },
-                                      [_vm._v("Detalji:")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("textarea", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.details,
-                                          expression: "details"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        id: "details",
-                                        name: "details",
-                                        required: "",
-                                        autofocus: ""
-                                      },
-                                      domProps: { value: _vm.details },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.details = $event.target.value
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "form-group d-flex flex-column"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "text-center",
-                                        attrs: { for: "amenities" }
-                                      },
-                                      [_vm._v("Dodatci sobi:")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("textarea", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.amenities,
-                                          expression: "amenities"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        id: "amenities",
-                                        name: "amenities",
-                                        required: "",
-                                        autofocus: ""
-                                      },
-                                      domProps: { value: _vm.amenities },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.amenities = $event.target.value
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "mt-3 align-self-center w-50",
-                                    attrs: { type: "submit", variant: "gold" }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                        Potvrdi\n                                    "
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
+              _c("b-col", { attrs: { id: "desni" } }, [_c("apartment-form")], 1)
             ],
             1
           )
@@ -73580,6 +73544,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Apartmentform.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Apartmentform.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Apartmentform.vue?vue&type=template&id=2cc92b9b& */ "./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b&");
+/* harmony import */ var _Apartmentform_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Apartmentform.vue?vue&type=script&lang=js& */ "./resources/js/components/Apartmentform.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Apartmentform_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Apartmentform.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Apartmentform.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Apartmentform.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartmentform_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Apartmentform.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Apartmentform.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartmentform_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Apartmentform.vue?vue&type=template&id=2cc92b9b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Apartmentform.vue?vue&type=template&id=2cc92b9b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartmentform_vue_vue_type_template_id_2cc92b9b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/Navbar.vue ***!
@@ -73757,7 +73790,8 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    user: null
+    user: null,
+    apartment: {}
   },
   getters: {
     loggedUser: function loggedUser(state) {
@@ -73769,6 +73803,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
       }
 
       return false;
+    },
+    name: function name(state) {
+      return state.name;
     }
   },
   mutations: {
@@ -73778,11 +73815,23 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
           state.user = response.data;
         }
       });
+    },
+    SET_APARTMENT: function SET_APARTMENT(state, apartment) {
+      // merge data with previous state
+      state.apartment = Object.assign({}, state.apartment, apartment);
     }
   },
   actions: {
     getUser: function getUser(context) {
       context.commit('getUser');
+    },
+    GET_APARTMENT: function GET_APARTMENT(_ref, id) {
+      var commit = _ref.commit;
+      swatApi.get(_api__WEBPACK_IMPORTED_MODULE_2__["apartments"] + id).then(function (resp) {
+        return resp.data;
+      }).then(function (apartment) {
+        return commit('SET_APARTMENT', apartment);
+      });
     }
   }
 }));

@@ -6,7 +6,7 @@
                     <b-container fluid>
                     <b-row>
                         <b-col id="MaliLijevi">
-                            <h1>{{names}}</h1>
+                            <h1>{{apartment.name}}</h1>
                                 <b-card
                                     img-src="https://picsum.photos/600/400/?image=25"
                                     img-alt="Image"
@@ -16,7 +16,7 @@
                                     class="mb-2"
                                 >
                                     <b-card-text>
-                                    {{ description }}
+                                        {{apartment.description}}
                                     </b-card-text>
                                     <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                                 </b-card>
@@ -24,11 +24,11 @@
                         <b-col id="Malidesni">
 
                             <div>
-                            {{details}}
+                                {{apartment.details}}
                             </div>
 
                             <div>
-                            {{amenities}}
+                                    {{apartment.amenities}}
                             </div>
 
 
@@ -57,40 +57,8 @@
                 </b-container>
                 </b-col>
                 <b-col id="desni" >
-                    <b-container fluid>
-                        <b-row>
-                            <b-col>
-                                <form v-on:submit.prevent="createApartment" class="swat-form">
-                                    <div class="form-group d-flex flex-column">
-                                        <label for="name" class="text-center">Ime:</label>
-                                        <input  v-model="names" id="name" type="text" class="form-control" name="name" required autofocus>
-                                    </div>
 
-                                    <div class="form-group d-flex flex-column">
-                                        <label for="description" class="text-center">Opis:</label>
-                                        <textarea v-model="description" id="description" class="form-control" name="description" required autofocus></textarea>
-                                    </div>
-
-                                    <div class="form-group d-flex flex-column">
-                                        <label for="details" class="text-center">Detalji:</label>
-                                        <textarea v-model="details" id="details" class="form-control" name="details" required autofocus></textarea>
-                                    </div>
-
-                                    <div class="form-group d-flex flex-column">
-                                        <label for="amenities" class="text-center">Dodatci sobi:</label>
-                                        <textarea v-model="amenities" id="amenities" class="form-control" name="amenities" required autofocus></textarea>
-                                    </div>
-
-
-                                    <b-btn type="submit" variant="gold" class="mt-3 align-self-center w-50">
-                                        Potvrdi
-                                    </b-btn>
-                                </form>
-
-                            </b-col>
-                        </b-row>
-                    </b-container>
-
+                    <apartment-form></apartment-form>
 
 
 
@@ -104,11 +72,16 @@
 <script>
 
 import VueGallery from 'vue-gallery';
+import store from './../../store.js';
+import Apartmentform from './../../components/Apartmentform'
+import Vuex from 'vuex';
 export default {
-    name:'apartments',
+
+    store,
 
   components: {
-    'gallery': VueGallery
+    'gallery': VueGallery,
+    'apartment-form': Apartmentform
   },
   data: function () {
 
@@ -121,32 +94,17 @@ export default {
           'https://picsum.photos/1024/480/?image=10',
           'resources\img\logo.png'
         ],
-        apartment: '',
+
         index: null,
-        description: '',
-        details: '',
-        amenities: ''
       };
 
   },
-  mounted() {
-  this.names = this.apartment.name;
-},
-  computed: {
-
-      names: function(){
-      return this.apartment.name;
-  }
-
-  },
-  watch: {
-  name(value) {
-    this.names = value;
-  }
-},
-  created: function() {
-    this.getApartment();
+    computed: Vuex.mapState(['apartment']),
+    created() {
+        this.$store.dispatch('GET_APARTMENT', this.$route.params.id)
     },
+
+
     methods: {
         getApartment() {
                 swatApi.get(api.apartments + this.$route.params.id).
@@ -156,7 +114,9 @@ export default {
                     }
                 });
             },
+
     },
+
 
 
 }

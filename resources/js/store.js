@@ -7,6 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         user: null,
+        apartment: {}
+
     },
     getters: {
         loggedUser: state => {
@@ -18,6 +20,9 @@ export default new Vuex.Store({
             }
             return false;
         },
+        name(state) {
+            return state.name
+          },
     },
     mutations: {
         getUser(state) {
@@ -28,10 +33,21 @@ export default new Vuex.Store({
                 }
             })
         },
+        SET_APARTMENT(state, apartment) {
+            // merge data with previous state
+            state.apartment = Object.assign({}, state.apartment, apartment)
+          }
+
     },
     actions: {
         getUser(context) {
             context.commit('getUser');
         },
+        GET_APARTMENT({ commit }, id) {
+            swatApi.get(api.apartments + id)
+            .then(resp => resp.data).
+              then(apartment => commit('SET_APARTMENT', apartment))
+          },
+
     }
 });
