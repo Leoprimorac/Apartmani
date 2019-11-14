@@ -16,9 +16,11 @@ class CreatePricesTable extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('season');
-            $table->string('dates');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->string('price');
             $table->string('valute');
+            $table->integer('apartments_id');
             $table->timestamps();
         });
     }

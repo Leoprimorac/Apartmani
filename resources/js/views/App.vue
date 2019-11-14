@@ -7,9 +7,28 @@
             <b-row>
                 <b-col>
 
-                <ul class="list-unstyled" v-for="apartment in apartments" :key="apartment.id">
-                    <li><router-link :to="'/app/EditApartment/' +apartment.id" class="nav-link">{{apartment.name}}</router-link></li>
-                </ul>
+                <div>
+                <b-card-group columns>
+                    <b-card v-for="apartment in apartments" :key="apartment.id"
+                        :title= 'apartment.name'
+                        img-src="https://picsum.photos/600/300/?image=25"
+                        img-alt="Image"
+                        img-top
+                        tag="article"
+                        style="max-width: 20rem;"
+                        class="mb-2"
+
+                    >
+                        <b-card-text>
+
+                        </b-card-text>
+                            <router-link :to="'/app/EditApartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                        <b-button :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
+                    </b-card>
+                </b-card-group>
+</div>
+
+
                 </b-col>
             </b-row>
     </b-container>

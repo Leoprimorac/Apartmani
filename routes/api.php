@@ -15,4 +15,8 @@ Route::resource('users', 'UserController')->except('update', 'create', 'edit', '
 Route::post('users/{user}', 'UserController@update');
 
 //Apartments
-Route::resource('apartments', 'ApartmentsController')->except('create', 'edit');
+Route::resource('apartments', 'ApartmentsController')->except('update','create', 'edit');
+Route::post('apartments/{apartment}', 'ApartmentsController@update');
+
+//Prices
+Route::resource('prices', 'PricesController')->except('update','create', 'edit');

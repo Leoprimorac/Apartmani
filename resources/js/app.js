@@ -50,6 +50,16 @@ import Navbar from './components/Navbar'
 import lightbox from 'vlightbox'
 Vue.component('lightbox', lightbox)
 
+import VCalendar from 'v-calendar'
+
+
+
+import DatePicker from 'v-calendar/lib/components/date-picker.umd'
+Vue.component('date-picker', DatePicker)
+
+import moment from 'moment'
+
+Vue.use(moment);
 
 
 
@@ -58,7 +68,7 @@ const app = new Vue({
     router,
     store,
     components: {
-        Navbar
+        Navbar,  DatePicker
     },
 
     data() {

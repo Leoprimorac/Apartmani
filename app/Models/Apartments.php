@@ -9,8 +9,9 @@ class Apartments extends Model
     protected $fillable =[
         'name', 'description', 'details', 'amenities'
     ];
+
     public function prices()
     {
-        return $this->belongsTo(Prices::class);
+        return $this->hasMany(Prices::class);
     }
 }

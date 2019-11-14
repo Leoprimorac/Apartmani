@@ -28,14 +28,15 @@ export default new Router({
             name: 'NewApartment',
             component: NewApartment
         },
+
         {
-            path: '/app/EditApartment',
+            path: '/app/EditApartment/:id',
             name: 'EditApartment',
             component: EditApartment
         },
         {
-            path: '/app/EditApartment/:id',
-            name: 'EditApartment',
+            path: '/app/EditApartment/:name',
+            name: 'EditApartmentf',
             component: EditApartment
         },
         {

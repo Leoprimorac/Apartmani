@@ -20,10 +20,24 @@ class ApartmentsController extends Controller
             'details' => $request['details'],
             'amenities' => $request['amenities']
         ]);
+        return $apartment;
     }
 
     public function show(Apartments $apartment)
     {
-        return Apartments::findOrFail($apartment->id);
+        return Apartments::with('prices')->findOrFail($apartment->id);
+    }
+
+    public function update(Request $request, Apartments $apartment)
+    {
+
+        $apartment->update(request([
+                'name',
+                'description',
+                'details',
+                'amenities'
+            ])
+        );
+        return $apartment;
     }
 }

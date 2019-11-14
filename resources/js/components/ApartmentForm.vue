@@ -3,7 +3,10 @@
 <b-container fluid>
                         <b-row>
                             <b-col>
-                                <form v-on:submit.prevent="createApartment" class="swat-form">
+                                <form @submit.prevent="saveApartment" class="swat-form">
+
+                                        <input id="name" type="text" class="form-control" name="name" :value="apartment.id" @input="updateid" required autofocus hidden>
+
                                     <div class="form-group d-flex flex-column">
                                         <label for="name" class="text-center">Ime:</label>
                                         <input id="name" type="text" class="form-control" name="name" :value="apartment.name" @input="updateName" required autofocus>
@@ -16,12 +19,12 @@
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="description" class="text-center">Detalji:</label>
-                                        <textarea id="details" class="form-control" name="details" :value="apartment.details" @input="updateDetails" required autofocus rows="8"></textarea>
+                                        <textarea id="details" class="form-control" name="details" :value="apartment.details" @input="updateDetails" required autofocus rows="5"></textarea>
                                     </div>
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="amenities" class="text-center">Dodatci sobi:</label>
-                                        <textarea id="amenities" class="form-control" name="amenities" :value="apartment.amenities" @input="updateAmenities" required autofocus rows="8"></textarea>
+                                        <textarea id="amenities" class="form-control" name="amenities" :value="apartment.amenities" @input="updateAmenities" required autofocus rows="5"></textarea>
                                     </div>
 
 
@@ -43,6 +46,9 @@ export default {
 
 computed: Vuex.mapState(['apartment']),
   methods: {
+      updateid(e) {
+      this.$store.commit('SET_APARTMENT', { id: e.target.value })
+    },
 
     updateName(e) {
       this.$store.commit('SET_APARTMENT', { name: e.target.value })
@@ -55,7 +61,16 @@ computed: Vuex.mapState(['apartment']),
     },
     updateAmenities(e) {
       this.$store.commit('SET_APARTMENT', { amenities: e.target.value })
-    }
+    },
+    saveApartment: function (e) {
+                const formData = new FormData(e.target);
+                swatApi.post(api.apartments + this.apartment.id, formData).
+                then(response => {
+                    if (response.status === 200) {
+                        this.$store.dispatch('GET_APARTMENT', this.apartment.id)
+                    }
+                });
+            },
   }
 }
 </script>
