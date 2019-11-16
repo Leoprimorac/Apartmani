@@ -80,7 +80,7 @@
                     <b-row>
                          <b-collapse id="collapse-1" class="mt-2">
                 	            <b-card>
-                                    <gallery :images="apartment.images" :index="index" @close="index = null"></gallery>
+                                    <gallery :images="images" :index="index" @close="index = null"></gallery>
                                         <div
                                         class="image"
                                         v-for="(image, imageIndex) in images"
@@ -148,6 +148,7 @@ export default {
         end: null,
         isHidden: true,
         images: [
+            '/uploads/Leo/1573756168_promajna.jpg'
 
         ],
 
@@ -167,10 +168,10 @@ export default {
 
 
   },
+
     computed: Vuex.mapState(['apartment']),
     created() {
         this.$store.dispatch('GET_APARTMENT', this.$route.params.id)
-
 
     },
 
@@ -198,6 +199,8 @@ export default {
                     }
                 });
             },
+
+
 },
 
 
