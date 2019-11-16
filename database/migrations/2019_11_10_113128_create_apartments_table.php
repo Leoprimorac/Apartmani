@@ -19,7 +19,6 @@ class CreateApartmentsTable extends Migration
             $table->text('description');
             $table->text('details');
             $table->text('amenities');
-            $table->integer('prices_id');
             $table->timestamps();
         });
     }
