@@ -4,8 +4,8 @@
                 <b-row>
                     <b-col cols="12">
                         <div class="viewpoint">
-                            <div class="info-bg mx-auto">
-                                <img class=" image-size mx-auto d-block" src="../../img/logo.png" alt="logo">
+                            <div class="ime mt-5">
+                                <h1> Villa Promajna </h1>
                             </div>
                         </div>
                     </b-col>
@@ -15,15 +15,15 @@
                         <div class="resize-center" >
                             <blockquote class="blockquote">
 
-                                <h1>VILLA PROMAJNA</h1>
+                                <h2>VILLA PROMAJNA</h2>
 
                                 <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
 
                             </blockquote>
 
                                     Promajna je mjesto u općini Baška Voda, u Splitsko-dalmatinskoj županiji,
-                                    smješteno između naselja Bratuš na istoku i Baška Voda na zapadu.
-                                    Naselje u cijelosti leži ispod Jadranske magistrale.
+                                    smješteno između mjesta Bratuš na istoku i Baška Voda na zapadu.
+                                    Mjesto u cijelosti leži ispod Jadranske magistrale.
                                     Prema popisu stanovništva iz 2011. godine, u Promajni živi 372 stanovnika.
                         </div>
                     </b-col >
@@ -74,33 +74,34 @@
                     </b-col>
                 </b-row>
 
-
-                <b-row>
+       
+            <b-row>
                     <b-col>
 
-                <div>
-                <b-card-group columns>
-                    <b-card v-for="apartment in apartments" :key="apartment.id"
-                        :title= 'apartment.name'
-                        :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style="max-width: 20rem;"
-                        class="mb-2"
+                         <div class="app">
+                            <b-card-group columns>
+                            <b-card v-for="apartment in apartments" :key="apartment.id"
+                            :title= 'apartment.name'
+                            :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
+                            img-alt="Image"
+                            img-top
+                            tag="article"
+                            style="max-width: 20rem;"
+                            class="mb-2"
 
                     >
-                        <b-card-text>
+                            <b-card-text>
 
-                        </b-card-text>
+                            </b-card-text>
                             <router-link :to="'/app/EditApartment/' +apartment.id"  v-slot="{href, route, navigate}">
-                        <b-button :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
-                    </b-card>
-                </b-card-group>
-</div>
-
+                            <b-button :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
+                            </b-card>
+                            </b-card-group>
+                            
+                        </div>
                     </b-col>
                 </b-row>
+          
             </b-container>
         </div>
 
@@ -163,9 +164,21 @@ methods: {
 
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap');
+#apartmani{
+    background-color: #262626;
+}
+    .ime{
+          font-family: 'Dancing Script', cursive;
+          text-align: center;
+           }
+    h1{
+        font-size: 5rem !important;
+    }
     .viewpoint{
-padding-top:56px;
-    background: url(../../img/promajna.jpg) no-repeat center;
+      
+    padding-top:56px;
+    background: url(../../img/promajna3.jpeg) no-repeat center;
     height:100vh;
     -webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover;    /* Mozilla*/
@@ -174,7 +187,7 @@ padding-top:56px;
     }
 
     .info-bg {
-    background-color: #ffffffb4 !important;
+    background-color: rgba(255, 255, 255, 0.35)!important;
 };
     .image-size{
     max-width: 20%;
@@ -189,6 +202,12 @@ padding-top:56px;
     }
     .offset-sm-1 {
     margin-left: 3.333333% !important;
+    .card-columns{
+        height: 100vh;
+        width: 100%;
+        background-color: #262626 !important;
+
+    }
 }
 #Onama{
     height:100vh;
