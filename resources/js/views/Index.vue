@@ -21,7 +21,7 @@
 
                             </blockquote>
 
-                                    Promajna je selo u općini Baška Voda, u Splitsko-dalmatinskoj županiji,
+                                    Promajna je mjesto u općini Baška Voda, u Splitsko-dalmatinskoj županiji,
                                     smješteno između naselja Bratuš na istoku i Baška Voda na zapadu.
                                     Naselje u cijelosti leži ispod Jadranske magistrale.
                                     Prema popisu stanovništva iz 2011. godine, u Promajni živi 372 stanovnika.
