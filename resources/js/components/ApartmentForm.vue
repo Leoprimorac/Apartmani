@@ -5,7 +5,7 @@
                             <b-col>
                                 <form @submit.prevent="saveApartment" class="swat-form">
 
-                                        <input id="name" type="text" class="form-control" name="name" :value="apartment.id" @input="updateid" required autofocus hidden>
+                                        <input id="name" type="text" class="form-control" name="id" :value="apartment.id" @input="updateid" required autofocus hidden>
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="name" class="text-center">Ime:</label>
@@ -26,6 +26,14 @@
                                         <label for="amenities" class="text-center">Dodatci sobi:</label>
                                         <textarea id="amenities" class="form-control" name="amenities" :value="apartment.amenities" @input="updateAmenities" required autofocus rows="5"></textarea>
                                     </div>
+
+                                    <b-form-group
+                                        class="d-flex flex-column"
+                                        label="Fotografije:"
+                                        label-for="cover_image"
+                                        label-class="text-center">
+                                        <b-form-file id="cover_image" name="images[]" accept=".jpg, .png, .gif" multiple placeholder="Odaberi datoteke..." required></b-form-file>
+                                    </b-form-group>
 
 
                                     <b-btn type="submit" variant="gold" class="mt-3 align-self-center w-50">

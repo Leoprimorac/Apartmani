@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Apartments;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ApartmentsController extends Controller
@@ -9,7 +10,7 @@ class ApartmentsController extends Controller
 
     public function index(){
 
-        return Apartments::all();
+        return Apartments::with('prices', 'images')->get();
 
     }
     public function store(request $request){
@@ -20,12 +21,25 @@ class ApartmentsController extends Controller
             'details' => $request['details'],
             'amenities' => $request['amenities']
         ]);
+
+        if ($request->hasfile('images')) {
+            $images = $request->file('images');
+            foreach ($images as $image) {
+                $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
+                Image::create([
+                    'apartments_id' => $apartment->id,
+                    'path' => $imagename,
+                ]);
+                $image->move('uploads/' . $apartment->name, $imagename);
+            }
+        }
+
         return $apartment;
     }
 
     public function show(Apartments $apartment)
     {
-        return Apartments::with('prices')->findOrFail($apartment->id);
+        return Apartments::with('prices', 'images')->findOrFail($apartment->id);
     }
 
     public function update(Request $request, Apartments $apartment)
@@ -38,6 +52,21 @@ class ApartmentsController extends Controller
                 'amenities'
             ])
         );
+
+
+        if ($request->hasfile('images')) {
+            $images = $request->file('images');
+            foreach ($images as $image) {
+                $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
+                $apartment2 = Apartments::find(request('id'))->name;
+                Image::create([
+                    'apartments_id' => $request->id,
+                    'path' => $imagename,
+                ]);
+                $image->move('uploads/' . $apartment2, $imagename);
+            }
+        }
+
         return $apartment;
     }
 }

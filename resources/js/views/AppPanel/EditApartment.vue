@@ -8,7 +8,7 @@
                         <b-col id="MaliLijevi">
                             <h1>{{apartment.name}}</h1>
                                 <b-card
-                                    img-src="https://picsum.photos/600/400/?image=25"
+                                    :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
                                     img-alt="Image"
                                     img-top
                                     tag="article"

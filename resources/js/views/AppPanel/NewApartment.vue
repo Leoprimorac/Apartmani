@@ -26,6 +26,14 @@
                         <textarea id="amenities" class="form-control" name="amenities" required autofocus></textarea>
                     </div>
 
+                    <b-form-group
+                                        class="d-flex flex-column"
+                                        label="Fotografije:"
+                                        label-for="cover_image"
+                                        label-class="text-center">
+                                        <b-form-file id="cover_image" name="images[]" accept=".jpg, .png, .gif" multiple placeholder="Odaberi datoteke..." required></b-form-file>
+                                    </b-form-group>
+
 
                     <b-btn type="submit" variant="gold" class="mt-3 align-self-center w-50">
                         Potvrdi

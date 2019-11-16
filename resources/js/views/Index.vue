@@ -73,6 +73,34 @@
                         </div>
                     </b-col>
                 </b-row>
+
+
+                <b-row>
+                    <b-col>
+
+                <div>
+                <b-card-group columns>
+                    <b-card v-for="apartment in apartments" :key="apartment.id"
+                        :title= 'apartment.name'
+                        :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
+                        img-alt="Image"
+                        img-top
+                        tag="article"
+                        style="max-width: 20rem;"
+                        class="mb-2"
+
+                    >
+                        <b-card-text>
+
+                        </b-card-text>
+                            <router-link :to="'/app/EditApartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                        <b-button :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
+                    </b-card>
+                </b-card-group>
+</div>
+
+                    </b-col>
+                </b-row>
             </b-container>
         </div>
 
@@ -84,13 +112,17 @@
 <script>
 import Navbar from '../components/Navbar.vue'
 import VueGallery from 'vue-gallery';
+import Vuex from 'vuex';
+import store from './../store.js';
 export default {
+    store,
 
   components: {
     Navbar, 'gallery': VueGallery
   },
   data: function () {
       return {
+        apartments: [],
         images: [
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
@@ -102,6 +134,9 @@ export default {
         index: null
       };
     },
+    created: function() {
+    this.getApartments();
+    },
   computed: {
             user: function () {
                 return this.$store.getters.loggedUser;
@@ -110,6 +145,18 @@ export default {
                 return this.$store.getters.isAdmin;
             }
         },
+methods: {
+     getApartments() {
+                    swatApi.get(api.apartments).
+                    then(response => {
+                        if (response.status === 200) {
+                            this.apartments = response.data;
+                        }
+                    });
+                },
+},
+
+
 
 }
 </script>
