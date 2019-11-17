@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-container fluid class="pt-5">
+    <b-container fluid class="pt-5" v-if="apartment">
             <b-row id="Veliki">
                 <b-col cols="12" md="8" sm id="lijevi">
                     <b-container fluid>
@@ -8,7 +8,7 @@
                         <b-col id="MaliLijevi">
                             <h1>{{apartment.name}}</h1>
                                 <b-card
-                                    :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
+                                    :img-src="images[0]"
                                     img-alt="Image"
                                     img-top
                                     tag="article"
@@ -51,8 +51,8 @@
                                     <table class="table table-light">
                                         <tbody>
                                             <tr v-for="item in apartment.prices">
-                                                <td>{{ item.date_start}}</td>
-                                                <td>{{ item.date_end}}</td>
+                                                <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
+                                                <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
                                                 <td>{{ item.price}}</td>
                                                 <td><b-btn v-if="!isHidden" @click="deletePrice(item.id)" >Delete</b-btn></td>
                                             </tr>
@@ -86,13 +86,15 @@
                                         v-for="(image, imageIndex) in images"
                                         :key="imageIndex"
                                         @click="index = imageIndex"
-                                        :style="{ backgroundImage: 'url(' + image + ')',
-                                        width: '10vh',
-                                        height: '10vh',
-                                        float:'left',
-                                        backgroundPosition: 'center center',
-                                        backgroundRepeat:'no-repeat',
-                                        backgroundSize:'cover'}">
+                                        :style="{
+                                                backgroundImage: 'url(' + image + ')',
+                                                width: '10vh',
+                                                height: '10vh',
+                                                float:'left',
+                                                backgroundPosition: 'center center',
+                                                backgroundRepeat:'no-repeat',
+                                                backgroundSize:'cover'
+                                                }">
                                         </div>
 
                                 </b-card>
@@ -102,12 +104,7 @@
                 </b-container>
                 </b-col>
                 <b-col id="desni" sm >
-
-                    <apartment-form></apartment-form>
-
-
-
-
+                    <nova-forma :apartment="apartment" @apartmentChanged="updateApartment"></nova-forma>
                 </b-col>
             </b-row>
 
@@ -121,92 +118,71 @@
 
 <script>
 
-
 import VueGallery from 'vue-gallery';
-import store from './../../store.js';
-import Apartmentform from './../../components/Apartmentform'
-import Vuex from 'vuex';
+import NovaForma from './../../components/NovaForma'
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
-import moment from 'moment'
-
 
 export default {
-
-    store,
-
-  components: {
+components: {
     'gallery': VueGallery,
-    'apartment-form': Apartmentform,
+    'nova-forma': NovaForma,
     DatePicker
-  },
+},
   data: function () {
-
       return {
-
+          apartment: null,
         start: null,
         end: null,
         isHidden: true,
-        images: [
-            '/uploads/Leo/1573756168_promajna.jpg'
-
-        ],
-
         index: null,
-
-        momentForamt: {
-      // Date to String
-      stringify: (date) => {
-        return date ? moment(date).format('DD.MM.YYYY') : ''
-      },
-      // String to Date
-      parse: (value) => {
-       return value ? moment(value, 'LL').toDate() : null
       }
-    }
-      };
-
-
-  },
-
-    computed: Vuex.mapState(['apartment']),
+    },
+    computed: {
+        images() {
+            let images = [];
+            if(this.apartment == null || this.apartment.images == undefined)
+                return [];
+            this.apartment.images.forEach(image => {
+                images.push('/uploads/' + this.apartment.id + '/' + image.path);
+            })
+            return images;
+        }
+    },
     created() {
-        this.$store.dispatch('GET_APARTMENT', this.$route.params.id)
-
+        this.getApartment();
     },
-
-
     methods: {
-             savePage() {
-      this.$store.dispatch('PUT_PAGE')
-      	.then(() => this.$emit('saved'))
-    },
-    createPrice: function (e) {
+        getApartment() {
+            swatApi.get(api.apartments + this.$route.params.id)
+                .then(resp => {this.apartment = resp.data})
+        },
+        updateApartment(novi) {
+            this.apartment = novi;
+        },
+            savePage() {
+                this.$store.dispatch('PUT_PAGE')
+                    .then(() => this.$emit('saved'))
+            },
+            createPrice: function (e) {
                 const formData = new FormData(e.target);
                 swatApi.post(api.prices, formData).
                 then(response => {
                     if (response.status === 201) {
-                        this.$store.dispatch('GET_APARTMENT', this.$route.params.id)
-                    }
-                });
-    },
-
-    deletePrice(id) {
-                swatApi.delete(api.prices + id).
-                then(response => {
-                    if (response.status === 200) {
-                        this.$store.dispatch('GET_APARTMENT', this.$route.params.id);
+                        this.getApartment();
                     }
                 });
             },
 
-
-},
-
-
-
-
-
+            deletePrice(id) {
+                swatApi.delete(api.prices + id).
+                then(response => {
+                    if (response.status === 200) {
+                        this.getApartment();
+                    }
+                });
+            },
+    },
 
 }
 </script>

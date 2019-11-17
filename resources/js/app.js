@@ -42,8 +42,8 @@ window.swatApi = axios.create({
     timeout: 5000,
 });
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.min.css'
 
 import Navbar from './components/Navbar'
 
@@ -57,11 +57,9 @@ import VCalendar from 'v-calendar'
 import DatePicker from 'v-calendar/lib/components/date-picker.umd'
 Vue.component('date-picker', DatePicker)
 
-import moment from 'moment'
+import VueMoment from 'vue-moment'
 
-Vue.use(moment);
-
-
+Vue.use(VueMoment);
 
 const app = new Vue({
     el: '#app',

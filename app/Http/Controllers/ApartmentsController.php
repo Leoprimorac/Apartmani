@@ -30,9 +30,11 @@ class ApartmentsController extends Controller
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
-                $image->move('uploads/' . $apartment->name, $imagename);
+                $image->move('uploads/' . $apartment->id, $imagename);
             }
         }
+
+        $apartment->images;
 
         return $apartment;
     }
@@ -58,14 +60,15 @@ class ApartmentsController extends Controller
             $images = $request->file('images');
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
-                $apartment2 = Apartments::find(request('id'))->name;
                 Image::create([
                     'apartments_id' => $request->id,
                     'path' => $imagename,
                 ]);
-                $image->move('uploads/' . $apartment2, $imagename);
+                $image->move('uploads/' . $apartment->id, $imagename);
             }
         }
+
+        $apartment->images;
 
         return $apartment;
     }

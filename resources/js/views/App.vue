@@ -11,7 +11,7 @@
                 <b-card-group columns>
                     <b-card v-for="apartment in apartments" :key="apartment.id"
                         :title= 'apartment.name'
-                        :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
+                        :img-src="'/uploads/' + apartment.id + '/' + apartment.images[0].path"
                         img-alt="Image"
                         img-top
                         tag="article"
