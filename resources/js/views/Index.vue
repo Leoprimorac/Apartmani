@@ -70,22 +70,20 @@
             </b-row>
         </b-container>
         
-        <b-container fluid id="apartmani">       
+        <b-container fluid id="apartmani">   
+        <b-container id="apartmani2">    
             <b-row>
                 <b-col>
-                    <div class="app mb-3 text-white" >
-                        <b-card-group columns id="kartice">
+                    <div class="text-gray">
+                       <b-card-group columns >
                         <b-card v-for="apartment in apartments" :key="apartment.id"
                         :title= 'apartment.name'
                         :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
                         img-alt="Image"
                         img-top
-                       bg
                         tag="article"
-                        style="width: 20rem; background-color: #333333 "
-                        class="mb-3"
-                        
-
+                        style=" height: 25rem; background-color: #e6e6e6;  border-color: #d9d9d9;"
+                        class=" shadow p-3 mb-5 bg-white rounded"
                         >
                             <b-card-text>
 
@@ -99,13 +97,20 @@
                     </b-col>
                 </b-row>
         </b-container>
+        </b-container>
         <b-container fluid class="Kontakt">
             <b-row>
                 <b-col>
                     <div class="ime">
                         <h3> Villa Promajna</h3>
                     </div>
-                    <h5> Vlasnik: Mladen Miličević</h5>
+                        <div class="tekst">
+                        Vila Promajna smještena je tik uz more i plažu u Promajni na Makarskoj Rivieri!
+                        Uživajte u pogledu na kristalno čisto more i otoke te iskusite jedinstveni 
+                        doživljaj pgleda na najljepše zalaske sunca na Makarskoj rivijeri.
+                        </div>
+                   
+                    
                 </b-col>
                 <b-col>
                 </b-col>
@@ -207,15 +212,16 @@ methods: {
     height: auto;
     }
     .resize-center{
-        padding: 5% 0 5% 0;
+        padding: 5% 0% 5% 0;
     }
     .offset-sm-1 {
     margin-left: 3.333333% !important;
     .card-columns{
         height: 100vh;
         width: 100%;
-        
-
+    }
+    .title{
+        background-color: gray;
     }
 }
 #Onama{
@@ -226,10 +232,13 @@ methods: {
     height:"70vh";
 }
 #apartmani{
-    background-color: #333333;
+  background-color: #e6e6e6;
+}
+#apartmani2{
+  
     padding-top:30px;
-    padding-left: 30px;
-    //padding-right:30px;
+   // padding-left: 30px;
+   // padding-right:30px;
     padding-bottom:30px;
 }
 
