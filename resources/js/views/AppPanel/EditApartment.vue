@@ -104,7 +104,7 @@
                 </b-container>
                 </b-col>
                 <b-col id="desni" sm >
-                    <nova-forma :apartment="apartment" @apartmentChanged="updateApartment"></nova-forma>
+                    <ApartmentForm :apartment="apartment" @apartmentChanged="updateApartment"></ApartmentForm>
                 </b-col>
             </b-row>
 
@@ -119,14 +119,14 @@
 <script>
 
 import VueGallery from 'vue-gallery';
-import NovaForma from './../../components/NovaForma'
+import ApartmentForm from './../../components/ApartmentForm'
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 
 export default {
 components: {
     'gallery': VueGallery,
-    'nova-forma': NovaForma,
+    'ApartmentForm': ApartmentForm,
     DatePicker
 },
   data: function () {
@@ -136,6 +136,7 @@ components: {
         end: null,
         isHidden: true,
         index: null,
+        priceses: null,
       }
     },
     computed: {
@@ -158,12 +159,11 @@ components: {
                 .then(resp => {this.apartment = resp.data})
         },
         updateApartment(novi) {
+            this.priceses = this.apartment.prices;
             this.apartment = novi;
+            this.apartment.prices = this.priceses;
+            //this.getApartment();
         },
-            savePage() {
-                this.$store.dispatch('PUT_PAGE')
-                    .then(() => this.$emit('saved'))
-            },
             createPrice: function (e) {
                 const formData = new FormData(e.target);
                 swatApi.post(api.prices, formData).
