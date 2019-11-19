@@ -73,8 +73,8 @@
         <b-container fluid id="apartmani">   
         <b-container id="apartmani2">    
             <b-row>
-                <b-col>
-                    <div class="text-gray">
+                <b-col >
+                    <div class=" text-gray">
                        <b-card-group columns >
                         <b-card v-for="apartment in apartments" :key="apartment.id"
                         :title= 'apartment.name'
@@ -83,7 +83,7 @@
                         img-top
                         tag="article"
                         style=" height: 25rem; background-color: #e6e6e6;  border-color: #d9d9d9;"
-                        class=" shadow p-3 mb-5 bg-white rounded"
+                        class=" shadow p-3 mb-6 bg-white rounded"
                         >
                             <b-card-text>
 
@@ -109,12 +109,21 @@
                         Uživajte u pogledu na kristalno čisto more i otoke te iskusite jedinstveni 
                         doživljaj pgleda na najljepše zalaske sunca na Makarskoj rivijeri.
                         </div>
-                   
-                    
                 </b-col>
                 <b-col>
+                <div class="ime">
+                    <h3> Kontakt</h3>
+                </div>
+                <div class="tekst">
+                        Vlasnik: Mladen Miličeivč 
+                        Br.tel: +389 91 888 06 85
+                        Mail: mladen1101@gmail.com
+                </div>
                 </b-col>
                 <b-col>
+                    <div class="ime">
+                        <h3> Lokacija</h3>
+                    </div>
                 </b-col>
             </b-row>
         </b-container>
@@ -135,6 +144,7 @@ export default {
 
   components: {
     Navbar, 'gallery': VueGallery
+    
   },
   data: function () {
       return {
@@ -218,7 +228,7 @@ methods: {
     margin-left: 3.333333% !important;
     .card-columns{
         height: 100vh;
-        width: 100%;
+        width: auto;
     }
     .title{
         background-color: gray;
@@ -237,8 +247,8 @@ methods: {
 #apartmani2{
   
     padding-top:30px;
-   // padding-left: 30px;
-   // padding-right:30px;
+    padding-left: 30px;
+    padding-right:30px;
     padding-bottom:30px;
 }
 
