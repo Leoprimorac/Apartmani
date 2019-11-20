@@ -69,37 +69,21 @@
                 </b-col>
             </b-row>
         </b-container>
-<<<<<<< HEAD
 
         <b-container fluid id="apartmani">
-            <b-row>
-                <b-col>
-
-                        <b-card-group columns id="kartice" class="p-5 m-5">
-=======
-        
-        <b-container fluid id="apartmani">   
-        <b-container id="apartmani2">    
+        <b-container id="apartmani2">
             <b-row>
                 <b-col >
                     <div class=" text-gray">
                        <b-card-group columns >
->>>>>>> eb3e014be1c4bb88f47c8071b6b1fe8fc9433eb3
                         <b-card v-for="apartment in apartments" :key="apartment.id"
                         :title= 'apartment.name'
                         :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
                         img-alt="Image"
                         img-top
                         tag="article"
-<<<<<<< HEAD
-                        style="width: 20rem; background-color: #333333 "
-                        class="mb-3 m-5"
-
-
-=======
                         style=" height: 25rem; background-color: #e6e6e6;  border-color: #d9d9d9;"
                         class=" shadow p-3 mb-6 bg-white rounded"
->>>>>>> eb3e014be1c4bb88f47c8071b6b1fe8fc9433eb3
                         >
                             <b-card-text>
 
@@ -122,7 +106,7 @@
                     </div>
                         <div class="tekst">
                         Vila Promajna smještena je tik uz more i plažu u Promajni na Makarskoj Rivieri!
-                        Uživajte u pogledu na kristalno čisto more i otoke te iskusite jedinstveni 
+                        Uživajte u pogledu na kristalno čisto more i otoke te iskusite jedinstveni
                         doživljaj pgleda na najljepše zalaske sunca na Makarskoj rivijeri.
                         </div>
                 </b-col>
@@ -131,7 +115,7 @@
                     <h3> Kontakt</h3>
                 </div>
                 <div class="tekst">
-                        Vlasnik: Mladen Miličeivč 
+                        Vlasnik: Mladen Miličeivč
                         Br.tel: +389 91 888 06 85
                         Mail: mladen1101@gmail.com
                 </div>
@@ -160,7 +144,7 @@ export default {
 
   components: {
     Navbar, 'gallery': VueGallery
-    
+
   },
   data: function () {
       return {
@@ -244,16 +228,10 @@ methods: {
     margin-left: 3.333333% !important;
     .card-columns{
         height: 100vh;
-<<<<<<< HEAD
-        width: 100%;
-
-
-=======
         width: auto;
     }
     .title{
         background-color: gray;
->>>>>>> eb3e014be1c4bb88f47c8071b6b1fe8fc9433eb3
     }
 }
 #Onama{
@@ -267,7 +245,7 @@ methods: {
   background-color: #e6e6e6;
 }
 #apartmani2{
-  
+
     padding-top:30px;
     padding-left: 30px;
     padding-right:30px;
