@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-container id="fitt"class="pt-5" v-if="apartment">
+    <b-container id="fitt" class="pt-5" v-if="apartment">
             <b-row id="Veliki">
                 <b-col cols="12" md="8" sm id="lijevi">
                     <b-container fluid>
@@ -174,7 +174,7 @@
 <script>
 
 import VueGallery from 'vue-gallery';
-import ApartmentForm from './../../components/ApartmentForm'
+import ApartmentForm from './../../components/ApartmentForm.vue'
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 

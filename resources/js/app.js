@@ -45,17 +45,18 @@ window.swatApi = axios.create({
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.min.css'
 
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar.vue'
 
 import lightbox from 'vlightbox'
 Vue.component('lightbox', lightbox)
 
 import VCalendar from 'v-calendar'
+Vue.use(VCalendar)
 
 
 
 import DatePicker from 'v-calendar/lib/components/date-picker.umd'
-Vue.component('date-picker', DatePicker)
+Vue.component('v-date-picker', DatePicker)
 
 import VueMoment from 'vue-moment'
 
