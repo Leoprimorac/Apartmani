@@ -19,4 +19,8 @@ class Apartments extends Model
     {
         return $this->hasMany(Image::class);
     }
+    public function calendar()
+    {
+        return $this->hasMany(Calendar::class);
+    }
 }

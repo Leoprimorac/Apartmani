@@ -12,3 +12,4 @@ export const logged = users + 'logged';
 
 export const apartments = 'apartments/';
 export const prices = 'prices/';
+export const calendars = 'calendars/';

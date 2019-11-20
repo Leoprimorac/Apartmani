@@ -40,6 +40,18 @@
                                     <b-btn type="submit" variant="gold" class="mt-3 align-self-center w-50">
                                         Potvrdi
                                     </b-btn>
+
+                                    <b-btn v-b-modal.deleteModal> Obriši apartman</b-btn>
+
+                                    <b-modal centered
+                                        id="deleteModal"
+                                        title="Potvrda"
+                                        @ok="deleteApartment"
+                                        ok-title="Da"
+                                        ok-variant="danger"
+                                        cancel-title="Odustani">
+                                        <p class="my-4">Jeste li sigurni da želite izbrisati ovaj oglas?</p>
+                                    </b-modal>
                                 </form>
 
                             </b-col>
@@ -73,6 +85,16 @@ props: {
                     }
                 });
             },
+deleteApartment() {
+                swatApi.delete(api.apartments + this.apartment.id).
+                then(response => {
+                    if (response.status == 200) {
+                        this.$router.push('/app/')
+                    }
+                })
+        },
+
+
   }
 }
 </script>

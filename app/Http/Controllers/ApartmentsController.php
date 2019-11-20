@@ -41,7 +41,7 @@ class ApartmentsController extends Controller
 
     public function show(Apartments $apartment)
     {
-        return Apartments::with('prices', 'images')->findOrFail($apartment->id);
+        return Apartments::with('prices', 'images', 'calendar')->findOrFail($apartment->id);
     }
 
     public function update(Request $request, Apartments $apartment)
@@ -71,5 +71,10 @@ class ApartmentsController extends Controller
         $apartment->images;
 
         return $apartment;
+    }
+    public function destroy(Apartments $apartment)
+    {
+        $apartment->delete();
+        return response('Success', 200);
     }
 }

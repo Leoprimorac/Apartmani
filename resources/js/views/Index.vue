@@ -69,12 +69,12 @@
                 </b-col>
             </b-row>
         </b-container>
-        
-        <b-container fluid id="apartmani">       
+
+        <b-container fluid id="apartmani">
             <b-row>
                 <b-col>
-                    <div class="app mb-3 text-white" >
-                        <b-card-group columns id="kartice">
+
+                        <b-card-group columns id="kartice" class="p-5 m-5">
                         <b-card v-for="apartment in apartments" :key="apartment.id"
                         :title= 'apartment.name'
                         :img-src="'/uploads/' + apartment.name + '/' + apartment.images[0].path"
@@ -83,8 +83,8 @@
                        bg
                         tag="article"
                         style="width: 20rem; background-color: #333333 "
-                        class="mb-3"
-                        
+                        class="mb-3 m-5"
+
 
                         >
                             <b-card-text>
@@ -94,8 +94,8 @@
                             <b-button class="button" :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
                             </b-card>
                             </b-card-group>
-                            
-                    </div>
+
+
                     </b-col>
                 </b-row>
         </b-container>
@@ -186,7 +186,7 @@ methods: {
         background: url(../../img/promajna3.jpeg) no-repeat center;
     }
     #pocetna{
-      
+
     padding-top:56px;
     height:100vh;
     -webkit-background-size: cover; /* For WebKit*/
@@ -214,7 +214,7 @@ methods: {
     .card-columns{
         height: 100vh;
         width: 100%;
-        
+
 
     }
 }
@@ -235,15 +235,15 @@ methods: {
 
 
 .button {
-  color: white !important; 
-  background-color: #666666 !important; 
+  color: white !important;
+  background-color: #666666 !important;
   border-color: #666666 !important;
 }
 .Kontakt{
     background-color: #262626;
-    color:white;      
+    color:white;
     height:50vh;
-    width:auto;  
+    width:auto;
     padding: 30px;
 
 }

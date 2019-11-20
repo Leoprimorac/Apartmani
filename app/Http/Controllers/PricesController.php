@@ -16,8 +16,8 @@ class PricesController extends Controller
     public function store(request $request){
 
         $price= Prices::create([
-            'date_start' => $request['start'],
-            'date_end' => $request['end'],
+            'date_start' => $request['dstart'],
+            'date_end' => $request['dend'],
             'price' => $request['price'],
             'apartments_id' => $request['apartments_id']
         ]);

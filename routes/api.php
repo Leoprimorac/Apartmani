@@ -20,3 +20,5 @@ Route::post('apartments/{apartment}', 'ApartmentsController@update');
 
 //Prices
 Route::resource('prices', 'PricesController')->except('update','create', 'edit');
+
+Route::resource('calendars', 'CalendarController')->except('update','create', 'edit');
