@@ -73,29 +73,32 @@
         <b-container fluid id="apartmani">
         <b-container id="apartmani2">
             <b-row>
-                <b-col >
-                    <div class=" text-gray">
-                       <b-card-group columns >
-                        <b-card v-for="apartment in apartments" :key="apartment.id"
-                        :title= 'apartment.name'
+                <b-col lg="4" md="6" sm="2"class="mb-3" v-for="apartment in apartments" :key="apartment.id">
+                <div class="card-group deck" >
+                    <b-card  no-body
+                        class="shadow-lg p-6 mb-6 bg-white" 
+                        style="margin-top:5%; height: 350rem%; background-color: #e6e6e6;  border-bottom-color: gray"
                         :img-src="'/uploads/' + apartment.id + '/' + apartment.images[0].path"
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style=" height: 25rem; background-color: #e6e6e6;  border-color: #d9d9d9;"
-                        class=" shadow p-3 mb-6 bg-white rounded"
+                        img-height="300rem"
                         >
-                            <b-card-text>
 
-                            </b-card-text>
-                            <router-link :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
-                            <b-button class="button" :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
-                            </b-card>
-                            </b-card-group>
-
-                    </div>
-                    </b-col>
-                </b-row>
+                    
+                    <b-card-footer footer-class="footer"
+                    style="background-color:white">
+                    <router-link  :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                        <b-button bottom class="button" 
+                            style="font-size:40px; padding:0"
+                            :href="href" variant="primary" 
+                            @click="navigate"> {{apartment.name}}
+                        
+                            
+                        </b-button> 
+                    </router-link>
+                    </b-card-footer>        
+                    </b-card group>
+                </div>
+            </b-col>
+            </b-row>
         </b-container>
         </b-container>
         <b-container fluid class="Kontakt">
@@ -252,11 +255,20 @@ methods: {
     padding-bottom:30px;
 }
 
-
+.footer{
+    height:5rem;
+    width:100%;
+    background-color: white;
+}
 .button {
-  color: white !important;
-  background-color: #666666 !important;
-  border-color: #666666 !important;
+  color: black !important;
+  background-color: white!important;
+  border-color: white !important;
+  width:100%;
+  height:100%;
+  font-family: 'Dancing Script', cursive;
+  
+
 }
 .Kontakt{
     background-color: #262626;
