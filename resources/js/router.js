@@ -7,6 +7,7 @@ import Login from './views/auth/Login'
 import Register from './views/auth/Register'
 import NewApartment from './views/AppPanel/NewApartment'
 import EditApartment from './views/AppPanel/EditApartment'
+import Apartment from './views/Apartment'
 
 Vue.use(Router);
 
@@ -35,9 +36,9 @@ export default new Router({
             component: EditApartment
         },
         {
-            path: '/app/EditApartment/:name',
-            name: 'EditApartmentf',
-            component: EditApartment
+            path: '/app/Apartment/:id',
+            name: 'Apartment',
+            component: Apartment
         },
         {
             path : '/auth',

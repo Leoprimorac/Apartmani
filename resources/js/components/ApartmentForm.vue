@@ -37,11 +37,13 @@
                                     </b-form-group>
 
 
-                                    <b-btn type="submit" variant="gold" class="mt-3 align-self-center w-50">
-                                        Potvrdi
+                                    <b-btn type="submit" variant="info" >
+                                        Potvrdi unos
                                     </b-btn>
 
-                                    <b-btn v-b-modal.deleteModal> Obriši apartman</b-btn>
+                                    <b-btn variant="danger" v-b-modal.deleteModal>
+                                        Obriši apartman
+                                    </b-btn>
 
                                     <b-modal centered
                                         id="deleteModal"

@@ -88,7 +88,7 @@
                             <b-card-text>
 
                             </b-card-text>
-                            <router-link :to="'/app/EditApartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                            <router-link :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
                             <b-button class="button" :href="href" variant="primary" @click="navigate">Uredi apartman</b-button> </router-link>
                             </b-card>
                             </b-card-group>
