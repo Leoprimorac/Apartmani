@@ -1,6 +1,6 @@
 <template>
 <div>
-<div class="container-fluid ">
+<div class="container ">
     <div class="row mx-auto">
         <div class="col mx-auto">
             <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg fixed-top">

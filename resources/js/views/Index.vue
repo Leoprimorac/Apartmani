@@ -13,9 +13,9 @@
                 </b-row>
             </b-container>
         </b-container>
-        <b-container fluid id="promajna">
+        <b-container id="promajna">
             <b-row id="Onama">
-                <b-col sm  offset-sm="1" >
+                <b-col sm   >
                     <div class="resize-center" >
                         <blockquote class="blockquote">
                             <h2>PROMAJNA</h2>
@@ -71,65 +71,40 @@
         </b-container>
 
         <b-container fluid id="apartmani">
-        <b-container id="apartmani2">
+        <b-container>
             <b-row>
-                <b-col lg="4" md="6" sm="2"class="mb-3" v-for="apartment in apartments" :key="apartment.id">
+                <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
+                    <router-link  :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
                     <b-card  no-body
-                        class="shadow-lg p-6 mb-6 bg-white" 
-                        style="margin-top:5%; height: 350rem%; background-color: #e6e6e6;  border-bottom-color: gray"
+                        class="shadow-lg p-6 mb-6 bg-white"
+                        style="margin-top:5%;  background-color: #e6e6e6;  border-bottom-color: gray"
                         :img-src="'/uploads/' + apartment.id + '/' + apartment.images[0].path"
                         img-height="300rem"
+                        @click="navigate"
                         >
 
-                    
+
                     <b-card-footer footer-class="footer"
                     style="background-color:white">
-                    <router-link  :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
-                        <b-button bottom class="button" 
+
+                        <b-button bottom class="button"
                             style="font-size:40px; padding:0"
-                            :href="href" variant="primary" 
+                            :href="href" variant="primary"
                             @click="navigate"> {{apartment.name}}
-                        
-                            
-                        </b-button> 
+
+
+                        </b-button>
+
+                    </b-card-footer>
+                    </b-card>
                     </router-link>
-                    </b-card-footer>        
-                    </b-card group>
                 </div>
             </b-col>
             </b-row>
         </b-container>
         </b-container>
-        <b-container fluid class="Kontakt">
-            <b-row>
-                <b-col>
-                    <div class="ime">
-                        <h3> Villa Promajna</h3>
-                    </div>
-                        <div class="tekst">
-                        Vila Promajna smještena je tik uz more i plažu u Promajni na Makarskoj Rivieri!
-                        Uživajte u pogledu na kristalno čisto more i otoke te iskusite jedinstveni
-                        doživljaj pgleda na najljepše zalaske sunca na Makarskoj rivijeri.
-                        </div>
-                </b-col>
-                <b-col>
-                <div class="ime">
-                    <h3> Kontakt</h3>
-                </div>
-                <div class="tekst">
-                        Vlasnik: Mladen Miličeivč
-                        Br.tel: +389 91 888 06 85
-                        Mail: mladen1101@gmail.com
-                </div>
-                </b-col>
-                <b-col>
-                    <div class="ime">
-                        <h3> Lokacija</h3>
-                    </div>
-                </b-col>
-            </b-row>
-        </b-container>
+        <footers></footers>
     </div>
 
 
@@ -138,7 +113,7 @@
 
 
 <script>
-import Navbar from '../components/Navbar.vue'
+import Footer from './../components/Footer';
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';
 import store from './../store.js';
@@ -146,7 +121,8 @@ export default {
     store,
 
   components: {
-    Navbar, 'gallery': VueGallery
+     'gallery': VueGallery,
+     'footers':Footer,
 
   },
   data: function () {
@@ -245,20 +221,23 @@ methods: {
     height:"70vh";
 }
 #apartmani{
-  background-color: #e6e6e6;
+   background: url(../../img/pozadina.jpg) center;
+   height:100%;
+   background-size: cover;
 }
-#apartmani2{
+/*#apartmani2{
 
     padding-top:30px;
     padding-left: 30px;
     padding-right:30px;
     padding-bottom:30px;
 }
-
+*/
 .footer{
     height:5rem;
     width:100%;
     background-color: white;
+    padding: 0 !important
 }
 .button {
   color: black !important;
@@ -267,16 +246,12 @@ methods: {
   width:100%;
   height:100%;
   font-family: 'Dancing Script', cursive;
-  
+
 
 }
-.Kontakt{
-    background-color: #262626;
-    color:white;
-    height:50vh;
-    width:auto;
-    padding: 30px;
 
+.card-img{
+    object-fit: cover;
 }
 
 </style>
