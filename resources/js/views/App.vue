@@ -10,6 +10,7 @@
                 <div>
                 <b-card-group columns>
                     <b-card v-for="apartment in apartments" :key="apartment.id"
+                    overlay
                         :title= 'apartment.name'
                         :img-src="'/uploads/' + apartment.id + '/' + apartment.images[0].path"
                         img-alt="Image"
