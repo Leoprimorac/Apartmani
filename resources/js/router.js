@@ -36,7 +36,7 @@ export default new Router({
             component: EditApartment
         },
         {
-            path: '/app/Apartment/:id',
+            path: '/Apartment/:id',
             name: 'Apartment',
             component: Apartment
         },

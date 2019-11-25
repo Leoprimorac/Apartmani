@@ -75,7 +75,7 @@
             <b-row>
                 <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
-                    <router-link  :to="'/app/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                    <router-link  :to="'/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
                     <b-card  no-body
                         class="shadow-lg p-6 mb-6 bg-white"
                         style="margin-top:5%;  background-color: #e6e6e6;  border-bottom-color: gray"
