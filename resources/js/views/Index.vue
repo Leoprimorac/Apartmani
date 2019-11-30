@@ -16,7 +16,7 @@
         <b-container id="promajna">
             <b-row id="Onama">
                 <b-col sm   >
-                    <div class="resize-center" >
+                    <div class="glavna-slova resize-center" >
                         <blockquote class="blockquote">
                             <h2>PROMAJNA</h2>
                             <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
@@ -45,7 +45,7 @@
                     </b-carousel>
                     </div>
                     <div>
-                        <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
+                        <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                             <b-collapse id="collapse-1" class="mt-2">
                                 <b-card>
                                     <gallery :images="images" :index="index" @close="index = null"></gallery>
@@ -77,8 +77,8 @@
                 <div class="card-group deck" >
                     <router-link  :to="'/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
                     <b-card  no-body
-                        class="shadow-lg p-6 mb-6 bg-white"
-                        style="margin-top:5%;  background-color: #e6e6e6;  border-bottom-color: gray"
+                        class="shadow-lg p-10 mb-6 bg-white"
+                        style="margin-top:15%; margin-bottom:5%; background-color: #e6e6e6;"
                         :img-src="'/uploads/' + apartment.id + '/' + apartment.images[0].path"
                         img-height="300rem"
                         @click="navigate"
@@ -89,7 +89,7 @@
                     style="background-color:white">
 
                         <b-button bottom class="button"
-                            style="font-size:40px; padding:0"
+                            style="font-size:30px; padding:0"
                             :href="href" variant="primary"
                             @click="navigate"> {{apartment.name}}
 
@@ -168,11 +168,15 @@ methods: {
 
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Parisienne&display=swap');
     .ime{
-          font-family: 'Dancing Script', cursive;
+          font-family: 'Parisienne', serif;
           text-align: center;
            }
+    .glavna-slova{
+        font-family: 'Lora', cursive;
+    }
     h1{
         font-size: 5rem !important;
     }
@@ -213,6 +217,14 @@ methods: {
         background-color: gray;
     }
 }
+.promajna-button{
+color: white !important;
+  background-color: #31708e !important;
+  border-color: #31708e!important;
+  width: 100%;
+  height: 100%;
+  font-family: 'Lora', cursive;
+}
 #Onama{
     height:100vh;
     width:auto;
@@ -222,8 +234,8 @@ methods: {
 }
 #apartmani{
    background: url(../../img/pozadina.jpg) center;
-   height:100%;
-   background-size: cover;
+   //height:100%;
+   
 }
 /*#apartmani2{
 
@@ -234,18 +246,20 @@ methods: {
 }
 */
 .footer{
-    height:5rem;
+    height:3rem;
     width:100%;
     background-color: white;
     padding: 0 !important
 }
 .button {
-  color: black !important;
-  background-color: white!important;
-  border-color: white !important;
-  width:100%;
-  height:100%;
-  font-family: 'Dancing Script', cursive;
+  color: #31708e !important;
+  background-color: white !important;
+  border-color: white!important;
+  width: 100%;
+  height: 100%;
+  font-family: 'Lora', cursive;
+  font-size: 20px;
+  align: center;
 
 
 }
