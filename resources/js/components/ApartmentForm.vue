@@ -9,22 +9,22 @@
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="name" class="text-center">Ime:</label>
-                                        <input id="name" type="text" class="form-control" name="name" v-model="apartment.name" @input="emitChange" required autofocus>
+                                        <input id="name" type="text" name="name" v-model="apartment.name" @input="emitChange" required autofocus>
                                     </div>
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="description" class="text-center">Opis:</label>
-                                        <textarea  id="description" class="form-control" name="description" v-model="apartment.description" @input="emitChange" required autofocus></textarea>
+                                        <vue-editor  id="description" name="description" v-model="apartment.description" @input="emitChange" required autofocus></vue-editor>
                                     </div>
 
-                                    <div class="form-group d-flex flex-column">
+                                    <div class="form-group">
                                         <label for="description" class="text-center">Detalji:</label>
-                                        <textarea id="details" class="form-control" name="details" v-model="apartment.details" @input="emitChange" required autofocus rows="5"></textarea>
+                                        <vue-editor id="details" name="details" v-model="apartment.details" @input="emitChange" required autofocus rows="5"></vue-editor>
                                     </div>
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="amenities" class="text-center">Dodatci sobi:</label>
-                                        <textarea id="amenities" class="form-control" name="amenities" v-model="apartment.amenities" @input="emitChange" required autofocus rows="5"></textarea>
+                                        <vue-editor id="amenities" name="amenities" v-model="apartment.amenities" @input="emitChange" required autofocus rows="5"></vue-editor>
                                     </div>
 
 
@@ -63,9 +63,12 @@
 </template>
 <script>
 import Vuex from 'vuex';
+import { VueEditor } from "vue2-editor";
 
 export default {
-
+components: {
+    VueEditor
+},
 props: {
 
     'apartment': {
@@ -79,6 +82,9 @@ props: {
       },
     saveApartment: function (e) {
                 const formData = new FormData(e.target);
+                formData.append('details', this.apartment.details)
+                formData.append('description', this.apartment.description)
+                formData.append('amenities', this.apartment.amenities)
                 swatApi.post(api.apartments + this.apartment.id, formData).
                 then(response => {
                     if (response.status === 200) {

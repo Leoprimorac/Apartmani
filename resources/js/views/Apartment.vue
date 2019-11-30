@@ -16,7 +16,7 @@
                             class="mb-2"
                             >
                             <b-card-text>
-                                {{apartment.description}}
+                                <div v-html="apartment.description">{{apartment}}</div>
                             </b-card-text>
                             <b-card-footer footer-class="footer">
 
@@ -52,8 +52,8 @@
 
                         <div class="ml-3">
                             <h6 class="pt-3">Dodatci:</h6>
+                            <div v-html="apartment.amenities">{{apartment}}</div>
 
-                            {{apartment.amenities}}
 
                         </div>
 
@@ -86,7 +86,7 @@
 
                     <div >
                         <h6>Detalji:</h6>
-                            {{apartment.details}}
+                        <div v-html="apartment.details">{{apartment}}</div>
                     </div>
 
                 </b-col>
@@ -105,7 +105,9 @@
                                                     :attributes="attrs"
 
                                                     :columns="$screens({ default: 1, lg: 2 })"
-                                                    :rows="$screens({ default: 1, lg: 2 })">
+                                                    :rows="$screens({ default: 1, lg: 2 })"
+                                                    >
+
                                         </v-calendar>
 
                                     </b-col>
@@ -115,12 +117,11 @@
                                             <h5 class="pb-3 pt-1">Odaberite željene datume za vaš upit:</h5>
                                             <v-date-picker
                                                 mode='range'
-                                                v-model='range'
+                                                v-model="form"
                                                 :input-props='{
                                                     placeholder: "Odaberite datume rezervacije",
                                                     readonly: true
                                                 }'
-                                                @submitDate.prevent="createDate"
                                         />
 
                                         </div>
@@ -130,43 +131,42 @@
                                             <b-spinner type="grow" small variant="danger" label="rezervirano"></b-spinner>
                                             Rezervirano - Apartman nije slobodan za odabrane datume
                                             </div>
-                                            <div>
-                                            <b-spinner type="grow" small variant="primary" label="dogovor"></b-spinner>
-                                            Dogovor - U tijeku je dogovor za odabrane datume
-                                            </div>
 
                                         </div>
                                     </b-col>
 
                                     <b-col>
-                                        <form v-on:submit.prevent=""  >
+                                        <b-form @submit.prevent="sendForm">
                                             <div class="formBorder p-2">
                                                 <h5 class="pb-3 pt-1">Pošaljite upit o rezervaciji:</h5>
-                                                <div class="form-group mb-1 d-flex flex-column">
-                                                    <label for="name" class="text-start mb-1">Ime:</label>
-                                                    <input id="name" type="text" class="form-control" name="name" required autofocus>
-                                                </div>
 
-                                                <div class="form-group mb-1 d-flex flex-column">
-                                                    <label for="description" class="text-start mb-1">Prezime:</label>
-                                                    <input id="surname" type="text" class="form-control" name="surname" required autofocus>
-                                                </div>
+                                                <b-form-group id="input-group-1" label="Ime:" label-for="input-1" class="text-start mb-1">
+                                                    <b-form-input id="input-1" v-model="form.name" type="text" required placeholder="Unesite ime"></b-form-input>
+                                                </b-form-group>
 
-                                                <div class="form-group mb-1 d-flex flex-column">
-                                                    <label for="details" class="text-start mb-1">Email:</label>
-                                                    <input id="email" type="text" class="form-control" name="email" required autofocus>
-                                                </div>
+                                                <b-form-group id="input-group-2" label="Prezime:" label-for="input-2" class="text-start mb-1">
+                                                    <b-form-input id="input-2" v-model="form.surname" type="text" required placeholder="Unesite prezime"></b-form-input>
+                                                </b-form-group>
 
-                                                <div class="form-group mb-1 d-flex flex-column">
-                                                    <label for="amenities" class="text-start mb-1">Poruka:</label>
-                                                    <textarea id="message" class="form-control" name="message" required autofocus></textarea>
-                                                </div>
+                                                <b-form-group id="input-group-3" label="Email:" label-for="input-3" class="text-start mb-1">
+                                                    <b-form-input id="input-3" v-model="form.email" type="email" required placeholder="Unesite email"></b-form-input>
+                                                </b-form-group>
+
+                                                <b-form-group id="text-aria-group-4" label="Poruka:" label-for="text-aria-1" class="text-start mb-1">
+                                                <b-form-textarea
+                                                    id="text-aria-1"
+                                                    v-model="form.message"
+                                                    placeholder="Upišite poruku..."
+                                                    rows="3"
+                                                    max-rows="6"
+                                                    ></b-form-textarea>
+                                                </b-form-group>
 
                                                 <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;">
-                                                    Potvrdi
+                                                    Pošaljite upit
                                                 </b-btn>
                                             </div>
-                                        </form>
+                                        </b-form>
                                     </b-col>
 
                                 </b-row>
@@ -189,9 +189,14 @@ export default {
         return {
             apartment: null,
             index:null,
-            range:{
-                start: null,
-                end: null,
+            form: {
+                apartmentName:'',
+                name:  '',
+                surname:  '',
+                email:  '',
+                message: '',
+                start:'',
+                end: '',
             }
         }
     },
@@ -228,13 +233,24 @@ export default {
 
             })
             return attrs;
-        }
+        },
      },
 
     methods: {
         getApartment() {
             swatApi.get(api.apartments + this.$route.params.id)
                 .then(resp => {this.apartment = resp.data})
+        },
+        sendForm(){
+            this.form.apartmentName = this.apartment.name;
+            let formData = this.form;
+
+            swatApi.post(api.apartmentEmail, formData)
+            .then(response => {
+                    if (response.status === 201) {
+                        this.$router.push('/app/')
+                    }
+                });
         },
     }
 }

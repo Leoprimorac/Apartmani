@@ -17,14 +17,14 @@
                                         class="mb-2"
                                     >
                                         <b-card-text>
-                                            {{apartment.description}}
+                                              <div v-html="apartment.description">{{apartment}}</div>
                                         </b-card-text>
                                         <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                                     </b-card>
 
                                     <div class="ml-3">
                                         <h6 class="pt-3">Dodatci:</h6>
-                                            {{apartment.amenities}}
+                                            <div v-html="apartment.amenities">{{apartment}}</div>
                                     </div>
 
                             </b-col>
@@ -71,7 +71,7 @@
 
                                 <div >
                                     <h6>Detalji:</h6>
-                                        {{apartment.details}}
+                                        <div v-html="apartment.details"></div>
                                 </div>
 
 
@@ -148,7 +148,7 @@
                                             <template v-slot:first>
                                                 <option :value="null" disabled>-- Odaberite opciju --</option>
                                             </template>
-                                            <option value="red">Izdato</option> <option value="blue">Pregovor</option>
+                                            <option value="red">Izdato</option>
                                         </b-form-select>
 
                                         <b-btn type="submit" variant="info" class="mt-3 align-self-center w-50">
