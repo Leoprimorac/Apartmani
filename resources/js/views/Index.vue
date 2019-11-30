@@ -194,7 +194,7 @@ methods: {
     }
 
     .info-bg {
-    background-color: rgba(255, 255, 255, 0.35)!important;
+    background-color: rgba(243, 96, 96, 0.35)!important;
 };
     .image-size{
     max-width: 20%;
@@ -235,7 +235,7 @@ color: white !important;
 #apartmani{
    background: url(../../img/pozadina.jpg) center;
    //height:100%;
-   
+
 }
 /*#apartmani2{
 

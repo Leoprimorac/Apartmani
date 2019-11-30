@@ -5,6 +5,11 @@ use App\Models\Apartments;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
+//For Mail
+use App\Mail\ApartmentEmail;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Mail;
+
 class ApartmentsController extends Controller
 {
 
@@ -76,5 +81,24 @@ class ApartmentsController extends Controller
     {
         $apartment->delete();
         return response('Success', 200);
+    }
+
+    public function email(Request $request){
+
+       // dd($request->all());
+
+        $data = $this->validate($request, [
+            'apartmentName' => 'required',
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+        ]);
+
+        Mail::to('test@test.com')->send( new ApartmentEmail($data));
+        return response()->json( ['sent' => true], Response::HTTP_OK);
+
     }
 }
