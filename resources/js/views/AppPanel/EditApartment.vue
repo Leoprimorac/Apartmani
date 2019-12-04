@@ -57,7 +57,7 @@
 
                                         <table class="table table-light">
                                             <tbody>
-                                                <tr v-for="item in apartment.prices">
+                                                <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start" >
                                                     <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
                                                     <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
                                                     <td>{{ item.price}}</td>
@@ -239,6 +239,9 @@ components: {
 
             })
             return attrs;
+        },
+         orderedApartmentPrices: function () {
+            return _.orderBy(this.apartment.prices, 'date_start')
         }
     },
     created() {

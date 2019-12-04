@@ -50,8 +50,8 @@
                                         </b-collapse>
                         </div>
 
-                        <div class="ml-3">
-                            <h6 class="pt-3">Dodatci:</h6>
+                        <div class="ml-3 amenities">
+                            <h5 class="pt-3 labels" >Dodatci:</h5>
                             <div v-html="apartment.amenities">{{apartment}}</div>
 
 
@@ -75,7 +75,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="item in apartment.prices">
+                                <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start">
                                     <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
                                     <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
                                     <td>{{ item.price}}</td>
@@ -85,7 +85,7 @@
                     </div>
 
                     <div >
-                        <h6>Detalji:</h6>
+                        <h5 class="labels pb-2">Detalji:</h5>
                         <div v-html="apartment.details">{{apartment}}</div>
                     </div>
 
@@ -117,7 +117,7 @@
                                             <h5 class="pb-3 pt-1">Odaberite željene datume za vaš upit:</h5>
                                             <v-date-picker
                                                 mode='range'
-                                                v-model="form"
+                                                v-model="range"
                                                 :input-props='{
                                                     placeholder: "Odaberite datume rezervacije",
                                                     readonly: true
@@ -165,6 +165,9 @@
                                                 <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;">
                                                     Pošaljite upit
                                                 </b-btn>
+
+                                                 <b-alert class="mt-2" variant="success" :show="succesAlert">Mail uspješno poslan</b-alert>
+                                                 <b-alert class="mt-2" variant="danger" :show="errorAlert">Mail nije poslan!</b-alert>
                                             </div>
                                         </b-form>
                                     </b-col>
@@ -178,30 +181,47 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import * as moment from 'moment';
 import Footer from './../components/Footer'
 import VueGallery from 'vue-gallery';
 export default {
     components:{
         'gallery': VueGallery,
-        'footers': Footer
+        'footers': Footer,
+
     },
     data() {
         return {
             apartment: null,
             index:null,
+            range:{
+                start: '',
+                end: '',
+            },
             form: {
                 apartmentName:'',
-                name:  '',
+                name: '',
                 surname:  '',
                 email:  '',
                 message: '',
                 start:'',
                 end: '',
-            }
+
+
+            },
+            succesAlert: false,
+            errorAlert: false,
         }
     },
     created() {
         this.getApartment();
+    },
+    watch:{
+        range: function(val){
+            this.form.start = moment(val.start).format('DD.MM.YYYY');
+            this.form.end = moment(val.end).format('DD.MM.YYYY');
+        },
     },
      computed: {
         images() {
@@ -234,6 +254,9 @@ export default {
             })
             return attrs;
         },
+        orderedApartmentPrices: function () {
+            return _.orderBy(this.apartment.prices, 'date_start')
+        }
      },
 
     methods: {
@@ -247,11 +270,29 @@ export default {
 
             swatApi.post(api.apartmentEmail, formData)
             .then(response => {
-                    if (response.status === 201) {
-                        this.$router.push('/app/')
+                    if (response.status == 200) {
+                        this.succesAlert = true;
+                        this.clearForm();
                     }
-                });
+                })
+            .catch(error =>{
+                this.errorAlert = true;
+                this.succesAlert = false;
+
+            });
+
         },
+        clearForm(){
+            this.form.apartmentName = '';
+            this.form.name = '';
+            this.form.surname = '';
+            this.form.email = '';
+            this.form.message = '';
+            this.form.start = '';
+            this.form.end = '';
+            this.range = '';
+            this.errorAlert = false;
+        }
     }
 }
 </script>
@@ -261,7 +302,7 @@ export default {
 
 
 .font {
- font-family: 'Nunito', serif;
+font-family: 'Lora', cursive;
 
 }
 
@@ -288,6 +329,11 @@ h1{
 
 
 
+}
+.labels{
+     color: #31708e !important;
+    /*border-bottom: 1px solid #31708e;*/
+    border-top: 0;
 }
 .thread-color tr th{
     color: #31708e !important;

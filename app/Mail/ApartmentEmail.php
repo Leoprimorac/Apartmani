@@ -12,6 +12,7 @@ class ApartmentEmail extends Mailable
     use Queueable, SerializesModels;
 
     public $data;
+    public $email;
 
     /**
      * Create a new message instance.
@@ -21,6 +22,7 @@ class ApartmentEmail extends Mailable
     public function __construct(array $data)
     {
         $this->data = $data;
+        $this->email = $data['email'];
     }
 
     /**
@@ -30,6 +32,8 @@ class ApartmentEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.apartment');
+        return $this->from($this->email)
+        ->replyTo($this->email)
+        ->markdown('mail.apartment');
     }
 }

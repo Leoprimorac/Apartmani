@@ -85,7 +85,6 @@ class ApartmentsController extends Controller
 
     public function email(Request $request){
 
-       // dd($request->all());
 
         $data = $this->validate($request, [
             'apartmentName' => 'required',
@@ -97,8 +96,8 @@ class ApartmentsController extends Controller
             'end' => 'required',
         ]);
 
-        Mail::to('test@test.com')->send( new ApartmentEmail($data));
-        return response()->json( ['sent' => true], Response::HTTP_OK);
+        Mail::to('leoprimorac96@gmail.com')->send( new ApartmentEmail($data));
+        return response('Success', 200);
 
     }
 }
