@@ -50,12 +50,6 @@
                                         </b-collapse>
                         </div>
 
-                        <div class="ml-3 amenities">
-                            <h5 class="pt-3 labels" >Dodatci:</h5>
-                            <div v-html="apartment.amenities">{{apartment}}</div>
-
-
-                        </div>
 
                 </b-col>
 

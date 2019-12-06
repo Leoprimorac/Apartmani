@@ -10,6 +10,6 @@ class Image extends Model
         'apartments_id', 'path'
     ];
     public function apartments() {
-        return $this->belongsTo(Advert::class);
+        return $this->belongsTo(Apartments::class);
     }
 }

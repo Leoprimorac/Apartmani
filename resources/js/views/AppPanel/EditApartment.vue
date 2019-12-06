@@ -9,7 +9,22 @@
                             <b-col id="MaliLijevi">
                                 <h1>{{apartment.name}}</h1>
                                     <b-card
-                                        :img-src="images[0]"
+                                        v-if="images[0]"
+                                        :img-src="images[0].path"
+                                        img-alt="Image"
+                                        img-top
+                                        tag="article"
+                                        style="max-width: 40rem;"
+                                        class="mb-2"
+                                    >
+                                        <b-card-text>
+                                              <div v-html="apartment.description">{{apartment}}</div>
+                                        </b-card-text>
+                                        <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
+                                    </b-card>
+                                    <b-card
+                                        v-else
+                                        img-src="./images/Borova-šuma-NajOdmor-3.jpg"
                                         img-alt="Image"
                                         img-top
                                         tag="article"
@@ -22,10 +37,7 @@
                                         <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                                     </b-card>
 
-                                    <div class="ml-3">
-                                        <h6 class="pt-3">Dodatci:</h6>
-                                            <div v-html="apartment.amenities">{{apartment}}</div>
-                                    </div>
+
 
                             </b-col>
                             <b-col id="Malidesni">
@@ -86,19 +98,20 @@
                                             <b-card>
                                                 <gallery :images="images" :index="index" @close="index = null"></gallery>
                                                     <div
-                                                    class="image"
+                                                    class="image d-flex"
                                                     v-for="(image, imageIndex) in images"
                                                     :key="imageIndex"
                                                     @click="index = imageIndex"
                                                     :style="{
-                                                            backgroundImage: 'url(' + image + ')',
+                                                            backgroundImage: 'url(' + image.path + ')',
                                                             width: '10vh',
-                                                            height: '10vh',
+                                                            height: '13vh',
                                                             float:'left',
                                                             backgroundPosition: 'center center',
                                                             backgroundRepeat:'no-repeat',
                                                             backgroundSize:'cover'
                                                             }">
+                                                    <b-btn class="align-self-end ImgBtn align-content-center " @click="deleteImage(image.id)" >Obriši</b-btn>
                                                     </div>
 
                                             </b-card>
@@ -215,7 +228,9 @@ components: {
             if(this.apartment == null || this.apartment.images == undefined)
                 return [];
             this.apartment.images.forEach(image => {
-                images.push('/uploads/' + this.apartment.id + '/' + image.path);
+                images.push({ path: '/uploads/' + this.apartment.id + '/' + image.path,
+                                    id: image.id,
+                });
             })
             return images;
         },
@@ -299,7 +314,15 @@ components: {
                     }
                 })
 
-        }
+        },
+        deleteImage(id) {
+            swatApi.delete(api.images + id).
+            then(response => {
+                if (response.status === 200) {
+                    this.getApartment();
+                }
+            });
+        },
 
     },
 
@@ -310,5 +333,10 @@ components: {
 
 #fitt{
     height: 100vh;
+}
+.ImgBtn{
+    height: 3vh;
+    width: 100%;
+    padding: 0!important ;
 }
 </style>

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 // Auth
 Route::post('login', 'AuthController@login');
@@ -25,3 +25,5 @@ Route::post('apartmentEmail/', 'ApartmentsController@email');
 Route::resource('prices', 'PricesController')->except('update','create', 'edit');
 
 Route::resource('calendars', 'CalendarController')->except('update','create', 'edit');
+
+Route::delete('images/{image}',  'ImagesController@destroy');

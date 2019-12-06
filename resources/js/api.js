@@ -14,3 +14,4 @@ export const apartments = 'apartments/';
 export const prices = 'prices/';
 export const calendars = 'calendars/';
 export const apartmentEmail = 'apartmentEmail/';
+export const images = 'images/';
