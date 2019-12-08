@@ -4,21 +4,16 @@
     <div class="row mx-auto">
         <div class="col mx-auto">
             <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg fixed-top">
-    <b-navbar-brand href="Index.vue">Početna</b-navbar-brand>
+    <b-navbar-brand href="/">Početna</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" ></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="padding" style="color: rgb(0, 0, 0) !important;">
-        <b-nav-item  href="Index.vue#Onama" style="color: rgb(0, 0, 0);">O nama</b-nav-item>
-          <b-nav-item-dropdown text="Apartmani" style="color: rgb(0, 0, 0);">
-            <b-dropdown-item href="#" style="color: rgb(0, 0, 0);">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-        <b-nav-item class="padding" href="#">Lokacija</b-nav-item>
-        <b-nav-item  class="padding" href="#">Kontakt</b-nav-item>
+        <b-nav-item><router-link to="/#AboutUs" style="color: rgb(0, 0, 0);">O nama</router-link></b-nav-item>
+          <b-nav-item ><router-link to="/#Apartments" style="color: rgb(0, 0, 0);">Apartmani</router-link></b-nav-item>
+        <b-nav-item class="padding"><router-link to="/#Footer" style="color: rgb(0, 0, 0);"> Lokacija</router-link></b-nav-item>
+        <b-nav-item  class="padding"><router-link to="/#Footer" style="color: rgb(0, 0, 0);">Kontakt</router-link></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
 
@@ -29,16 +24,13 @@
                         <li class="nav-item">
                             <router-link to="/auth/login" class="nav-link">Prijava</router-link>
                         </li>
-                        <li class="nav-item">
-                            <router-link to="/auth/register" class="nav-link">Registracija</router-link>
-                        </li>
                     </template>
                     <li v-else-if="!$parent.isApp" class="nav-item">
                         <router-link to="/app" class="nav-link">Nastavi</router-link>
                     </li>
                     <template v-else-if="$parent.isApp">
                         <li class="nav-item">
-                            <router-link to="/index" class="nav-link">Profil</router-link>
+                            <router-link to="/app" class="nav-link">Profil</router-link>
                         </li>
                         <b-nav-item class="nav-item" @click="logout">
                             Odjava

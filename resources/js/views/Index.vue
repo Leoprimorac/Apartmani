@@ -14,7 +14,7 @@
             </b-container>
         </b-container>
         <b-container id="promajna">
-            <b-row id="Onama">
+            <b-row id="AboutUs">
                 <b-col sm   >
                     <div class="glavna-slova resize-center" >
                         <blockquote class="blockquote">
@@ -72,7 +72,7 @@
 
         <b-container fluid id="apartmani">
         <b-container>
-            <b-row>
+            <b-row id="Apartments">
                 <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
                     <router-link  :to="'/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
@@ -104,7 +104,7 @@
             </b-row>
         </b-container>
         </b-container>
-        <footers></footers>
+        <footers id="Footer"></footers>
     </div>
 
 
