@@ -16,7 +16,7 @@
                             class="mb-2"
                             >
                             <b-card-text>
-                                <div v-html="apartment.description">{{apartment}}</div>
+                                <div v-html="apartment.translation.description">{{apartment}}</div>
                             </b-card-text>
                             <b-card-footer footer-class="footer">
 
@@ -58,7 +58,7 @@
                         <table class="table table-striped">
                             <thead class="thread-color" >
                                 <tr>
-                                    <th scope="col"><h3>Cjenovnik</h3></th>
+                                    <th scope="col"><h3>Cjene</h3></th>
                                     <th scope="col"></th>
                                     <th></th>
                                 </tr>
@@ -80,7 +80,7 @@
 
                     <div >
                         <h5 class="labels pb-2">Detalji:</h5>
-                        <div v-html="apartment.details">{{apartment}}</div>
+                        <div v-html="apartment.translation.details">{{apartment}}</div>
                     </div>
 
                 </b-col>
@@ -156,7 +156,7 @@
                                                     ></b-form-textarea>
                                                 </b-form-group>
 
-                                                <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;">
+                                                <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;" :disabled="this.hidden">
                                                     Pošaljite upit
                                                 </b-btn>
 
@@ -187,6 +187,7 @@ export default {
     },
     data() {
         return {
+            hidden: false,
             apartment: null,
             index:null,
             range:{
@@ -206,6 +207,7 @@ export default {
             },
             succesAlert: false,
             errorAlert: false,
+            lang: 'hrv',
         }
     },
     created() {
@@ -250,28 +252,38 @@ export default {
         },
         orderedApartmentPrices: function () {
             return _.orderBy(this.apartment.prices, 'date_start')
-        }
+        },
+        translationsFilter: function() {
+                this.apartment.translation= this.apartment.translation.find(({language})=> language == this.lang);
+        },
+
      },
 
     methods: {
         getApartment() {
             swatApi.get(api.apartments + this.$route.params.id)
-                .then(resp => {this.apartment = resp.data})
+                .then(resp => {this.apartment = resp.data
+                     if (resp.status === 200) {
+                    this.translationsFilter;
+                     }
+                })
         },
         sendForm(){
             this.form.apartmentName = this.apartment.name;
             let formData = this.form;
-
+            this.hidden = true;
             swatApi.post(api.apartmentEmail, formData)
             .then(response => {
                     if (response.status == 200) {
                         this.succesAlert = true;
+                        this.hidden=false;
                         this.clearForm();
                     }
                 })
             .catch(error =>{
                 this.errorAlert = true;
                 this.succesAlert = false;
+                this.hidden=false;
 
             });
 
@@ -286,7 +298,7 @@ export default {
             this.form.end = '';
             this.range = '';
             this.errorAlert = false;
-        }
+        },
     }
 }
 </script>

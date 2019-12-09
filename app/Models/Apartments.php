@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Apartments extends Model
 {
     protected $fillable =[
-        'name', 'description', 'details', 'amenities'
+        'name'
     ];
 
     public function prices()
@@ -22,5 +22,9 @@ class Apartments extends Model
     public function calendar()
     {
         return $this->hasMany(Calendar::class);
+    }
+    public function translation()
+    {
+        return $this->hasMany(Translation::class);
     }
 }

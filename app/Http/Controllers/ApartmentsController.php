@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Apartments;
 use App\Models\Image;
+use App\Models\Translation;
 use Illuminate\Http\Request;
 
 //For Mail
@@ -22,9 +23,6 @@ class ApartmentsController extends Controller
 
         $apartment= Apartments::create([
             'name' => $request['name'],
-            'description' => $request['description'],
-            'details' => $request['details'],
-            'amenities' => $request['amenities']
         ]);
 
         if ($request->hasfile('images')) {
@@ -38,7 +36,16 @@ class ApartmentsController extends Controller
                 $image->move('uploads/' . $apartment->id, $imagename);
             }
         }
+        Translation::create([
+            'description' => $request['description'],
+            'details' => $request['details'],
+            'language' => 'hrv',
+            'apartments_id'=>$apartment->id,
 
+        ]);
+
+        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'eng', 'apartments_id'=>$apartment->id]);
+        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'de', 'apartments_id'=>$apartment->id]);
         $apartment->images;
 
         return $apartment;
@@ -46,7 +53,7 @@ class ApartmentsController extends Controller
 
     public function show(Apartments $apartment)
     {
-        return Apartments::with('prices', 'images', 'calendar')->findOrFail($apartment->id);
+        return Apartments::with('prices', 'images', 'calendar', 'translation')->findOrFail($apartment->id);
     }
 
     public function update(Request $request, Apartments $apartment)
@@ -54,9 +61,6 @@ class ApartmentsController extends Controller
 
         $apartment->update(request([
                 'name',
-                'description',
-                'details',
-                'amenities'
             ])
         );
 
@@ -72,6 +76,11 @@ class ApartmentsController extends Controller
                 $image->move('uploads/' . $apartment->id, $imagename);
             }
         }
+
+        Translation::whereId($request['id'])->update([
+            'description' => $request['description'],
+            'details' => $request['details'],
+        ]);
 
         $apartment->images;
 

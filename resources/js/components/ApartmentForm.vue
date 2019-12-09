@@ -3,7 +3,18 @@
 <b-container fluid>
                         <b-row>
                             <b-col>
-                                <form @submit.prevent="saveApartment" class="swat-form">
+                                <form @submit.prevent="saveApartment" class="swat-form" >
+
+                                    <div class="form-group d-flex flex-column">
+                                    <b-form-select @submitDate.prevent="createDate" v-model="lang" id="availability" class="mb-3" name="availability">
+                                            <template v-slot:first>
+                                                <option :value="null" disabled>-- Odaberite opciju --</option>
+                                            </template>
+                                            <option value="hrv">Hrvatski</option>
+                                            <option value="eng">Engleski</option>
+                                            <option value="de">Njemački</option>
+                                        </b-form-select>
+                                    </div>
 
                                         <input id="name" type="text" class="form-control" name="id" v-model="apartment.id" @input="emitChange" required autofocus hidden>
 
@@ -14,18 +25,15 @@
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="description" class="text-center">Opis:</label>
-                                        <vue-editor  id="description" name="description" v-model="apartment.description" @input="emitChange" required autofocus></vue-editor>
+                                        <vue-editor  id="description" name="description" v-model="apartment.translation.description" @input="emitChange" required autofocus></vue-editor>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="description" class="text-center">Detalji:</label>
-                                        <vue-editor id="details" name="details" v-model="apartment.details" @input="emitChange" required autofocus rows="5"></vue-editor>
+                                        <vue-editor id="details" name="details" v-model="apartment.translation.details" @input="emitChange" required autofocus rows="5"></vue-editor>
                                     </div>
 
-                                    <div class="form-group d-flex flex-column">
-                                        <label for="amenities" class="text-center">Dodatci sobi:</label>
-                                        <vue-editor id="amenities" name="amenities" v-model="apartment.amenities" @input="emitChange" required autofocus rows="5"></vue-editor>
-                                    </div>
+
 
 
                                     <b-form-group
@@ -82,13 +90,12 @@ props: {
       },
     saveApartment: function (e) {
                 const formData = new FormData(e.target);
-                formData.append('details', this.apartment.details)
-                formData.append('description', this.apartment.description)
-                formData.append('amenities', this.apartment.amenities)
+                formData.append('id', this.apartment.translation.id)
+                formData.append('details', this.apartment.translation.details)
+                formData.append('description', this.apartment.translation.description)
                 swatApi.post(api.apartments + this.apartment.id, formData).
                 then(response => {
                     if (response.status === 200) {
-                        this.apartment = response.data;
                         this.emitChange();
                     }
                 });

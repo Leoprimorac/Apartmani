@@ -21,10 +21,7 @@
                         <textarea id="details" class="form-control" name="details" required autofocus></textarea>
                     </div>
 
-                    <div class="form-group d-flex flex-column">
-                        <label for="amenities" class="text-center">Dodatci sob:</label>
-                        <textarea id="amenities" class="form-control" name="amenities" required autofocus></textarea>
-                    </div>
+
 
                     <b-form-group
                                         class="d-flex flex-column"
