@@ -50,6 +50,11 @@
                                         </b-collapse>
                         </div>
 
+                        <div >
+                        <h5 class="labels pb-2">Detalji:</h5>
+                        <div v-html="apartment.translation.details">{{apartment}}</div>
+                    </div>
+
 
                 </b-col>
 
@@ -58,7 +63,7 @@
                         <table class="table table-striped">
                             <thead class="thread-color" >
                                 <tr>
-                                    <th scope="col"><h3>Cjene</h3></th>
+                                    <th scope="col"><h3>Cijene</h3></th>
                                     <th scope="col"></th>
                                     <th></th>
                                 </tr>
@@ -78,10 +83,7 @@
                         </table>
                     </div>
 
-                    <div >
-                        <h5 class="labels pb-2">Detalji:</h5>
-                        <div v-html="apartment.translation.details">{{apartment}}</div>
-                    </div>
+
 
                 </b-col>
             </b-row>

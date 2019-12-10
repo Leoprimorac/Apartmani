@@ -225,25 +225,17 @@ color: white !important;
   height: 100%;
   font-family: 'Lora', cursive;
 }
-#Onama{
+#AboutUs{
     height:100vh;
     width:auto;
 }
 .Apartments{
-    height:"70vh";
+    height:"100vh";
 }
 #apartmani{
    background: url(../../img/pozadina.jpg) center;
-   //height:100%;
+   min-height:100vh;
 }
-/*#apartmani2{
-
-    padding-top:30px;
-    padding-left: 30px;
-    padding-right:30px;
-    padding-bottom:30px;
-}
-*/
 .footer{
     height:3rem;
     width:100%;

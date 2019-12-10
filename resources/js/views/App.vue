@@ -1,10 +1,11 @@
 <template>
     <b-container fluid>
-        <div class="pt-5">
-            <router-link to="/app/NewApartment" class="nav-link">Novi apartman</router-link>
-        </div>
 
-            <b-row>
+        <b-container>
+            <div class="pt-5">
+                    <router-link to="/app/NewApartment" class="nav-link"><b-button>Novi apartman</b-button></router-link>
+                </div>
+            <b-row id="Apartments">
                  <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
                     <router-link  :to="'app/EditApartment/' +apartment.id"  v-slot="{href, route, navigate}">
@@ -57,6 +58,7 @@
                 </div>
             </b-col>
             </b-row>
+        </b-container>
     </b-container>
 </template>
 
@@ -106,5 +108,8 @@
 }
 .card-img{
     object-fit: cover;
+}
+.Apartments{
+    height:"100vh";
 }
 </style>

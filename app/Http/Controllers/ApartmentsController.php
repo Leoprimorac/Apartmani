@@ -77,7 +77,7 @@ class ApartmentsController extends Controller
             }
         }
 
-        Translation::whereId($request['id'])->update([
+        Translation::whereId($request['translations_id'])->update([
             'description' => $request['description'],
             'details' => $request['details'],
         ]);
@@ -88,6 +88,7 @@ class ApartmentsController extends Controller
     }
     public function destroy(Apartments $apartment)
     {
+
         $apartment->delete();
         return response('Success', 200);
     }
