@@ -32,14 +32,18 @@
                                         class="mb-2"
                                     >
                                         <b-card-text>
+                                            <div class="ql-editor">
                                               <div v-html="apartment.translation.description">{{apartment}}</div>
+                                            </div>
                                         </b-card-text>
                                         <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                                     </b-card>
 
                                      <div >
-                                    <h6>Detalji:</h6>
-                                        <div v-html="apartment.translation.details"></div>
+                                        <h6>Detalji:</h6>
+                                        <div class="ql-editor">
+                                            <div v-html="apartment.translation.details"></div>
+                                        </div>
                                 </div>
 
 
@@ -207,7 +211,7 @@
 
                                     <div class="form-group">
                                         <label for="description" class="text-center">Detalji:</label>
-                                        <vue-editor id="details" name="details" v-model="apartment.translation.details" @input="emitChange" required autofocus rows="5"></vue-editor>
+                                        <vue-editor id="details" name="details" v-model="apartment.translation.details" @input="emitChange" required autofocus rows="5" ></vue-editor>
                                     </div>
 
 
@@ -349,7 +353,7 @@ components: {
             this.priceses = this.apartment.prices;
             this.apartment = novi;
             this.apartment.prices = this.priceses;
-            //this.getApartment();
+            this.getApartment();
         },
         createPrice: function (e) {
             const formData = new FormData(e.target);

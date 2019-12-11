@@ -16,7 +16,9 @@
                             class="mb-2"
                             >
                             <b-card-text>
+
                                 <div v-html="apartment.translation.description">{{apartment}}</div>
+
                             </b-card-text>
                             <b-card-footer footer-class="footer">
 
@@ -52,7 +54,9 @@
 
                         <div >
                         <h5 class="labels pb-2">Detalji:</h5>
-                        <div v-html="apartment.translation.details">{{apartment}}</div>
+                        <div class="always">
+                        <div v-html="apartment.translation.details" ></div>
+                        </div>
                     </div>
 
 
@@ -371,5 +375,19 @@ h1{
 
 .vc-border-gray-400 {
     border-color: #31708e;
+}
+.always {
+        box-sizing: border-box;
+    line-height: 1.42;
+    height: 100%;
+    outline: 0;
+    overflow-y: auto;
+    padding: 12px 15px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
 }
 </style>

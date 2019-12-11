@@ -50,7 +50,7 @@
                 swatApi.post(api.apartments, formData).
                 then(response => {
                     if (response.status === 201) {
-                        this.$router.push('/app/')
+                        this.$router.push('/app')
                     }
                 });
             }
