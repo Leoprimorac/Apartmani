@@ -19,13 +19,11 @@
                     <div class="glavna-slova resize-center" >
                         <blockquote class="blockquote">
                             <h2>PROMAJNA</h2>
-                            <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
+                            <footer class="blockquote-footer">{{ $t('blackqouteFooter') }}</footer>
+
                         </blockquote>
-                            Promajna je malo turističko mjesto koje se nalazi u podnožju planine Biokovo, smještena između Makarske (6 km) i Baške Vode (3 km). 
-                            Mjesto je jedan od bisera Makarske rivijere, a krase je duge šljunčane plaže i kristalno čisto more. 
-                            Idealno je turističko odredište za starije osobe i obitelji sa malom djecom.<br>
-                            Dođite i uživajte u pogledu na kristalno more i otoke, te iskusite jedinstveni
-                            doživljaj pogleda na najljepši zalazak sunca na Makarskoj rivijeri.
+                            {{ $t('textPromajna') }}
+                           <p> {{ $t('textPromajna2') }}</p>
                     </div>
                 </b-col >
                 <b-col sm>
@@ -39,13 +37,13 @@
                     ></b-embed>
                     </div>
     </div>
-                   
+
                 </b-col>
             </b-row>
         </b-container>
 <b-container id="promajna" class="pt-3">
             <b-row id="AboutUs">
-               
+
                 <b-col sm>
                     <div class="sort resize-center" >
                     <b-carousel
@@ -87,7 +85,7 @@
                     </b-carousel>
                     </div>
                     <div>
-                        <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
+                        <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >{{ $t('galleryButton') }}</b-button>
                             <b-collapse id="collapse-1" class="mt-2">
                                 <b-card>
                                     <gallery :images="images" :index="index" @close="index = null"></gallery>
@@ -115,10 +113,10 @@
                             <h2>VILLA PROMAJNA</h2>
                             <footer class="blockquote-footer">Savršeno mjesto za mirn obiteljski odmor</footer>
                         </blockquote>
-                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne. 
+                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne.
                         Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.
-                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu, 
-                        a većina apartmana ima i pogled na more.<br> Apartmani su luksuzno i funkcionalno opremljeni 
+                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu,
+                        a većina apartmana ima i pogled na more.<br> Apartmani su luksuzno i funkcionalno opremljeni
                         i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.
 
                     </div>
@@ -131,7 +129,7 @@
             <b-row id="Apartments">
                 <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
-                    <router-link  :to="'/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                    <router-link  :to="'/Apartment/' +apartment.id  +'/'+ $i18n.locale"  v-slot="{href, route, navigate}">
                     <b-card  no-body
                         class="shadow-lg p-10 mb-6 bg-white"
                         style="margin-top:15%; margin-bottom:5%; background-color: #e6e6e6;"
@@ -160,7 +158,7 @@
             </b-row>
         </b-container>
         </b-container>
-        <footers id="Footer"></footers>
+       <!-- <footers id="Footer"></footers>-->
     </div>
 
 
@@ -169,8 +167,6 @@
 
 
 <script>
-import Vue from 'vue'
-import Footer from './../components/Footer';
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';
 import store from './../store.js';
@@ -181,7 +177,6 @@ export default {
 
   components: {
      'gallery': VueGallery,
-     'footers':Footer,
 
   },
   data: function () {
@@ -207,7 +202,8 @@ export default {
             },
             isAdmin: function () {
                 return this.$store.getters.isAdmin;
-            }
+            },
+
         },
 methods: {
      getApartments() {
@@ -218,6 +214,7 @@ methods: {
                         }
                     });
                 },
+
 },
 
 

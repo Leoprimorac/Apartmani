@@ -1,6 +1,5 @@
 <template>
-
-    <b-container fluid class="Kontakt bottom-row p-4">
+    <b-container fluid class="Kontakt bottom-row p-4" id="Footer">
         <b-container>
             <b-row sm align-h="center">
                 <b-col>
@@ -8,37 +7,28 @@
                         <h3 class="text-center"> Villa Promajna</h3>
                     </div>
                         <div class="tekst text-justify">
-                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne. 
-                        Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.
-                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu, 
-                        a većina apartmana ima i pogled na more.<br> Apartmani su luksuzno i funkcionalno opremljeni 
-                        i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.
-
+                        {{ $t('textFooterPromajna') }}
                         </div>
                 </b-col>
                 <b-col class="text-center">
                 <div class="tekst">
-                    <h3> Kontakt</h3>
+                    <h3> {{ $t('navContact') }}</h3>
                 </div>
 
                 <div class="tekst text">
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         Vlasnik: Mladen Miličeivć <br>
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
-                        Vlasnik: Robert Gavranović<br>
+                        {{ $t('footerContactOwner') }}<br>
                     <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
-                        Br.tel: +385 91 888 06 85<br>
-                    <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
-                        Br.tel: +387 63 366 837 <br>
-                    <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
-                        Br.tel: +385 97 603 88 71 <br>
+                      {{ $t('footerContactNumber') }}<br>
                     <img src="./../../img/ikone/at.png" style="width:15px; height:15px;">
-                        Mail: mladen1101@gmail.com<br>
+                        Email: mladen1101@gmail.com<br>
                 </div>
                 </b-col>
                 <b-col>
                     <div class="tekst">
-                        <h3 class="text-center">Lokacija</h3>
+                        <h3 class="text-center">{{ $t('navLocation') }}</h3>
                         <div class="mapouter">
                             <div class="gmap_canvas">
 
@@ -57,7 +47,7 @@
 <script>
 
 export default {
-    name: 'footers',
+    name: 'footers'
 
 
 }
