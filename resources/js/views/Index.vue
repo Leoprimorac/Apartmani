@@ -13,7 +13,7 @@
                 </b-row>
             </b-container>
         </b-container>
-        <b-container id="promajna">
+        <b-container id="promajna"class="pt-3">
             <b-row id="AboutUs">
                 <b-col sm   >
                     <div class="glavna-slova resize-center" >
@@ -43,7 +43,7 @@
                 </b-col>
             </b-row>
         </b-container>
-<b-container id="promajna" class="pt-4">
+<b-container id="promajna" class="pt-3">
             <b-row id="AboutUs">
                
                 <b-col sm>
@@ -59,8 +59,31 @@
                         img-height="480"
                     >
                         <b-carousel-slide :img-src="require('./../../img/pocetne/1.jpg')"></b-carousel-slide>
-                        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
-                        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=22" ></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/2.png')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/3.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/4.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/5.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/6.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/7.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/8.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/9.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/10.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/11.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/12.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/13.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/14.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/15.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/16.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/17.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/18.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/19.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/20.jpeg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/21.jpg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/22.jpeg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/23.jpeg')"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/24.jpeg')"></b-carousel-slide>
+
+
                     </b-carousel>
                     </div>
                     <div>
@@ -262,8 +285,9 @@ color: white !important;
   font-family: 'Lora', cursive;
 }
 #AboutUs{
-    height:100vh;
+    height:50%;
     width:auto;
+    padding:30px;
 }
 .Apartments{
     height:"100vh";
