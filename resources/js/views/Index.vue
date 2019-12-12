@@ -13,7 +13,7 @@
                 </b-row>
             </b-container>
         </b-container>
-        <b-container id="promajna"class="pt-3">
+        <b-container id="promajna" class="pt-3">
             <b-row id="AboutUs">
                 <b-col sm   >
                     <div class="glavna-slova resize-center" >
@@ -56,30 +56,30 @@
                         img-width="1024"
                         img-height="480"
                     >
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/1.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/2.png')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/3.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/4.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/5.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/6.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/7.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/8.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/9.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/10.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/11.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/12.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/13.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/14.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/15.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/16.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/17.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/18.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/19.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/20.jpeg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/21.jpg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/22.jpeg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/23.jpeg')"></b-carousel-slide>
-                        <b-carousel-slide :img-src="require('./../../img/pocetne/24.jpeg')"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/1.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/2.png"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/3.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/4.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/5.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/6.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/7.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/8.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/9.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/10.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/11.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/12.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/13.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/14.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/15.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/16.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/17.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/18.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/19.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/20.jpeg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/21.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/22.jpeg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/23.jpeg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/24.jpeg"></b-carousel-slide>
 
 
                     </b-carousel>
@@ -193,7 +193,7 @@ export default {
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
           'https://picsum.photos/1024/480/?image=10',
-          '/images/1.jpg'
+          './../../../public/images/1.jpg'
         ],
         index: null
       };
