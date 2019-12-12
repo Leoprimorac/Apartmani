@@ -32,10 +32,19 @@
                                         class="mb-2"
                                     >
                                         <b-card-text>
+                                            <div class="ql-editor">
                                               <div v-html="apartment.translation.description">{{apartment}}</div>
+                                            </div>
                                         </b-card-text>
                                         <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
                                     </b-card>
+
+                                     <div >
+                                        <h6>Detalji:</h6>
+                                        <div class="ql-editor">
+                                            <div v-html="apartment.translation.details"></div>
+                                        </div>
+                                </div>
 
 
 
@@ -43,7 +52,7 @@
                             <b-col id="Malidesni">
 
                             <div class="pt-5">
-                                <b-button v-b-toggle.collapse-2 class="mt-1" variant="primary" v-on:click="isHidden = !isHidden" >Uredi cijenik</b-button>
+                                <b-button v-b-toggle.collapse-2 class="mt-1" variant="primary" v-on:click="isHidden = !isHidden" >Uredi cjenik</b-button>
                                 <b-collapse id="collapse-2" class="mt-2">
                                     <b-card>
                                         <date-picker v-model="dstart" lang="en" :not-after="dend" valueType="format" class="col-sm-5 pl-0 pr-0" sm></date-picker>
@@ -66,14 +75,13 @@
                             </div>
 
                                 <div >
-
                                         <table class="table table-light">
                                             <tbody>
                                                 <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start" >
                                                     <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
                                                     <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
                                                     <td>{{ item.price}}</td>
-                                                    <td><b-btn v-if="!isHidden" @click="deletePrice(item.id)" >Delete</b-btn></td>
+                                                    <td><b-btn v-if="!isHidden" @click="deletePrice(item.id)" >Obriši</b-btn></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -81,10 +89,7 @@
                                 </div>
 
 
-                                <div >
-                                    <h6>Detalji:</h6>
-                                        <div v-html="apartment.translation.details"></div>
-                                </div>
+
 
 
 
@@ -206,7 +211,7 @@
 
                                     <div class="form-group">
                                         <label for="description" class="text-center">Detalji:</label>
-                                        <vue-editor id="details" name="details" v-model="apartment.translation.details" @input="emitChange" required autofocus rows="5"></vue-editor>
+                                        <vue-editor id="details" name="details" v-model="apartment.translation.details" @input="emitChange" required autofocus rows="5" ></vue-editor>
                                     </div>
 
 
@@ -348,7 +353,7 @@ components: {
             this.priceses = this.apartment.prices;
             this.apartment = novi;
             this.apartment.prices = this.priceses;
-            //this.getApartment();
+            this.getApartment();
         },
         createPrice: function (e) {
             const formData = new FormData(e.target);
@@ -404,13 +409,13 @@ components: {
       },
         saveApartment: function (e) {
                 const formData = new FormData(e.target);
-                formData.append('id', this.apartment.translation.id)
+                formData.append('translations_id', this.apartment.translation.id)
                 formData.append('details', this.apartment.translation.details)
                 formData.append('description', this.apartment.translation.description)
                 swatApi.post(api.apartments + this.apartment.id, formData).
                 then(response => {
                     if (response.status === 200) {
-                        this.emitChange();
+                        this.getApartment();
                     }
                 });
             },
