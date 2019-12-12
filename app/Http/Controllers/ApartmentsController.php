@@ -39,12 +39,12 @@ class ApartmentsController extends Controller
         Translation::create([
             'description' => $request['description'],
             'details' => $request['details'],
-            'language' => 'hrv',
+            'language' => 'cro',
             'apartments_id'=>$apartment->id,
 
         ]);
 
-        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'eng', 'apartments_id'=>$apartment->id]);
+        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'en', 'apartments_id'=>$apartment->id]);
         Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'de', 'apartments_id'=>$apartment->id]);
         $apartment->images;
 

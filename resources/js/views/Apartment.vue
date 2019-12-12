@@ -176,7 +176,7 @@
         </b-container>
 
     </b-container>
-     <!--<footers></footers>-->
+     <footers></footers>
 </div>
 </template>
 
@@ -213,7 +213,7 @@ export default {
             },
             succesAlert: false,
             errorAlert: false,
-            lang: 'hrv',
+            lang: this.$route.params.lang,
         }
     },
     created() {
@@ -224,6 +224,9 @@ export default {
             this.form.start = moment(val.start).format('DD.MM.YYYY');
             this.form.end = moment(val.end).format('DD.MM.YYYY');
         },
+        $route (to, from){
+       this.getApartment()
+    }
     },
      computed: {
         images() {
@@ -260,7 +263,7 @@ export default {
             return _.orderBy(this.apartment.prices, 'date_start')
         },
         translationsFilter: function() {
-                this.apartment.translation= this.apartment.translation.find(({language})=> language == this.lang);
+                this.apartment.translation= this.apartment.translation.find(({language})=> language == this.$route.params.lang);
         },
 
      },

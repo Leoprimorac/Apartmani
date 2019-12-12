@@ -106,7 +106,7 @@
             <b-row id="Apartments">
                 <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
-                    <router-link  :to="'/Apartment/' +apartment.id  +'/'+ $i18n.locale"  v-slot="{href, route, navigate}">
+                    <router-link  :to="$i18n.locale + '/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
                     <b-card  no-body
                         class="shadow-lg p-10 mb-6 bg-white"
                         style="margin-top:15%; margin-bottom:5%; background-color: #e6e6e6;"
@@ -135,7 +135,7 @@
             </b-row>
         </b-container>
         </b-container>
-       <!-- <footers id="Footer"></footers>-->
+      <footers id="Footer"></footers>
     </div>
 
 
@@ -144,6 +144,7 @@
 
 
 <script>
+import Footer from './../components/Footer'
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';
 import store from './../store.js';
@@ -152,8 +153,10 @@ Vue.component('b-embed', BEmbed)
 export default {
     store,
 
+
   components: {
      'gallery': VueGallery,
+     'footers':Footer,
 
   },
   data: function () {
@@ -165,7 +168,7 @@ export default {
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
           'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
           'https://picsum.photos/1024/480/?image=10',
-          'resources\img\logo.png'
+          '/images/1.jpg'
         ],
         index: null
       };
@@ -225,10 +228,9 @@ methods: {
     -o-background-size: cover;      /* Opera*/
     background-size: cover;
     }
-
-    .info-bg {
+   /* .info-bg {
     background-color: rgba(243, 96, 96, 0.35)!important;
-};
+    }*/
     .image-size{
     max-width: 20%;
     height: auto;
@@ -249,47 +251,48 @@ methods: {
     .title{
         background-color: gray;
     }
-}
-.promajna-button{
-color: white !important;
-  background-color: #31708e !important;
-  border-color: #31708e!important;
-  width: 100%;
-  height: 100%;
-  font-family: 'Lora', cursive;
-}
-#AboutUs{
-    height:100vh;
-    width:auto;
-}
-.Apartments{
-    height:"100vh";
-}
-#apartmani{
-   background: url(../../img/pozadina.jpg) center;
-   min-height:100vh;
-}
-.footer{
-    height:3rem;
-    width:100%;
-    background-color: white;
-    padding: 0 !important
-}
-.button {
-  color: #31708e !important;
-  background-color: white !important;
-  border-color: white!important;
-  width: 100%;
-  height: 100%;
-  font-family: 'Lora', cursive;
-  font-size: 20px;
-  align: center;
+    }
+    .promajna-button{
+    color: white !important;
+    background-color: #31708e !important;
+    border-color: #31708e!important;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lora', cursive;
+    }
+    #AboutUs{
+        min-height:50vh;
+        padding: 30px;
+        width:auto;
+    }
+    .Apartments{
+        height:"100vh";
+    }
+    #apartmani{
+    background: url(../../img/pozadina.jpg) center;
+    min-height:100vh;
+    }
+    .footer{
+        height:3rem;
+        width:100%;
+        background-color: white;
+        padding: 0 !important
+    }
+    .button {
+    color: #31708e !important;
+    background-color: white !important;
+    border-color: white!important;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lora', cursive;
+    font-size: 20px;
+    align: center;
 
 
-}
+    }
 
-.card-img{
-    object-fit: cover;
-}
+    .card-img{
+        object-fit: cover;
+    }
 
 </style>

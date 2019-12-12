@@ -191,8 +191,8 @@
                                             <template v-slot:first>
                                                 <option :value="null" disabled>-- Odaberite opciju --</option>
                                             </template>
-                                            <option value="hrv">Hrvatski</option>
-                                            <option value="eng">Engleski</option>
+                                            <option value="cro">Hrvatski</option>
+                                            <option value="en">Engleski</option>
                                             <option value="de">Njemački</option>
                                         </b-form-select>
                                     </div>
@@ -287,7 +287,7 @@ components: {
             end: null,
         },
         selectedDay: null,
-        lang: 'hrv',
+        lang: 'cro',
       }
     },
     computed: {

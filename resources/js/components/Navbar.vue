@@ -4,24 +4,38 @@
     <div class="row mx-auto">
         <div class="col mx-auto">
             <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg fixed-top">
-    <b-navbar-brand ><router-link :to="'/'+ $i18n.locale + '/'">{{ $t('navMain') }}</router-link></b-navbar-brand>
+    <b-navbar-brand ><router-link :to="'/'+ $i18n.locale">{{ $t('navMain') }}</router-link></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" ></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="padding" style="color: rgb(0, 0, 0) !important;">
-        <b-nav-item><router-link :to="'/'+ $i18n.locale + '/#AboutUs'" style="color: rgb(0, 0, 0);">{{ $t('navAbout') }}</router-link></b-nav-item>
-          <b-nav-item ><router-link :to="'/'+$i18n.locale +  '/#Apartments'" style="color: rgb(0, 0, 0);">{{ $t('navApartments') }}</router-link></b-nav-item>
-        <b-nav-item class="padding"><router-link :to="'/'+ $i18n.locale + '/#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navLocation') }}</router-link></b-nav-item>
-        <b-nav-item  class="padding"><router-link :to="'/'+ $i18n.locale + '/#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navContact') }}</router-link></b-nav-item>
+        <b-nav-item><router-link :to="'/'+ $i18n.locale + '#AboutUs'" style="color: rgb(0, 0, 0);">{{ $t('navAbout') }}</router-link></b-nav-item>
+          <b-nav-item ><router-link :to="'/'+$i18n.locale +  '#Apartments'" style="color: rgb(0, 0, 0);">{{ $t('navApartments') }}</router-link></b-nav-item>
+        <b-nav-item class="padding"><router-link :to="'/'+ $i18n.locale + '#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navLocation') }}</router-link></b-nav-item>
+        <b-nav-item  class="padding"><router-link :to="'/'+ $i18n.locale + '#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navContact') }}</router-link></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
 
-    <b-navbar-nav class="ml-auto">
-        <b-nav-item> <select
-    class="LanguageSwitcher"
-    name="language"
-    @change="changeLanguage"
+       <b-navbar-nav class="ml-auto">
+
+            <b-nav-item-dropdown right>
+                <template slot="button-content"> <img
+                :src="icons[currentLanguage]"
+                class="country-icon as-toggle"
+            /></template>
+                <b-dropdown-item v-for="lang in supportedLanguages"
+                                :key="lang"
+                                :selected="isCurrentLanguage(lang)"
+                                :class="{ 'is-selected': isCurrentLanguage(lang) }"
+                                :value="lang"
+                                 @click="changeLanguage(lang)"
+                                :img-src="icons[lang]"><img :src="icons[lang]" class="country-icon" /></b-dropdown-item>
+        </b-nav-item-dropdown>
+        <!--<b-nav-item> <select
+            class="LanguageSwitcher"
+            name="language"
+            @change="changeLanguage"
   >
     <option
       v-for="lang in supportedLanguages"
@@ -29,16 +43,21 @@
       :selected="isCurrentLanguage(lang)"
       :class="{ 'is-selected': isCurrentLanguage(lang) }"
       :value="lang"
+      :img-src="icons[lang]"
+
     >
-      {{lang}}
+      <img :src="icons[lang]" class="country-icon" />
     </option>
   </select>
-</b-nav-item>
+</b-nav-item>-->
         <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav class="ml-auto text-center text-uppercase">
                     <template v-if="$parent.isGuest">
                         <li class="nav-item">
                             <router-link to="/auth/login" class="nav-link">Prijava</router-link>
+                        </li>
+                            <li class="nav-item">
+                            <router-link to="/auth/register" class="nav-link">reg</router-link>
                         </li>
                     </template>
                     <li v-else-if="!$parent.isApp" class="nav-item">
@@ -78,13 +97,25 @@
 
 <script>
 import { Trans } from './../lang/Translations'
+import enIcon from './../../img/ikone/en.png'
+import deIcon from './../../img/ikone/de.png'
+import croIcon from './../../img/ikone/cro.png'
     export default {
         name: 'navbar',
         data: function(){
             return{
 
-        langs: ['cro','de', 'en'] ,
+        langs: [
+            'cro',
+            'de',
+            'en'] ,
+        icons: {
+                en: enIcon,
+                de: deIcon,
+                cro: croIcon,
+            },
             }
+
         },
         computed: {
             supportedLanguages () {
@@ -104,8 +135,8 @@ import { Trans } from './../lang/Translations'
                     }
                 })
             },
-            changeLanguage (e) {
-      const lang = e.target.value
+            changeLanguage (language) {
+      const lang = language
       const to = this.$router.resolve({ params: { lang } })
       return Trans.changeLanguage(lang).then(() => {
         this.$router.push(to.location)
@@ -120,7 +151,16 @@ import { Trans } from './../lang/Translations'
 <style>
     .info-bg {
     background-color: #ffffffb4 !important;
-};
-
+}
+.country-icon {
+        width: 20px;
+        height: auto;
+        display: inline-block;
+        vertical-align: baseline;
+        border: 1px solid #dee2e6;
+        box-shadow: 0px 1px 3px rgba(24, 29, 38, 0.1);
+    }
+    .country-icon.as-toggle {
+        margin-top: 5px;}
 
     </style>
