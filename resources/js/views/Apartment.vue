@@ -176,7 +176,7 @@
         </b-container>
 
     </b-container>
-     <footers></footers>
+     <!--<footers></footers>-->
 </div>
 </template>
 

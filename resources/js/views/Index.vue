@@ -19,12 +19,11 @@
                     <div class="glavna-slova resize-center" >
                         <blockquote class="blockquote">
                             <h2>PROMAJNA</h2>
-                            <footer class="blockquote-footer">Mjesto odmora i relaksacije</footer>
+                            <footer class="blockquote-footer">{{ $t('blackqouteFooter') }}</footer>
+
                         </blockquote>
-                            Promajna je mjesto u općini Baška Voda, u Splitsko-dalmatinskoj županiji,
-                            smješteno između mjesta Bratuš na istoku i Baška Voda na zapadu.
-                            Mjesto u cijelosti leži ispod Jadranske magistrale.
-                            Prema popisu stanovništva iz 2011. godine, u Promajni živi 372 stanovnika.
+                            {{ $t('textPromajna') }}
+                           <p> {{ $t('textPromajna2') }}</p>
                     </div>
                 </b-col >
                 <b-col sm>
@@ -45,7 +44,7 @@
                     </b-carousel>
                     </div>
                     <div>
-                        <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >Otvorite cijelu galeriju</b-button>
+                        <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >{{ $t('galleryButton') }}</b-button>
                             <b-collapse id="collapse-1" class="mt-2">
                                 <b-card>
                                     <gallery :images="images" :index="index" @close="index = null"></gallery>
@@ -75,7 +74,7 @@
             <b-row id="Apartments">
                 <b-col lg="4" md="6" sm="2" class="mb-3" v-for="apartment in apartments" :key="apartment.id">
                 <div class="card-group deck" >
-                    <router-link  :to="'/Apartment/' +apartment.id"  v-slot="{href, route, navigate}">
+                    <router-link  :to="'/Apartment/' +apartment.id  +'/'+ $i18n.locale"  v-slot="{href, route, navigate}">
                     <b-card  no-body
                         class="shadow-lg p-10 mb-6 bg-white"
                         style="margin-top:15%; margin-bottom:5%; background-color: #e6e6e6;"
@@ -104,7 +103,7 @@
             </b-row>
         </b-container>
         </b-container>
-        <footers id="Footer"></footers>
+       <!-- <footers id="Footer"></footers>-->
     </div>
 
 
@@ -113,7 +112,6 @@
 
 
 <script>
-import Footer from './../components/Footer';
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';
 import store from './../store.js';
@@ -122,7 +120,6 @@ export default {
 
   components: {
      'gallery': VueGallery,
-     'footers':Footer,
 
   },
   data: function () {
@@ -148,7 +145,8 @@ export default {
             },
             isAdmin: function () {
                 return this.$store.getters.isAdmin;
-            }
+            },
+
         },
 methods: {
      getApartments() {
@@ -159,6 +157,7 @@ methods: {
                         }
                     });
                 },
+
 },
 
 
