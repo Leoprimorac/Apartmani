@@ -14,13 +14,16 @@
                 <div class="tekst">
                     <h3> {{ $t('navContact') }}</h3>
                 </div>
-                <div class="tekst text-center">
+
+                <div class="tekst text">
+                    <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
+                        Vlasnik: Mladen Miličeivć <br>
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         {{ $t('footerContactOwner') }}<br>
                     <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
                       {{ $t('footerContactNumber') }}<br>
                     <img src="./../../img/ikone/at.png" style="width:15px; height:15px;">
-                        Mail: mladen1101@gmail.com<br>
+                        Email: mladen1101@gmail.com<br>
                 </div>
                 </b-col>
                 <b-col>

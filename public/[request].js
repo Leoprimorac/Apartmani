@@ -52,6 +52,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'footers'
 });
@@ -401,6 +404,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../store.js */ "./resources/js/store.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -517,6 +553,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+Vue.component('b-embed', bootstrap_vue__WEBPACK_IMPORTED_MODULE_3__["BEmbed"]);
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_2__["default"],
   components: {
@@ -1041,7 +1079,14 @@ var render = function() {
                   _c("h3", [_vm._v(" " + _vm._s(_vm.$t("navContact")))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "tekst text-center" }, [
+                _c("div", { staticClass: "tekst text" }, [
+                  _c("img", {
+                    staticStyle: { width: "15px", height: "15px" },
+                    attrs: { src: __webpack_require__(/*! ./../../img/ikone/contact.png */ "./resources/img/ikone/contact.png") }
+                  }),
+                  _vm._v("\n                    Vlasnik: Mladen Miličeivć "),
+                  _c("br"),
+                  _vm._v(" "),
                   _c("img", {
                     staticStyle: { width: "15px", height: "15px" },
                     attrs: { src: __webpack_require__(/*! ./../../img/ikone/contact.png */ "./resources/img/ikone/contact.png") }
@@ -1066,7 +1111,7 @@ var render = function() {
                     staticStyle: { width: "15px", height: "15px" },
                     attrs: { src: __webpack_require__(/*! ./../../img/ikone/at.png */ "./resources/img/ikone/at.png") }
                   }),
-                  _vm._v("\n                    Mail: mladen1101@gmail.com"),
+                  _vm._v("\n                    Email: mladen1101@gmail.com"),
                   _c("br")
                 ])
               ]),
@@ -1717,14 +1762,47 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(
-                    "\n                        " +
+                    "\n                            " +
                       _vm._s(_vm.$t("textPromajna")) +
-                      "\n                       "
+                      "\n                           "
                   ),
                   _c("p", [_vm._v(" " + _vm._s(_vm.$t("textPromajna2")))])
                 ])
               ]),
               _vm._v(" "),
+              _c("b-col", { attrs: { sm: "" } }, [
+                _c("div", { staticClass: "sort resize-center" }, [
+                  _c(
+                    "div",
+                    [
+                      _c("b-embed", {
+                        attrs: {
+                          type: "iframe",
+                          aspect: "16by9",
+                          src: "https://youtube.com/embed/Sn93bmXM6Kg",
+                          allowfullscreen: ""
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "b-container",
+        { staticClass: "pt-4", attrs: { id: "promajna" } },
+        [
+          _c(
+            "b-row",
+            { attrs: { id: "AboutUs" } },
+            [
               _c("b-col", { attrs: { sm: "" } }, [
                 _c(
                   "div",
@@ -1747,8 +1825,7 @@ var render = function() {
                       [
                         _c("b-carousel-slide", {
                           attrs: {
-                            "img-src":
-                              "https://picsum.photos/1024/480/?image=10"
+                            "img-src": __webpack_require__(/*! ./../../img/pocetne/1.jpg */ "./resources/img/pocetne/1.jpg")
                           }
                         }),
                         _vm._v(" "),
@@ -1840,6 +1917,25 @@ var render = function() {
                   ],
                   1
                 )
+              ]),
+              _vm._v(" "),
+              _c("b-col", { attrs: { sm: "" } }, [
+                _c("div", { staticClass: "glavna-slova resize-center pt-4" }, [
+                  _c("blockquote", { staticClass: "blockquote" }, [
+                    _c("h2", [_vm._v("VILLA PROMAJNA")]),
+                    _vm._v(" "),
+                    _c("footer", { staticClass: "blockquote-footer" }, [
+                      _vm._v("Savršeno mjesto za mirn obiteljski odmor")
+                    ])
+                  ]),
+                  _vm._v(
+                    "\n                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne.\n                        Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.\n                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu,\n                        a većina apartmana ima i pogled na more."
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    " Apartmani su luksuzno i funkcionalno opremljeni\n                        i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.\n\n                    "
+                  )
+                ])
               ])
             ],
             1
@@ -1940,7 +2036,7 @@ var render = function() {
                                                   _vm._v(
                                                     " " +
                                                       _vm._s(apartment.name) +
-                                                      "\n\n\n                    "
+                                                      "\n\n\n                        "
                                                   )
                                                 ]
                                               )
@@ -2013,6 +2109,17 @@ module.exports = "/images/contact.png?03cbb54b25a911e2172bb1a412f0c54e";
 /***/ (function(module, exports) {
 
 module.exports = "/images/telefon.png?b2a358ed46b9bf5271a4b28d4b792491";
+
+/***/ }),
+
+/***/ "./resources/img/pocetne/1.jpg":
+/*!*************************************!*\
+  !*** ./resources/img/pocetne/1.jpg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/1.jpg?f1a4ca4472b91896642a18427ccefadc";
 
 /***/ }),
 

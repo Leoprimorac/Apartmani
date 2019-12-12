@@ -28,6 +28,24 @@
                 </b-col >
                 <b-col sm>
                     <div class="sort resize-center" >
+                  <div>
+                    <b-embed
+                        type="iframe"
+                        aspect="16by9"
+                        src="https://youtube.com/embed/Sn93bmXM6Kg"
+                        allowfullscreen
+                    ></b-embed>
+                    </div>
+    </div>
+
+                </b-col>
+            </b-row>
+        </b-container>
+<b-container id="promajna" class="pt-4">
+            <b-row id="AboutUs">
+
+                <b-col sm>
+                    <div class="sort resize-center" >
                     <b-carousel
                         id="carousel-1"
                         style="text-shadow: 0px 0px 2px #000"
@@ -38,7 +56,7 @@
                         img-width="1024"
                         img-height="480"
                     >
-                        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=10"></b-carousel-slide>
+                        <b-carousel-slide :img-src="require('./../../img/pocetne/1.jpg')"></b-carousel-slide>
                         <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
                         <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=22" ></b-carousel-slide>
                     </b-carousel>
@@ -66,6 +84,20 @@
                             </b-collapse>
                         </div>
                 </b-col>
+                 <b-col sm   >
+                    <div class="glavna-slova resize-center pt-4" >
+                        <blockquote class="blockquote">
+                            <h2>VILLA PROMAJNA</h2>
+                            <footer class="blockquote-footer">Savršeno mjesto za mirn obiteljski odmor</footer>
+                        </blockquote>
+                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne.
+                        Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.
+                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu,
+                        a većina apartmana ima i pogled na more.<br> Apartmani su luksuzno i funkcionalno opremljeni
+                        i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.
+
+                    </div>
+                </b-col >
             </b-row>
         </b-container>
 
@@ -115,6 +147,8 @@
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';
 import store from './../store.js';
+import { BEmbed } from 'bootstrap-vue'
+Vue.component('b-embed', BEmbed)
 export default {
     store,
 
