@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from './views/App'
 import { Trans } from './lang/Translations'
-
 import Login from './views/auth/Login'
 import Register from './views/auth/Register'
 import NewApartment from './views/AppPanel/NewApartment'
@@ -16,6 +15,7 @@ export default new Router({
   mode: "history",
   base: __dirname,
   routes: [
+
     {
         path: '/app',
         name: 'App',
@@ -46,15 +46,13 @@ export default new Router({
             {
                 path: '/auth/register',
                 component: Register,
-                name: 'Register'
+                name: 'register'
             }
         ]
     },
     {
       path: "/:lang",
-      component:{
-      template: '<router-view></router-view>',
-      },
+      component: { render (c) { return c('router-view') }},
       beforeEnter(to, from, next) {
         const lang = to.params.lang;
         if (!['en', 'de','cro'].includes(lang)) return next('cro');
@@ -76,26 +74,26 @@ export default new Router({
             import(/* webpackChunkName: "[request]" */ "./views/Index.vue")
         },
         {
-            path: '/#AboutUs',
+            path: '#AboutUs',
             name: 'AboutUs',
             component: () =>
             import(/* webpackChunkName: "[request]" */ "./views/Index.vue")
 
         },
         {
-            path: '/#Footer',
+            path: '#Footer',
             name: 'Footer',
             component: () =>
             import(/* webpackChunkName: "[request]" */ "./components/Footer.vue")
         },
         {
-            path: '/Apartment/:id',
+            path: 'Apartment/:id',
             name: 'Apartment',
             component: () =>
             import(/* webpackChunkName: "[request]" */ "./views/Apartment.vue")
         },
         {
-            path: '/Apartment/:id/:lang',
+            path: ':lang/Apartment/:id',
             name: 'apartment-with-redirect',
             component: () =>
             import(/* webpackChunkName: "[request]" */ "./views/Apartment.vue")
