@@ -144,6 +144,8 @@
 
 
 <script>
+
+import { Trans } from './../lang/Translations'
 import Footer from './../components/Footer'
 import VueGallery from 'vue-gallery';
 import Vuex from 'vuex';

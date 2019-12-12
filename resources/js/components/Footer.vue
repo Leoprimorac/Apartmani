@@ -16,8 +16,7 @@
                 </div>
 
                 <div class="tekst text">
-                    <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
-                        Vlasnik: Mladen Miličeivć <br>
+
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         {{ $t('footerContactOwner') }}<br>
                     <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">

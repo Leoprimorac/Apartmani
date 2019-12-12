@@ -54,7 +54,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'footers'
 });
@@ -288,7 +287,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       succesAlert: false,
       errorAlert: false,
-      lang: 'hrv'
+      lang: this.$route.params.lang
     };
   },
   created: function created() {
@@ -298,6 +297,9 @@ __webpack_require__.r(__webpack_exports__);
     range: function range(val) {
       this.form.start = moment__WEBPACK_IMPORTED_MODULE_1__(val.start).format('DD.MM.YYYY');
       this.form.end = moment__WEBPACK_IMPORTED_MODULE_1__(val.end).format('DD.MM.YYYY');
+    },
+    $route: function $route(to, from) {
+      this.getApartment();
     }
   },
   computed: {
@@ -340,7 +342,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.apartment.translation = this.apartment.translation.find(function (_ref) {
         var language = _ref.language;
-        return language == _this2.lang;
+        return language == _this2.$route.params.lang;
       });
     }
   },
@@ -400,11 +402,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-gallery */ "./node_modules/vue-gallery/dist/js/vue-gallery.js");
-/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../store.js */ "./resources/js/store.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var _lang_Translations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../lang/Translations */ "./resources/js/lang/Translations.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-gallery */ "./node_modules/vue-gallery/dist/js/vue-gallery.js");
+/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../store.js */ "./resources/js/store.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
 //
 //
 //
@@ -554,16 +558,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Vue.component('b-embed', bootstrap_vue__WEBPACK_IMPORTED_MODULE_3__["BEmbed"]);
+
+
+Vue.component('b-embed', bootstrap_vue__WEBPACK_IMPORTED_MODULE_5__["BEmbed"]);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  store: _store_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  store: _store_js__WEBPACK_IMPORTED_MODULE_4__["default"],
   components: {
-    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_0___default.a
+    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_2___default.a,
+    'footers': _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
       apartments: [],
-      images: ['https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://picsum.photos/1024/480/?image=10', 'resources\img\logo.png'],
+      images: ['https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://picsum.photos/1024/480/?image=10', '/images/1.jpg'],
       index: null
     };
   },
@@ -607,7 +614,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lor
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Parisienne&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".ime {\n  font-family: \"Parisienne\", serif;\n  text-align: center;\n}\n.glavna-slova {\n  font-family: \"Lora\", cursive;\n}\nh1 {\n  font-size: 5rem !important;\n}\n#main {\n  background: url(" + escape(__webpack_require__(/*! ../../img/promajna3.jpeg */ "./resources/img/promajna3.jpeg")) + ") no-repeat center;\n}\n#pocetna {\n  padding-top: 56px;\n  height: 100vh;\n  /* For WebKit*/\n  /* Mozilla*/\n  /* Opera*/\n  background-size: cover;\n}\n.info-bg {\n  background-color: rgba(243, 96, 96, 0.35) !important;\n}\n.image-size {\n  max-width: 20%;\n  height: auto;\n}\n.image-size50 {\n  max-width: 100vh;\n  height: auto;\n}\n.resize-center {\n  padding: 5% 0% 5% 0;\n}\n.offset-sm-1 {\n  margin-left: 3.333333% !important;\n}\n.offset-sm-1 .card-columns {\n  height: 100vh;\n  width: auto;\n}\n.offset-sm-1 .title {\n  background-color: gray;\n}\n.promajna-button {\n  color: white !important;\n  background-color: #31708e !important;\n  border-color: #31708e !important;\n  width: 100%;\n  height: 100%;\n  font-family: \"Lora\", cursive;\n}\n#AboutUs {\n  height: 100vh;\n  width: auto;\n}\n.Apartments {\n  height: \"100vh\";\n}\n#apartmani {\n  background: url(" + escape(__webpack_require__(/*! ../../img/pozadina.jpg */ "./resources/img/pozadina.jpg")) + ") center;\n  min-height: 100vh;\n}\n.footer {\n  height: 3rem;\n  width: 100%;\n  background-color: white;\n  padding: 0 !important;\n}\n.button {\n  color: #31708e !important;\n  background-color: white !important;\n  border-color: white !important;\n  width: 100%;\n  height: 100%;\n  font-family: \"Lora\", cursive;\n  font-size: 20px;\n  align: center;\n}\n.card-img {\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".ime {\n  font-family: \"Parisienne\", serif;\n  text-align: center;\n}\n.glavna-slova {\n  font-family: \"Lora\", cursive;\n}\nh1 {\n  font-size: 5rem !important;\n}\n#main {\n  background: url(" + escape(__webpack_require__(/*! ../../img/promajna3.jpeg */ "./resources/img/promajna3.jpeg")) + ") no-repeat center;\n}\n#pocetna {\n  padding-top: 56px;\n  height: 100vh;\n  /* For WebKit*/\n  /* Mozilla*/\n  /* Opera*/\n  background-size: cover;\n}\n\n/* .info-bg {\n background-color: rgba(243, 96, 96, 0.35)!important;\n }*/\n.image-size {\n  max-width: 20%;\n  height: auto;\n}\n.image-size50 {\n  max-width: 100vh;\n  height: auto;\n}\n.resize-center {\n  padding: 5% 0% 5% 0;\n}\n.offset-sm-1 {\n  margin-left: 3.333333% !important;\n}\n.offset-sm-1 .card-columns {\n  height: 100vh;\n  width: auto;\n}\n.offset-sm-1 .title {\n  background-color: gray;\n}\n.promajna-button {\n  color: white !important;\n  background-color: #31708e !important;\n  border-color: #31708e !important;\n  width: 100%;\n  height: 100%;\n  font-family: \"Lora\", cursive;\n}\n#AboutUs {\n  min-height: 50vh;\n  padding: 30px;\n  width: auto;\n}\n.Apartments {\n  height: \"100vh\";\n}\n#apartmani {\n  background: url(" + escape(__webpack_require__(/*! ../../img/pozadina.jpg */ "./resources/img/pozadina.jpg")) + ") center;\n  min-height: 100vh;\n}\n.footer {\n  height: 3rem;\n  width: 100%;\n  background-color: white;\n  padding: 0 !important;\n}\n.button {\n  color: #31708e !important;\n  background-color: white !important;\n  border-color: white !important;\n  width: 100%;\n  height: 100%;\n  font-family: \"Lora\", cursive;\n  font-size: 20px;\n  align: center;\n}\n.card-img {\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -1080,13 +1087,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "tekst text" }, [
-                  _c("img", {
-                    staticStyle: { width: "15px", height: "15px" },
-                    attrs: { src: __webpack_require__(/*! ./../../img/ikone/contact.png */ "./resources/img/ikone/contact.png") }
-                  }),
-                  _vm._v("\n                    Vlasnik: Mladen Miličeivć "),
-                  _c("br"),
-                  _vm._v(" "),
                   _c("img", {
                     staticStyle: { width: "15px", height: "15px" },
                     attrs: { src: __webpack_require__(/*! ./../../img/ikone/contact.png */ "./resources/img/ikone/contact.png") }
@@ -1686,7 +1686,9 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("footers")
     ],
     1
   )
@@ -1970,10 +1972,7 @@ var render = function() {
                           _c("router-link", {
                             attrs: {
                               to:
-                                "/Apartment/" +
-                                apartment.id +
-                                "/" +
-                                _vm.$i18n.locale
+                                _vm.$i18n.locale + "/Apartment/" + apartment.id
                             },
                             scopedSlots: _vm._u(
                               [
@@ -2067,7 +2066,9 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("footers", { attrs: { id: "Footer" } })
     ],
     1
   )

@@ -62,10 +62,13 @@ import VueMoment from 'vue-moment'
 
 Vue.use(VueMoment);
 
+import {i18n} from './lang/i18n'
+
 const app = new Vue({
     el: '#app',
     router,
     store,
+    i18n,
     components: {
         Navbar,  DatePicker
     },
