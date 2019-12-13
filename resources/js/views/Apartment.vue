@@ -1,5 +1,5 @@
 <template>
-<div class="mt-5">
+<div class="mt-5" v-if="apartment">
     <b-container fluid id="main">
 
 
