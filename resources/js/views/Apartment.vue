@@ -22,7 +22,7 @@
                             </b-card-text>
                             <b-card-footer footer-class="footer">
 
-                                <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" class="Gallerybutton" >Otvorite cijelu galeriju</b-button>
+                                <b-button v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" class="Gallerybutton" >{{ $t('galleryButton')}}</b-button>
 
                             </b-card-footer>
 
@@ -53,7 +53,7 @@
                         </div>
 
                         <div >
-                        <h5 class="labels pb-2">Detalji:</h5>
+                        <h5 class="labels pb-2">{{ $t('apartmentDetails')}}</h5>
                         <div class="always">
                         <div v-html="apartment.translation.details" ></div>
                         </div>
@@ -67,13 +67,13 @@
                         <table class="table table-striped">
                             <thead class="thread-color" >
                                 <tr>
-                                    <th scope="col"><h3>Cijene</h3></th>
+                                    <th scope="col"><h3>{{$t('apartmentPrices')}}</h3></th>
                                     <th scope="col"></th>
                                     <th></th>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td class="tdColoration"><h5>SEZONA:</h5></td>
+                                    <td class="tdColoration"><h5>{{$t('apartmentSeason')}}</h5></td>
                                     <td class="tdColoration"><h5>{{ new Date().getFullYear() }}</h5></td>
                                 </tr>
                             </thead>
@@ -95,7 +95,7 @@
         <b-container class="mt-3 pb-4">
                                 <b-row class="pt-3 pb-4">
                                     <b-col>
-                                        <h4 class="borderbttm pb-2 pl-lg-4">REZERVIRAJTE:</h4>
+                                        <h4 class="borderbttm pb-2 pl-lg-4">{{$t('apartmentReservation')}}</h4>
                                     </b-col>
                                 </b-row>
                                 <b-row>
@@ -114,7 +114,7 @@
 
                                     <b-col>
                                         <div class="formBorder p-2 pb-4">
-                                            <h5 class="pb-3 pt-1">Odaberite željene datume za vaš upit:</h5>
+                                            <h5 class="pb-3 pt-1">{{$t('apartmentDatesInput')}}</h5>
                                             <v-date-picker
                                                 mode='range'
                                                 v-model="range"
@@ -130,7 +130,7 @@
                                         <div class="formBorder p-2 mt-3">
                                             <div>
                                             <b-spinner type="grow" small variant="danger" label="rezervirano"></b-spinner>
-                                            Rezervirano - Apartman nije slobodan za odabrane datume
+                                           {{$t('apartmentSpinner')}}
                                             </div>
 
                                         </div>
@@ -139,32 +139,32 @@
                                     <b-col>
                                         <b-form @submit.prevent="sendForm">
                                             <div class="formBorder p-2">
-                                                <h5 class="pb-3 pt-1">Pošaljite upit o rezervaciji:</h5>
+                                                <h5 class="pb-3 pt-1">{{$t('apartmentFormLabel')}}</h5>
 
-                                                <b-form-group id="input-group-1" label="Ime:" label-for="input-1" class="text-start mb-1">
-                                                    <b-form-input id="input-1" v-model="form.name" type="text" required placeholder="Unesite ime"></b-form-input>
+                                                <b-form-group id="input-group-1" :label=" $t('apartmentFormLabelName')" label-for="input-1" class="text-start mb-1">
+                                                    <b-form-input id="input-1" v-model="form.name" type="text" required :placeholder=" $t('apartmentFormPlName')"></b-form-input>
                                                 </b-form-group>
 
-                                                <b-form-group id="input-group-2" label="Prezime:" label-for="input-2" class="text-start mb-1">
-                                                    <b-form-input id="input-2" v-model="form.surname" type="text" required placeholder="Unesite prezime"></b-form-input>
+                                                <b-form-group id="input-group-2" :label=" $t('apartmentFormLabelSurname')" label-for="input-2" class="text-start mb-1">
+                                                    <b-form-input id="input-2" v-model="form.surname" type="text" required :placeholder=" $t('apartmentFormPlSurname')"></b-form-input>
                                                 </b-form-group>
 
-                                                <b-form-group id="input-group-3" label="Email:" label-for="input-3" class="text-start mb-1">
-                                                    <b-form-input id="input-3" v-model="form.email" type="email" required placeholder="Unesite email"></b-form-input>
+                                                <b-form-group id="input-group-3" :label=" $t('apartmentFormLabelEmail')" label-for="input-3" class="text-start mb-1">
+                                                    <b-form-input id="input-3" v-model="form.email" type="email" required :placeholder=" $t('apartmentFormPlEmail')"></b-form-input>
                                                 </b-form-group>
 
-                                                <b-form-group id="text-aria-group-4" label="Poruka:" label-for="text-aria-1" class="text-start mb-1">
+                                                <b-form-group id="text-aria-group-4" :label=" $t('apartmentFormLabelMessage')" label-for="text-aria-1" class="text-start mb-1">
                                                 <b-form-textarea
                                                     id="text-aria-1"
                                                     v-model="form.message"
-                                                    placeholder="Upišite poruku..."
+                                                    :placeholder=" $t('apartmentFormPlMessage')"
                                                     rows="3"
                                                     max-rows="6"
                                                     ></b-form-textarea>
                                                 </b-form-group>
 
                                                 <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;" :disabled="this.hidden">
-                                                    Pošaljite upit
+                                                    {{$t('formButton')}}
                                                 </b-btn>
 
                                                  <b-alert class="mt-2" variant="success" :show="succesAlert">Mail uspješno poslan</b-alert>
@@ -182,6 +182,7 @@
 </template>
 
 <script>
+import { Trans } from './../lang/Translations'
 import Vue from 'vue';
 import * as moment from 'moment';
 import Footer from './../components/Footer'

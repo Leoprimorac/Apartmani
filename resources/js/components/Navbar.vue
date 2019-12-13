@@ -14,9 +14,9 @@
           <b-nav-item ><router-link :to="'/'+$i18n.locale +  '#Apartments'" style="color: rgb(0, 0, 0);">{{ $t('navApartments') }}</router-link></b-nav-item>
         <b-nav-item class="padding"><router-link :to="'/'+ $i18n.locale + '#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navLocation') }}</router-link></b-nav-item>
         <b-nav-item  class="padding"><router-link :to="'/'+ $i18n.locale + '#Footer'" style="color: rgb(0, 0, 0);">{{ $t('navContact') }}</router-link></b-nav-item>
-            <b-nav-item-dropdown :text=" $t('Camera')" right>
-                <b-dropdown-item href="https://www.livecamcroatia.com/hr/kamera/promajna-plaza-baska-voda?fbclid=IwAR3bqmusGgfoT7yuMvnkzurNRjY9hTe49jh9f2zD0C7S1JrL9nq3F09Wkt0">{{ $t('Camera1') }}</b-dropdown-item>
-                <b-dropdown-item href="https://dalmacija-live.com/Promajna/promajna-1">{{ $t('Camera2') }}</b-dropdown-item>
+            <b-nav-item-dropdown :text=" $t('camera')" right>
+                <b-dropdown-item href="https://www.livecamcroatia.com/hr/kamera/promajna-plaza-baska-voda?fbclid=IwAR3bqmusGgfoT7yuMvnkzurNRjY9hTe49jh9f2zD0C7S1JrL9nq3F09Wkt0">{{ $t('camera1') }}</b-dropdown-item>
+                <b-dropdown-item href="https://dalmacija-live.com/Promajna/promajna-1">{{ $t('camera2') }}</b-dropdown-item>
             </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
