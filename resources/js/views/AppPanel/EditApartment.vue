@@ -41,7 +41,7 @@
 
                                      <div >
                                         <h6>Detalji:</h6>
-                                        <div class="ql-editor">
+                                        <div class="always">
                                             <div v-html="apartment.translation.details"></div>
                                         </div>
                                 </div>
@@ -443,5 +443,19 @@ components: {
     height: 3vh;
     width: 100%;
     padding: 0!important ;
+}
+.always {
+        box-sizing: border-box;
+    line-height: 1.42;
+    height: 100%;
+    outline: 0;
+    overflow-y: auto;
+    padding: 12px 15px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
 }
 </style>
