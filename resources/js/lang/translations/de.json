@@ -13,7 +13,24 @@
     "footerContactNumber": "Kontakttelefon: +389 91 888 06 85",
     "camera": "Live-Kamera",
     "camera1": "Kamera 1",
-    "camera2": "Kamera 2"
+    "camera2": "Kamera 2",
+    "apartmentDetails": "Einzelheit:",
+    "apartmentPrices": "Preise:",
+    "apartmentSeason": "SAISON:",
+    "apartmentReservation": "BUCHEN:",
+    "apartmentDatesInput": "Wählen Sie die Daten für Ihre Anfrage:",
+    "apartmentSpinner": " Reserviert - Die Wohnung ist für ausgewählte Daten reserviert",
+    "apartmentFormLabel": "Füllen Sie eine Buchungsanfrage aus:",
+    "apartmentFormPlLabel": "Wählen Sie Ihre Buchungsdaten:",
+    "apartmentFormLabelName": "Name:",
+    "apartmentFormPlName": "Geben Sie hier Ihren Namen ein",
+    "apartmentFormLabelSurname" :"Familienname:",
+    "apartmentFormPlSurname": "Geben Sie hier Ihren Familienamen ein",
+    "apartmentFormLabelEmail":"Email:",
+    "apartmentFormPlEmail": "Geben Sie hier Ihren Email ein",
+    "apartmentFormLabelMessage": "Ihre Nachricht:",
+    "apartmentFormPlMessage": "Geben Sie hier Ihre Nachricht ein...",
+    "formButton":"Anfrage senden"
 
 
   }

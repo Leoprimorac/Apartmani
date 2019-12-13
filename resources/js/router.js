@@ -13,7 +13,7 @@ import { i18n } from "./lang/i18n";
 Vue.use(Router);
 export default new Router({
   mode: "history",
-  base: __dirname,
+  base: process.env.BASE_URL,
   routes: [
 
     {
@@ -104,7 +104,9 @@ export default new Router({
     },
     {
       path: "*",
-      redirect: "/de"
+      redirect (to) {
+        return Trans.getUserSupportedLang()
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

@@ -13,7 +13,25 @@
     "footerContactNumber": "Kontakt telefon: +389 91 888 06 85",
     "camera": "Kamere uživo",
     "camera1": "Kamera 1",
-    "camera2": "Kamera 2"
+    "camera2": "Kamera 2",
+    "apartmentDetails": "Detalji:",
+    "apartmentPrices": "Cijene:",
+    "apartmentSeason": "SEZONA:",
+    "apartmentReservation": "REZERVIRAJTE:",
+    "apartmentDatesInput": "Odaberite željene datume za vaš upit:",
+    "apartmentSpinner": " Rezervirano - Apartman nije slobodan za odabrane datume",
+    "apartmentFormLabel": "Ispunite upit o rezervaciji:",
+    "apartmentFormPlLabel": "Odaberite datume rezervacije:",
+    "apartmentFormLabelName": "Ime:",
+    "apartmentFormPlName": "Unesite ime",
+    "apartmentFormLabelSurname" :"Prezime:",
+    "apartmentFormPlSurname": "Unesite prezime",
+    "apartmentFormLabelEmail":"Email:",
+    "apartmentFormPlEmail": "Unesite email",
+    "apartmentFormLabelMessage": "Vaša poruka",
+    "apartmentFormPlMessage": "Upišite poruku....",
+    "formButton":"Pošaljite upit"
+
 
 
   }

@@ -16,7 +16,7 @@
                     <navbar></navbar>
 
                 <router-view></router-view>
-                
+
 
 
         </div>

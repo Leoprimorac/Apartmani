@@ -13,7 +13,24 @@
     "footerContactNumber": "Contact phone: +389 91 888 06 85",
     "camera": "Live Stream",
     "camera1": "Cam 1",
-    "camera2": "Cam 2"
+    "camera2": "Cam 2",
+    "apartmentDetails": "Details:",
+    "apartmentPrices": "Prices:",
+    "apartmentSeason": "SEASON:",
+    "apartmentReservation": "BOOK:",
+    "apartmentDatesInput": "Select the dates for your request:",
+    "apartmentSpinner": " Reserved - Apartment is not available for selected dates",
+    "apartmentFormLabel": "Fill out your booking request:",
+    "apartmentFormPlLabel": "Select your booking dates:",
+    "apartmentFormLabelName": "Name:",
+    "apartmentFormPlName": "Enter your name here",
+    "apartmentFormLabelSurname" :"Surname:",
+    "apartmentFormPlSurname": "Enter your surname here",
+    "apartmentFormLabelEmail":"Email:",
+    "apartmentFormPlEmail": "Enter your email here",
+    "apartmentFormLabelMessage": "Your message",
+    "apartmentFormPlMessage": "Enter your message here....",
+    "formButton":"Send request"
 
 
   }
