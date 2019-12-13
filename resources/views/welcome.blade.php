@@ -16,8 +16,7 @@
                     <navbar></navbar>
 
                 <router-view></router-view>
-                <footers></footers>
-
+                
 
 
         </div>

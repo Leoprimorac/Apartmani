@@ -57,7 +57,7 @@
                         img-height="480"
                     >
                         <b-carousel-slide img-src="/images/1.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/2.png"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/2.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/3.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/4.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/5.jpg"></b-carousel-slide>
@@ -75,8 +75,9 @@
                         <b-carousel-slide img-src="/images/17.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/18.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/19.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/20.jpeg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/24.jpeg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/20.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/21.jpg"></b-carousel-slide>
+                        <b-carousel-slide img-src="/images/22.jpg"></b-carousel-slide>
 
 
                     </b-carousel>
@@ -186,7 +187,7 @@ export default {
         apartments: [],
         images: [
             '/images/1.jpg',
-            '/images/2.png',
+            '/images/2.jpg',
             '/images/3.jpg',
             '/images/4.jpg',
             '/images/5.jpg',
@@ -204,8 +205,9 @@ export default {
             '/images/17.jpg',
             '/images/18.jpg',
             '/images/19.jpg',
-            '/images/20.jpeg',
-            '/images/24.jpeg',
+            '/images/20.jpg',
+            '/images/21.jpg',
+            '/images/22.jpg',
         ],
         index: null
       };
