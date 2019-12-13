@@ -7,9 +7,7 @@
 
 <p><b>Datum:</b>{{ $data['start']}} - {{ $data['end']}}</p>
 
-<div><b>Poruka:</b>
-{{ $data['message'] }}
-</div>
+<p><b>Poruka:</b> {{ $data['message']  }}<p>
+
 Thanks,<br>
-{{ config('app.name') }}
 @endcomponent
