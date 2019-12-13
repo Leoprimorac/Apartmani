@@ -56,28 +56,8 @@
                         img-width="1024"
                         img-height="480"
                     >
-                        <b-carousel-slide img-src="/images/1.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/2.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/3.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/4.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/5.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/6.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/7.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/8.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/9.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/10.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/11.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/12.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/13.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/14.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/15.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/16.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/17.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/18.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/19.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/20.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/21.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/22.jpg"></b-carousel-slide>
+                        <b-carousel-slide v-for="image in images" v-bind:key="image" :img-src="image"></b-carousel-slide>
+
 
 
                     </b-carousel>
@@ -105,17 +85,14 @@
                             </b-collapse>
                         </div>
                 </b-col>
-                 <b-col sm   >
+                 <b-col sm>
                     <div class="glavna-slova resize-center pt-4" >
                         <blockquote class="blockquote">
                             <h2>VILLA PROMAJNA</h2>
-                            <footer class="blockquote-footer">Savršeno mjesto za mirn obiteljski odmor</footer>
+                            <footer class="blockquote-footer">{{ $t('blackqouteFooter2')}}</footer>
                         </blockquote>
-                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne.
-                        Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.
-                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu,
-                        a većina apartmana ima i pogled na more.<br> Apartmani su luksuzno i funkcionalno opremljeni
-                        i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.
+                        {{ $t('textVillaPromajna')}}<br>
+                        {{ $t('textVillaPromajna2')}}
 
                     </div>
                 </b-col >
@@ -188,7 +165,6 @@ export default {
         images: [
             '/images/1.jpg',
             '/images/2.jpg',
-            '/images/3.jpg',
             '/images/4.jpg',
             '/images/5.jpg',
             '/images/6.jpg',

@@ -4,7 +4,7 @@
     <div class="row mx-auto">
         <div class="col mx-auto">
             <b-navbar toggleable="sm" type="light" variant="fadded" class="info-bg fixed-top">
-    <b-navbar-brand ><router-link :to="'/'+ $i18n.locale">{{ $t('navMain') }}</router-link></b-navbar-brand>
+    <b-navbar-brand ><router-link class="router-decoration" :to="'/'+ $i18n.locale">{{ $t('navMain') }}</router-link></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" ></b-navbar-toggle>
 
@@ -36,24 +36,6 @@
                                  @click="changeLanguage(lang)"
                                 :img-src="icons[lang]"><img :src="icons[lang]" class="country-icon" /></b-dropdown-item>
         </b-nav-item-dropdown>
-        <!--<b-nav-item> <select
-            class="LanguageSwitcher"
-            name="language"
-            @change="changeLanguage"
-  >
-    <option
-      v-for="lang in supportedLanguages"
-      :key="lang"
-      :selected="isCurrentLanguage(lang)"
-      :class="{ 'is-selected': isCurrentLanguage(lang) }"
-      :value="lang"
-      :img-src="icons[lang]"
-
-    >
-      <img :src="icons[lang]" class="country-icon" />
-    </option>
-  </select>
-</b-nav-item>-->
         <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav class="ml-auto text-center text-uppercase">
                     <template v-if="$parent.isGuest">
@@ -121,6 +103,7 @@ import croIcon from './../../img/ikone/cro.png'
             }
 
         },
+
         computed: {
             supportedLanguages () {
       return Trans.supportedLanguages
@@ -140,17 +123,17 @@ import croIcon from './../../img/ikone/cro.png'
                 })
             },
             changeLanguage (language) {
-      const lang = language
-      const to = this.$router.resolve({ params: { lang } })
-      return Trans.changeLanguage(lang).then(() => {
-        this.$router.push(to.location)
-      })
-    },
-    isCurrentLanguage (lang) {
-      return lang === this.currentLanguage
-    }
-        }
-    }
+                const lang = language
+                const to = this.$router.resolve({ params: { lang } })
+                return Trans.changeLanguage(lang).then(() => {
+                    this.$router.push(to.location)
+                })
+            },
+            isCurrentLanguage (lang) {
+            return lang === this.currentLanguage
+            }
+                }
+            }
 </script>
 <style>
     .info-bg {
@@ -165,6 +148,11 @@ import croIcon from './../../img/ikone/cro.png'
         box-shadow: 0px 1px 3px rgba(24, 29, 38, 0.1);
     }
     .country-icon.as-toggle {
-        margin-top: 5px;}
+        margin-top: 5px;
+        }
+    a {
+	text-decoration: none;
+    color: black !important;
+}
 
     </style>

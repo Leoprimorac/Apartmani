@@ -120,7 +120,7 @@
                                                 v-model="range"
                                                 :locale="$i18n.locale"
                                                 :input-props='{
-                                                    placeholder: "Odaberite datume rezervacije",
+                                                    placeholder: $t("apartmentDatesInputField"),
                                                     readonly: true
                                                 }'
                                         />
