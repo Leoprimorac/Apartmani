@@ -7,7 +7,7 @@
         <title>Laravel</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <?php header('Access-Control-Allow-Origin: *'); ?>
-        <base href="/" />
+        <base href="" />
     </head>
     <body>
         <div id="app" class="d-flex flex-column">
