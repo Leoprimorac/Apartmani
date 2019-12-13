@@ -93,7 +93,7 @@ export default new Router({
             import(/* webpackChunkName: "[request]" */ "./views/Apartment.vue")
         },
         {
-            path: ':lang/Apartment/:id',
+            path: '/Apartment/:id',
             name: 'apartment-with-redirect',
             component: () =>
             import(/* webpackChunkName: "[request]" */ "./views/Apartment.vue")
@@ -104,9 +104,7 @@ export default new Router({
     },
     {
       path: "*",
-      redirect (to) {
-        return Trans.getUserSupportedLang()
-      }
+      redirect: "/de"
     }
   ],
   scrollBehavior (to, from, savedPosition) {

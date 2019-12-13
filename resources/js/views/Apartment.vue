@@ -103,7 +103,7 @@
                                     <b-col  sm>
                                         <v-calendar is-expanded
                                                     :attributes="attrs"
-
+                                                    :locale="$i18n.locale"
                                                     :columns="$screens({ default: 1, lg: 2 })"
                                                     :rows="$screens({ default: 1, lg: 2 })"
                                                     >
@@ -118,6 +118,7 @@
                                             <v-date-picker
                                                 mode='range'
                                                 v-model="range"
+                                                :locale="$i18n.locale"
                                                 :input-props='{
                                                     placeholder: "Odaberite datume rezervacije",
                                                     readonly: true
@@ -313,7 +314,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
 
 .font {
