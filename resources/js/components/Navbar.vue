@@ -42,9 +42,6 @@
                         <li class="nav-item">
                             <router-link to="/auth/login" class="nav-link">Prijava</router-link>
                         </li>
-                            <li class="nav-item">
-                            <router-link to="/auth/register" class="nav-link">reg</router-link>
-                        </li>
                     </template>
                     <li v-else-if="!$parent.isApp" class="nav-item">
                         <router-link to="/app" class="nav-link">Nastavi</router-link>
