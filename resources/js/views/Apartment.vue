@@ -167,8 +167,8 @@
                                                     {{$t('formButton')}}
                                                 </b-btn>
 
-                                                 <b-alert class="mt-2" variant="success" :show="succesAlert">Mail uspješno poslan</b-alert>
-                                                 <b-alert class="mt-2" variant="danger" :show="errorAlert">Mail nije poslan!</b-alert>
+                                                 <b-alert class="mt-2" variant="success" :show="succesAlert">{{$t('succesAlert')}}</b-alert>
+                                                 <b-alert class="mt-2" variant="danger" :show="errorAlert">{{$t('errorAlert')}}</b-alert>
                                             </div>
                                         </b-form>
                                     </b-col>

@@ -34,7 +34,9 @@
     "apartmentFormPlEmail": "Enter your email here",
     "apartmentFormLabelMessage": "Your message",
     "apartmentFormPlMessage": "Enter your message here....",
-    "formButton":"Send request"
+    "formButton":"Send request",
+    "succesAlert": "Email is sent! Thank you for your message. We will contact you shortly :)",
+    "errorAlert": "Email is not sent! Please try again or send mail direct to email address: mladen1101@gmail.com "
 
 
   }
