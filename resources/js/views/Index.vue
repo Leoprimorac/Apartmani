@@ -76,9 +76,6 @@
                         <b-carousel-slide img-src="/images/18.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/19.jpg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/20.jpeg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/21.jpg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/22.jpeg"></b-carousel-slide>
-                        <b-carousel-slide img-src="/images/23.jpeg"></b-carousel-slide>
                         <b-carousel-slide img-src="/images/24.jpeg"></b-carousel-slide>
 
 
@@ -188,12 +185,27 @@ export default {
       return {
         apartments: [],
         images: [
-          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-          'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-          'https://picsum.photos/1024/480/?image=10',
-          './../../../public/images/1.jpg'
+            '/images/1.jpg',
+            '/images/2.png',
+            '/images/3.jpg',
+            '/images/4.jpg',
+            '/images/5.jpg',
+            '/images/6.jpg',
+            '/images/7.jpg',
+            '/images/8.jpg',
+            '/images/9.jpg',
+            '/images/10.jpg',
+            '/images/11.jpg',
+            '/images/12.jpg',
+            '/images/13.jpg',
+            '/images/14.jpg',
+            '/images/15.jpg',
+            '/images/16.jpg',
+            '/images/17.jpg',
+            '/images/18.jpg',
+            '/images/19.jpg',
+            '/images/20.jpeg',
+            '/images/24.jpeg',
         ],
         index: null
       };

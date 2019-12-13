@@ -222,7 +222,7 @@
                                         label="Fotografije:"
                                         label-for="cover_image"
                                         label-class="text-center">
-                                        <b-form-file id="cover_image" name="images[]" accept=".jpg, .png, .gif" multiple placeholder="Odaberi datoteke..."></b-form-file>
+                                        <b-form-file id="cover_image" name="images[]" accept=".jpg, .png, .gif" placeholder="Odaberi datoteke..." multiple></b-form-file>
                                     </b-form-group>
 
 
