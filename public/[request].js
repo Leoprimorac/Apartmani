@@ -54,6 +54,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'footers'
 });
@@ -69,13 +71,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../components/Footer */ "./resources/js/components/Footer.vue");
-/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-gallery */ "./node_modules/vue-gallery/dist/js/vue-gallery.js");
-/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _lang_Translations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../lang/Translations */ "./resources/js/lang/Translations.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-gallery */ "./node_modules/vue-gallery/dist/js/vue-gallery.js");
+/* harmony import */ var vue_gallery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_gallery__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -255,17 +258,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_3___default.a,
-    'footers': _components_Footer__WEBPACK_IMPORTED_MODULE_2__["default"]
+    'gallery': vue_gallery__WEBPACK_IMPORTED_MODULE_4___default.a,
+    'footers': _components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -295,8 +296,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     range: function range(val) {
-      this.form.start = moment__WEBPACK_IMPORTED_MODULE_1__(val.start).format('DD.MM.YYYY');
-      this.form.end = moment__WEBPACK_IMPORTED_MODULE_1__(val.end).format('DD.MM.YYYY');
+      this.form.start = moment__WEBPACK_IMPORTED_MODULE_2__(val.start).format('DD.MM.YYYY');
+      this.form.end = moment__WEBPACK_IMPORTED_MODULE_2__(val.end).format('DD.MM.YYYY');
     },
     $route: function $route(to, from) {
       this.getApartment();
@@ -552,8 +553,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -570,7 +569,7 @@ Vue.component('b-embed', bootstrap_vue__WEBPACK_IMPORTED_MODULE_5__["BEmbed"]);
   data: function data() {
     return {
       apartments: [],
-      images: ['https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://images.unsplash.com/photo-1527555197883-98e27ca0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'https://picsum.photos/1024/480/?image=10', '/images/1.jpg'],
+      images: ['/images/1.jpg', '/images/2.jpg', '/images/4.jpg', '/images/5.jpg', '/images/6.jpg', '/images/7.jpg', '/images/8.jpg', '/images/9.jpg', '/images/10.jpg', '/images/11.jpg', '/images/12.jpg', '/images/13.jpg', '/images/14.jpg', '/images/15.jpg', '/images/16.jpg', '/images/17.jpg', '/images/18.jpg', '/images/19.jpg', '/images/20.jpg', '/images/21.jpg', '/images/22.jpg'],
       index: null
     };
   },
@@ -633,7 +632,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.Kontakt{\n    background-color: #5D5C61; /* For WebKit*/    /* Mozilla*/      /* Opera*/\n    background-size: cover;\n    color:white;\n    font-family: 'Lora', cursive;\n}\n.mapouter{\nposition:relative;\ntext-align:right;\nheight:auto;\nwidth:100%;\n}\n.gmap_canvas {\noverflow:hidden;\nbackground:none!important;\nheight:100%;\nwidth:100%;\n}\n\n", ""]);
+exports.push([module.i, "\n.Kontakt{\r\n    background-color: #5D5C61; /* For WebKit*/    /* Mozilla*/      /* Opera*/\r\n    background-size: cover;\r\n    color:white;\r\n    font-family: 'Lora', cursive;\n}\n.mapouter{\r\nposition:relative;\r\ntext-align:right;\r\nheight:auto;\r\nwidth:100%;\n}\n.gmap_canvas {\r\noverflow:hidden;\r\nbackground:none!important;\r\nheight:100%;\r\nwidth:100%;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -650,10 +649,10 @@ exports.push([module.i, "\n.Kontakt{\n    background-color: #5D5C61; /* For WebK
 var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Nunito&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lora&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\n.font[data-v-15a10023] {\nfont-family: 'Lora', cursive;\n}\n.table-striped > tbody > tr:nth-child(2n+1) > td[data-v-15a10023], .table-striped > tbody > tr:nth-child(2n+1) > th[data-v-15a10023] {\n    background-color: #8fc1d3 ;\n    /*color: white;*/\n}\n.Gallerybutton[data-v-15a10023] {\n  color: white !important;\n  background-color: #31708e !important;\n  border-color: #31708e!important;\n  width: 100%;\n  height: 100%;\n}\n#main[data-v-15a10023]{\n        background: url(" + escape(__webpack_require__(/*! ../../img/pozadina.jpg */ "./resources/img/pozadina.jpg")) + ") center;\n}\nh1[data-v-15a10023]{\n    text-align: center;\n    color:#31708e;\n}\n.labels[data-v-15a10023]{\n     color: #31708e !important;\n    /*border-bottom: 1px solid #31708e;*/\n    border-top: 0;\n}\n.thread-color tr th[data-v-15a10023]{\n    color: #31708e !important;\n    border-bottom: 2px solid #31708e;\n    border-top: 0;\n}\n.tdColoration[data-v-15a10023]{\n    background-color: #31708e !important;\n    color: white\n}\n.footer[data-v-15a10023]{\n    width: 100%;\n    height: 2.5rem;\n    padding: 0 0 0 0 !important;\n}\n.borderbttm[data-v-15a10023]{\n    border-bottom: 1px solid #31708e;\n    color:#31708e;\n}\n.formBorder[data-v-15a10023]{\n    background-color: white;\n    border: 1px solid #31708e ;\n    border-radius: 7px;\n}\n.vc-border-gray-400[data-v-15a10023] {\n    border-color: #31708e;\n}\n.always[data-v-15a10023] {\n        box-sizing: border-box;\n    line-height: 1.42;\n    height: 100%;\n    outline: 0;\n    overflow-y: auto;\n    padding: 12px 15px;\n    -o-tab-size: 4;\n       tab-size: 4;\n    -moz-tab-size: 4;\n    text-align: left;\n    white-space: pre-wrap;\n    word-wrap: break-word;\n}\n", ""]);
+exports.push([module.i, "\n.font[data-v-15a10023] {\r\nfont-family: 'Lora';\n}\n.table-striped > tbody > tr:nth-child(2n+1) > td[data-v-15a10023], .table-striped > tbody > tr:nth-child(2n+1) > th[data-v-15a10023] {\r\n    background-color: #8fc1d3 ;\r\n    /*color: white;*/\n}\n.Gallerybutton[data-v-15a10023] {\r\n  color: white !important;\r\n  background-color: #31708e !important;\r\n  border-color: #31708e!important;\r\n  width: 100%;\r\n  height: 100%;\n}\n#main[data-v-15a10023]{\r\n        background: url(" + escape(__webpack_require__(/*! ../../img/pozadina.jpg */ "./resources/img/pozadina.jpg")) + ") center;\n}\nh1[data-v-15a10023]{\r\n    text-align: center;\r\n    color:#31708e;\n}\n.labels[data-v-15a10023]{\r\n     color: #31708e !important;\r\n    /*border-bottom: 1px solid #31708e;*/\r\n    border-top: 0;\n}\n.thread-color tr th[data-v-15a10023]{\r\n    color: #31708e !important;\r\n    border-bottom: 2px solid #31708e;\r\n    border-top: 0;\n}\n.tdColoration[data-v-15a10023]{\r\n    background-color: #31708e !important;\r\n    color: white\n}\n.footer[data-v-15a10023]{\r\n    width: 100%;\r\n    height: 2.5rem;\r\n    padding: 0 0 0 0 !important;\n}\n.borderbttm[data-v-15a10023]{\r\n    border-bottom: 1px solid #31708e;\r\n    color:#31708e;\n}\n.formBorder[data-v-15a10023]{\r\n    background-color: white;\r\n    border: 1px solid #31708e ;\r\n    border-radius: 7px;\n}\n.vc-border-gray-400[data-v-15a10023] {\r\n    border-color: #31708e;\n}\n.always[data-v-15a10023] {\r\n        box-sizing: border-box;\r\n    line-height: 1.42;\r\n    height: 100%;\r\n    outline: 0;\r\n    overflow-y: auto;\r\n    padding: 12px 15px;\r\n    -o-tab-size: 4;\r\n       tab-size: 4;\r\n    -moz-tab-size: 4;\r\n    text-align: left;\r\n    white-space: pre-wrap;\r\n    word-wrap: break-word;\n}\r\n", ""]);
 
 // exports
 
@@ -1102,8 +1101,18 @@ var render = function() {
                     attrs: { src: __webpack_require__(/*! ./../../img/ikone/telefon.png */ "./resources/img/ikone/telefon.png") }
                   }),
                   _vm._v(
-                    "\n                  " +
+                    "\n                    " +
                       _vm._s(_vm.$t("footerContactNumber"))
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.$t("footerContactNumber2"))
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.$t("footerContactNumber3"))
                   ),
                   _c("br"),
                   _vm._v(" "),
@@ -1175,505 +1184,523 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "mt-5" },
-    [
-      _c(
-        "b-container",
-        { attrs: { fluid: "", id: "main" } },
+  return _vm.apartment
+    ? _c(
+        "div",
+        { staticClass: "mt-5" },
         [
           _c(
             "b-container",
-            { staticClass: "mt-2 font" },
+            { attrs: { fluid: "", id: "main" } },
             [
               _c(
-                "b-row",
+                "b-container",
+                { staticClass: "mt-2 font" },
                 [
                   _c(
-                    "b-col",
+                    "b-row",
                     [
-                      _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
-                      _vm._v(" "),
                       _c(
-                        "b-card",
-                        {
-                          staticClass: "mb-2",
-                          staticStyle: { "max-width": "40rem" },
-                          attrs: {
-                            "img-src": _vm.images[0],
-                            "img-alt": "Image",
-                            "img-top": "",
-                            tag: "article"
-                          }
-                        },
+                        "b-col",
                         [
-                          _c("b-card-text", [
-                            _c(
-                              "div",
-                              {
-                                domProps: {
-                                  innerHTML: _vm._s(
-                                    _vm.apartment.translation.description
-                                  )
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.apartment))]
-                            )
-                          ]),
+                          _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
                           _vm._v(" "),
                           _c(
-                            "b-card-footer",
-                            { attrs: { "footer-class": "footer" } },
-                            [
-                              _c(
-                                "b-button",
-                                {
-                                  directives: [
-                                    {
-                                      name: "b-toggle",
-                                      rawName: "v-b-toggle.collapse-1",
-                                      modifiers: { "collapse-1": true }
-                                    }
-                                  ],
-                                  staticClass: "Gallerybutton",
-                                  attrs: {
-                                    block: "",
-                                    variant: "outline-dark",
-                                    "align-self": "center"
-                                  }
-                                },
-                                [_vm._v("Otvorite cijelu galeriju")]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        [
-                          _c(
-                            "b-collapse",
+                            "b-card",
                             {
-                              staticClass: "mt-2",
-                              attrs: { id: "collapse-1" }
+                              staticClass: "mb-2",
+                              staticStyle: { "max-width": "40rem" },
+                              attrs: {
+                                "img-src": _vm.images[0],
+                                "img-alt": "Image",
+                                "img-top": "",
+                                tag: "article"
+                              }
                             },
                             [
-                              _c(
-                                "b-card",
-                                [
-                                  _c("gallery", {
-                                    attrs: {
-                                      images: _vm.images,
-                                      index: _vm.index
-                                    },
-                                    on: {
-                                      close: function($event) {
-                                        _vm.index = null
-                                      }
+                              _c("b-card-text", [
+                                _c(
+                                  "div",
+                                  {
+                                    domProps: {
+                                      innerHTML: _vm._s(
+                                        _vm.apartment.translation.description
+                                      )
                                     }
-                                  }),
-                                  _vm._v(" "),
-                                  _vm._l(_vm.images, function(
-                                    image,
-                                    imageIndex
-                                  ) {
-                                    return _c("div", {
-                                      key: imageIndex,
-                                      staticClass: "image",
-                                      style: {
-                                        backgroundImage: "url(" + image + ")",
-                                        width: "10vh",
-                                        height: "10vh",
-                                        float: "left",
-                                        backgroundPosition: "center center",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundSize: "cover"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.index = imageIndex
+                                  },
+                                  [_vm._v(_vm._s(_vm.apartment))]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "b-card-footer",
+                                { attrs: { "footer-class": "footer" } },
+                                [
+                                  _c(
+                                    "b-button",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "b-toggle",
+                                          rawName: "v-b-toggle.collapse-1",
+                                          modifiers: { "collapse-1": true }
                                         }
+                                      ],
+                                      staticClass: "Gallerybutton",
+                                      attrs: {
+                                        block: "",
+                                        variant: "outline-dark",
+                                        "align-self": "center"
                                       }
-                                    })
-                                  })
+                                    },
+                                    [_vm._v(_vm._s(_vm.$t("galleryButton")))]
+                                  )
                                 ],
-                                2
+                                1
                               )
                             ],
                             1
-                          )
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            [
+                              _c(
+                                "b-collapse",
+                                {
+                                  staticClass: "mt-2",
+                                  attrs: { id: "collapse-1" }
+                                },
+                                [
+                                  _c(
+                                    "b-card",
+                                    [
+                                      _c("gallery", {
+                                        attrs: {
+                                          images: _vm.images,
+                                          index: _vm.index
+                                        },
+                                        on: {
+                                          close: function($event) {
+                                            _vm.index = null
+                                          }
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.images, function(
+                                        image,
+                                        imageIndex
+                                      ) {
+                                        return _c("div", {
+                                          key: imageIndex,
+                                          staticClass: "image",
+                                          style: {
+                                            backgroundImage:
+                                              "url(" + image + ")",
+                                            width: "10vh",
+                                            height: "10vh",
+                                            float: "left",
+                                            backgroundPosition: "center center",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundSize: "cover"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.index = imageIndex
+                                            }
+                                          }
+                                        })
+                                      })
+                                    ],
+                                    2
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("h5", { staticClass: "labels pb-2" }, [
+                              _vm._v(_vm._s(_vm.$t("apartmentDetails")))
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "always" }, [
+                              _c("div", {
+                                domProps: {
+                                  innerHTML: _vm._s(
+                                    _vm.apartment.translation.details
+                                  )
+                                }
+                              })
+                            ])
+                          ])
                         ],
                         1
                       ),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("h5", { staticClass: "labels pb-2" }, [
-                          _vm._v("Detalji:")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "always" }, [
-                          _c("div", {
-                            domProps: {
-                              innerHTML: _vm._s(
-                                _vm.apartment.translation.details
-                              )
-                            }
-                          })
+                      _c("b-col", { staticClass: "mt-md-5" }, [
+                        _c("div", { staticClass: "mt-md-5" }, [
+                          _c("table", { staticClass: "table table-striped" }, [
+                            _c("thead", { staticClass: "thread-color" }, [
+                              _c("tr", [
+                                _c("th", { attrs: { scope: "col" } }, [
+                                  _c("h3", [
+                                    _vm._v(_vm._s(_vm.$t("apartmentPrices")))
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { attrs: { scope: "col" } }),
+                                _vm._v(" "),
+                                _c("th")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "tbody",
+                              _vm._l(_vm.orderedApartmentPrices, function(
+                                item
+                              ) {
+                                return _c("tr", { key: item.date_start }, [
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm._f("moment")(
+                                          item.date_start,
+                                          "DD.MM.YYYY."
+                                        )
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm._f("moment")(
+                                          item.date_end,
+                                          "DD.MM.YYYY."
+                                        )
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [_vm._v(_vm._s(item.price))])
+                                ])
+                              }),
+                              0
+                            )
+                          ])
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-container",
+                { staticClass: "mt-3 pb-4" },
+                [
+                  _c(
+                    "b-row",
+                    { staticClass: "pt-3 pb-4" },
+                    [
+                      _c("b-col", [
+                        _c("h4", { staticClass: "borderbttm pb-2 pl-lg-4" }, [
+                          _vm._v(_vm._s(_vm.$t("apartmentReservation")))
                         ])
                       ])
                     ],
                     1
                   ),
                   _vm._v(" "),
-                  _c("b-col", { staticClass: "mt-md-5" }, [
-                    _c("div", { staticClass: "mt-md-5" }, [
-                      _c("table", { staticClass: "table table-striped" }, [
-                        _c("thead", { staticClass: "thread-color" }, [
-                          _c("tr", [
-                            _c("th", { attrs: { scope: "col" } }, [
-                              _c("h3", [_vm._v("Cijene")])
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { attrs: { scope: "col" } }),
-                            _vm._v(" "),
-                            _c("th")
-                          ]),
-                          _vm._v(" "),
-                          _c("tr", [
-                            _c("td"),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "tdColoration" }, [
-                              _c("h5", [_vm._v("SEZONA:")])
-                            ]),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "tdColoration" }, [
-                              _c("h5", [
-                                _vm._v(_vm._s(new Date().getFullYear()))
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "tbody",
-                          _vm._l(_vm.orderedApartmentPrices, function(item) {
-                            return _c("tr", { key: item.date_start }, [
-                              _c("td", [
-                                _vm._v(
-                                  _vm._s(
-                                    _vm._f("moment")(
-                                      item.date_start,
-                                      "DD.MM.YYYY."
-                                    )
-                                  )
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _vm._v(
-                                  _vm._s(
-                                    _vm._f("moment")(
-                                      item.date_end,
-                                      "DD.MM.YYYY."
-                                    )
-                                  )
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(item.price))])
-                            ])
-                          }),
-                          0
-                        )
-                      ])
-                    ])
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "b-container",
-            { staticClass: "mt-3 pb-4" },
-            [
-              _c(
-                "b-row",
-                { staticClass: "pt-3 pb-4" },
-                [
-                  _c("b-col", [
-                    _c("h4", { staticClass: "borderbttm pb-2 pl-lg-4" }, [
-                      _vm._v("REZERVIRAJTE:")
-                    ])
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-row",
-                [
                   _c(
-                    "b-col",
-                    { attrs: { sm: "" } },
+                    "b-row",
                     [
-                      _c("v-calendar", {
-                        attrs: {
-                          "is-expanded": "",
-                          attributes: _vm.attrs,
-                          columns: _vm.$screens({ default: 1, lg: 2 }),
-                          rows: _vm.$screens({ default: 1, lg: 2 })
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("b-col", [
-                    _c(
-                      "div",
-                      { staticClass: "formBorder p-2 pb-4" },
-                      [
-                        _c("h5", { staticClass: "pb-3 pt-1" }, [
-                          _vm._v("Odaberite željene datume za vaš upit:")
-                        ]),
-                        _vm._v(" "),
-                        _c("v-date-picker", {
-                          attrs: {
-                            mode: "range",
-                            "input-props": {
-                              placeholder: "Odaberite datume rezervacije",
-                              readonly: true
-                            }
-                          },
-                          model: {
-                            value: _vm.range,
-                            callback: function($$v) {
-                              _vm.range = $$v
-                            },
-                            expression: "range"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "formBorder p-2 mt-3" }, [
                       _c(
-                        "div",
+                        "b-col",
+                        { attrs: { sm: "" } },
                         [
-                          _c("b-spinner", {
+                          _c("v-calendar", {
                             attrs: {
-                              type: "grow",
-                              small: "",
-                              variant: "danger",
-                              label: "rezervirano"
+                              "is-expanded": "",
+                              attributes: _vm.attrs,
+                              locale: _vm.$i18n.locale,
+                              columns: _vm.$screens({ default: 1, lg: 2 }),
+                              rows: _vm.$screens({ default: 1, lg: 2 })
                             }
-                          }),
-                          _vm._v(
-                            "\n                                            Rezervirano - Apartman nije slobodan za odabrane datume\n                                            "
-                          )
+                          })
                         ],
                         1
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "b-col",
-                    [
-                      _c(
-                        "b-form",
-                        {
-                          on: {
-                            submit: function($event) {
-                              $event.preventDefault()
-                              return _vm.sendForm($event)
-                            }
-                          }
-                        },
-                        [
+                      ),
+                      _vm._v(" "),
+                      _c("b-col", [
+                        _c(
+                          "div",
+                          { staticClass: "formBorder p-2 pb-4" },
+                          [
+                            _c("h5", { staticClass: "pb-3 pt-1" }, [
+                              _vm._v(_vm._s(_vm.$t("apartmentDatesInput")))
+                            ]),
+                            _vm._v(" "),
+                            _c("v-date-picker", {
+                              attrs: {
+                                mode: "range",
+                                locale: _vm.$i18n.locale,
+                                "input-props": {
+                                  placeholder: _vm.$t(
+                                    "apartmentDatesInputField"
+                                  ),
+                                  readonly: true
+                                }
+                              },
+                              model: {
+                                value: _vm.range,
+                                callback: function($$v) {
+                                  _vm.range = $$v
+                                },
+                                expression: "range"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "formBorder p-2 mt-3" }, [
                           _c(
                             "div",
-                            { staticClass: "formBorder p-2" },
                             [
-                              _c("h5", { staticClass: "pb-3 pt-1" }, [
-                                _vm._v("Pošaljite upit o rezervaciji:")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "b-form-group",
-                                {
-                                  staticClass: "text-start mb-1",
-                                  attrs: {
-                                    id: "input-group-1",
-                                    label: "Ime:",
-                                    "label-for": "input-1"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: {
-                                      id: "input-1",
-                                      type: "text",
-                                      required: "",
-                                      placeholder: "Unesite ime"
-                                    },
-                                    model: {
-                                      value: _vm.form.name,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "name", $$v)
-                                      },
-                                      expression: "form.name"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-form-group",
-                                {
-                                  staticClass: "text-start mb-1",
-                                  attrs: {
-                                    id: "input-group-2",
-                                    label: "Prezime:",
-                                    "label-for": "input-2"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: {
-                                      id: "input-2",
-                                      type: "text",
-                                      required: "",
-                                      placeholder: "Unesite prezime"
-                                    },
-                                    model: {
-                                      value: _vm.form.surname,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "surname", $$v)
-                                      },
-                                      expression: "form.surname"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-form-group",
-                                {
-                                  staticClass: "text-start mb-1",
-                                  attrs: {
-                                    id: "input-group-3",
-                                    label: "Email:",
-                                    "label-for": "input-3"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: {
-                                      id: "input-3",
-                                      type: "email",
-                                      required: "",
-                                      placeholder: "Unesite email"
-                                    },
-                                    model: {
-                                      value: _vm.form.email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "email", $$v)
-                                      },
-                                      expression: "form.email"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-form-group",
-                                {
-                                  staticClass: "text-start mb-1",
-                                  attrs: {
-                                    id: "text-aria-group-4",
-                                    label: "Poruka:",
-                                    "label-for": "text-aria-1"
-                                  }
-                                },
-                                [
-                                  _c("b-form-textarea", {
-                                    attrs: {
-                                      id: "text-aria-1",
-                                      placeholder: "Upišite poruku...",
-                                      rows: "3",
-                                      "max-rows": "6"
-                                    },
-                                    model: {
-                                      value: _vm.form.message,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "message", $$v)
-                                      },
-                                      expression: "form.message"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-btn",
-                                {
-                                  staticClass: "mt-1 align-self-center w-50",
-                                  staticStyle: {
-                                    "background-color": "#31708e"
-                                  },
-                                  attrs: {
-                                    type: "submit",
-                                    color: "#31708e",
-                                    disabled: this.hidden
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                    Pošaljite upit\n                                                "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-alert",
-                                {
-                                  staticClass: "mt-2",
-                                  attrs: {
-                                    variant: "success",
-                                    show: _vm.succesAlert
-                                  }
-                                },
-                                [_vm._v("Mail uspješno poslan")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-alert",
-                                {
-                                  staticClass: "mt-2",
-                                  attrs: {
-                                    variant: "danger",
-                                    show: _vm.errorAlert
-                                  }
-                                },
-                                [_vm._v("Mail nije poslan!")]
+                              _c("b-spinner", {
+                                attrs: {
+                                  type: "grow",
+                                  small: "",
+                                  variant: "danger",
+                                  label: "rezervirano"
+                                }
+                              }),
+                              _vm._v(
+                                "\r\n                                           " +
+                                  _vm._s(_vm.$t("apartmentSpinner")) +
+                                  "\r\n                                            "
                               )
                             ],
                             1
                           )
-                        ]
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "b-col",
+                        [
+                          _c(
+                            "b-form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.sendForm($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "formBorder p-2" },
+                                [
+                                  _c("h5", { staticClass: "pb-3 pt-1" }, [
+                                    _vm._v(_vm._s(_vm.$t("apartmentFormLabel")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-form-group",
+                                    {
+                                      staticClass: "text-start mb-1",
+                                      attrs: {
+                                        id: "input-group-1",
+                                        label: _vm.$t("apartmentFormLabelName"),
+                                        "label-for": "input-1"
+                                      }
+                                    },
+                                    [
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          id: "input-1",
+                                          type: "text",
+                                          required: "",
+                                          placeholder: _vm.$t(
+                                            "apartmentFormPlName"
+                                          )
+                                        },
+                                        model: {
+                                          value: _vm.form.name,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.form, "name", $$v)
+                                          },
+                                          expression: "form.name"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-form-group",
+                                    {
+                                      staticClass: "text-start mb-1",
+                                      attrs: {
+                                        id: "input-group-2",
+                                        label: _vm.$t(
+                                          "apartmentFormLabelSurname"
+                                        ),
+                                        "label-for": "input-2"
+                                      }
+                                    },
+                                    [
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          id: "input-2",
+                                          type: "text",
+                                          required: "",
+                                          placeholder: _vm.$t(
+                                            "apartmentFormPlSurname"
+                                          )
+                                        },
+                                        model: {
+                                          value: _vm.form.surname,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.form, "surname", $$v)
+                                          },
+                                          expression: "form.surname"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-form-group",
+                                    {
+                                      staticClass: "text-start mb-1",
+                                      attrs: {
+                                        id: "input-group-3",
+                                        label: _vm.$t(
+                                          "apartmentFormLabelEmail"
+                                        ),
+                                        "label-for": "input-3"
+                                      }
+                                    },
+                                    [
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          id: "input-3",
+                                          type: "email",
+                                          required: "",
+                                          placeholder: _vm.$t(
+                                            "apartmentFormPlEmail"
+                                          )
+                                        },
+                                        model: {
+                                          value: _vm.form.email,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.form, "email", $$v)
+                                          },
+                                          expression: "form.email"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-form-group",
+                                    {
+                                      staticClass: "text-start mb-1",
+                                      attrs: {
+                                        id: "text-aria-group-4",
+                                        label: _vm.$t(
+                                          "apartmentFormLabelMessage"
+                                        ),
+                                        "label-for": "text-aria-1"
+                                      }
+                                    },
+                                    [
+                                      _c("b-form-textarea", {
+                                        attrs: {
+                                          id: "text-aria-1",
+                                          placeholder: _vm.$t(
+                                            "apartmentFormPlMessage"
+                                          ),
+                                          rows: "3",
+                                          "max-rows": "6"
+                                        },
+                                        model: {
+                                          value: _vm.form.message,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.form, "message", $$v)
+                                          },
+                                          expression: "form.message"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass:
+                                        "mt-1 align-self-center w-50",
+                                      staticStyle: {
+                                        "background-color": "#31708e"
+                                      },
+                                      attrs: {
+                                        type: "submit",
+                                        color: "#31708e",
+                                        disabled: this.hidden
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\r\n                                                    " +
+                                          _vm._s(_vm.$t("formButton")) +
+                                          "\r\n                                                "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-alert",
+                                    {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        variant: "success",
+                                        show: _vm.succesAlert
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.$t("succesAlert")))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-alert",
+                                    {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        variant: "danger",
+                                        show: _vm.errorAlert
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.$t("errorAlert")))]
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
@@ -1683,15 +1710,13 @@ var render = function() {
               )
             ],
             1
-          )
+          ),
+          _vm._v(" "),
+          _c("footers")
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("footers")
-    ],
-    1
-  )
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1748,7 +1773,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
-        { attrs: { id: "promajna" } },
+        { staticClass: "pt-3", attrs: { id: "promajna" } },
         [
           _c(
             "b-row",
@@ -1799,7 +1824,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
-        { staticClass: "pt-4", attrs: { id: "promajna" } },
+        { staticClass: "pt-3", attrs: { id: "promajna" } },
         [
           _c(
             "b-row",
@@ -1824,27 +1849,12 @@ var render = function() {
                           "img-height": "480"
                         }
                       },
-                      [
-                        _c("b-carousel-slide", {
-                          attrs: {
-                            "img-src": __webpack_require__(/*! ./../../img/pocetne/1.jpg */ "./resources/img/pocetne/1.jpg")
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("b-carousel-slide", {
-                          attrs: {
-                            "img-src":
-                              "https://picsum.photos/1024/480/?image=12"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("b-carousel-slide", {
-                          attrs: {
-                            "img-src":
-                              "https://picsum.photos/1024/480/?image=22"
-                          }
+                      _vm._l(_vm.images, function(image) {
+                        return _c("b-carousel-slide", {
+                          key: image,
+                          attrs: { "img-src": image }
                         })
-                      ],
+                      }),
                       1
                     )
                   ],
@@ -1927,15 +1937,18 @@ var render = function() {
                     _c("h2", [_vm._v("VILLA PROMAJNA")]),
                     _vm._v(" "),
                     _c("footer", { staticClass: "blockquote-footer" }, [
-                      _vm._v("Savršeno mjesto za mirn obiteljski odmor")
+                      _vm._v(_vm._s(_vm.$t("blackqouteFooter2")))
                     ])
                   ]),
                   _vm._v(
-                    "\n                        Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne.\n                        Od centra Promajne udaljena je samo 100 m, a od plaže 40 m.\n                        Svi apartmani su veličine 40 m2 i svaki ima svoj balkon ili terasu,\n                        a većina apartmana ima i pogled na more."
+                    "\n                        " +
+                      _vm._s(_vm.$t("textVillaPromajna"))
                   ),
                   _c("br"),
                   _vm._v(
-                    " Apartmani su luksuzno i funkcionalno opremljeni\n                        i gostima nude sve što je potrebno za ugodan i dobar godišnji odmor.\n\n                    "
+                    "\n                        " +
+                      _vm._s(_vm.$t("textVillaPromajna2")) +
+                      "\n\n                    "
                   )
                 ])
               ])
@@ -2110,17 +2123,6 @@ module.exports = "/images/contact.png?03cbb54b25a911e2172bb1a412f0c54e";
 /***/ (function(module, exports) {
 
 module.exports = "/images/telefon.png?b2a358ed46b9bf5271a4b28d4b792491";
-
-/***/ }),
-
-/***/ "./resources/img/pocetne/1.jpg":
-/*!*************************************!*\
-  !*** ./resources/img/pocetne/1.jpg ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/1.jpg?f1a4ca4472b91896642a18427ccefadc";
 
 /***/ }),
 
