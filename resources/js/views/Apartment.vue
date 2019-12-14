@@ -71,11 +71,7 @@
                                     <th scope="col"></th>
                                     <th></th>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="tdColoration"><h5>{{$t('apartmentSeason')}}</h5></td>
-                                    <td class="tdColoration"><h5>{{ new Date().getFullYear() }}</h5></td>
-                                </tr>
+
                             </thead>
                             <tbody>
                                 <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start">

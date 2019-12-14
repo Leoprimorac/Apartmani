@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}" >
-        <title>Laravel</title>
+        <title>Villa Promajna</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <?php header('Access-Control-Allow-Origin: *'); ?>
         <base href="/" />
