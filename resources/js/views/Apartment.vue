@@ -315,7 +315,7 @@ export default {
 
 
 .font {
-font-family: 'Lora', cursive;
+font-family: 'Lora';
 
 }
 

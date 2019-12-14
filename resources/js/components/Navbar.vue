@@ -147,7 +147,7 @@ import croIcon from './../../img/ikone/cro.png'
     .country-icon.as-toggle {
         margin-top: 5px;
         }
-    a {
+    a{
 	text-decoration: none;
     color: black !important;
 }
