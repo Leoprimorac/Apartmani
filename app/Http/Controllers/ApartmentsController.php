@@ -24,18 +24,23 @@ class ApartmentsController extends Controller
 
         $apartment= Apartments::create([
             'name' => $request['name'],
-        ]);
+            ]);
 
         if ($request->hasfile('images')) {
             $images = $request->file('images');
+            $path = base_path().'./public/uploads/';
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
                 Image::create([
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
+<<<<<<< HEAD
 		 $path = base_path().'./public/uploads/';
                 $image->move($path  . $apartment->id, $imagename);
+=======
+                $image->move($path . $apartment->id, $imagename);
+>>>>>>> 61155ac65b791bfd38a092cf4cb08b3a87f5de8e
             }
         }
         Translation::create([

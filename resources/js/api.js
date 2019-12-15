@@ -1,5 +1,6 @@
 // Domain url
-export const apiDomain = 'https://villapromajna.com/api/';
+export const apiDomain = 'http://3.125.152.150/api/';
+//export const apiDomain = 'http://127.0.0.1:8000/api/';
 
 // Auth
 export const login = 'login';

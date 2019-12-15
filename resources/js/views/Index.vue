@@ -257,8 +257,8 @@ methods: {
     .resize-center{
         padding: 5% 0% 5% 0;
     }
-    .offset-sm-1 {
-    margin-left: 3.333333% !important;
+    //.offset-sm-1 {
+   // margin-left: 3.333333% !important;
     .card-columns{
         height: 100vh;
         width: auto;
@@ -266,7 +266,7 @@ methods: {
     .title{
         background-color: gray;
     }
-    }
+
     .promajna-button{
     color: white !important;
     background-color: #31708e !important;
