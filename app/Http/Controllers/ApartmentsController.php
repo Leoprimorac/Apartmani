@@ -1,7 +1,7 @@
-
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Apartments;
 use App\Models\Image;
 use App\Models\Translation;
@@ -35,12 +35,7 @@ class ApartmentsController extends Controller
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
-<<<<<<< HEAD
-		 $path = base_path().'./public/uploads/';
-                $image->move($path  . $apartment->id, $imagename);
-=======
                 $image->move($path . $apartment->id, $imagename);
->>>>>>> 61155ac65b791bfd38a092cf4cb08b3a87f5de8e
             }
         }
         Translation::create([
