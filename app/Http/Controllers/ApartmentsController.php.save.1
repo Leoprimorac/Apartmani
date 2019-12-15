@@ -34,8 +34,7 @@ class ApartmentsController extends Controller
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
-		 $path = base_path().'./public/uploads/';
-                $image->move($path  . $apartment->id, $imagename);
+//                $image->move( . $apartment->id, $imagename);
             }
         }
         Translation::create([
