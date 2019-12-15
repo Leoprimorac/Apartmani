@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <meta name="google-site-verification" content="M8VLj3iFlTx9HSgce_blhOuvX6tNbNQgML9RzxiIeaA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}" >
         <title>Villa Promajna</title>
