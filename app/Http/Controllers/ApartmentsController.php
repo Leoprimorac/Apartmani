@@ -79,7 +79,7 @@ class ApartmentsController extends Controller
                     'apartments_id' => $request->id,
                     'path' => $imagename,
                 ]);
-                $image->move('uploads/' . $apartment->id, $imagename);
+                $image->move(base_path().'/public/uploads/' . $apartment->id, $imagename);
             }
         }
 
