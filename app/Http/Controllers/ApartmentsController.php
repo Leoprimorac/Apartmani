@@ -29,29 +29,30 @@ class ApartmentsController extends Controller
             'name' => $request['name'],
             ]);
 
+            Translation::create([
+                'description' => $request['description'],
+                'details' => $request['details'],
+                'language' => 'cro',
+                'apartments_id'=>$apartment->id,
+
+            ]);
+
+            Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'en', 'apartments_id'=>$apartment->id]);
+            Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'de', 'apartments_id'=>$apartment->id]);
+
         if ($request->hasfile('images')) {
             $images = $request->file('images');
             File::makeDirectory(base_path().'/public/uploads/' .$apartment->id, $mode = 0777, true, true);
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
-                $path = base_path().'/public/uploads/';
                 Image::create([
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
-                $image->move($path .$apartment->id , $imagename);
+                $image->move(base_path().'/public/uploads/' .$apartment->id , $imagename);
             }
         }
-        Translation::create([
-            'description' => $request['description'],
-            'details' => $request['details'],
-            'language' => 'cro',
-            'apartments_id'=>$apartment->id,
 
-        ]);
-
-        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'en', 'apartments_id'=>$apartment->id]);
-        Translation::create(['description' => 'Unesite podatke', 'details' => 'Unesite podatke', 'language' => 'de', 'apartments_id'=>$apartment->id]);
         $apartment->images;
 
         return $apartment;
