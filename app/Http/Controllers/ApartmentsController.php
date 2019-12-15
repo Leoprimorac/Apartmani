@@ -28,7 +28,7 @@ class ApartmentsController extends Controller
 
         if ($request->hasfile('images')) {
             $images = $request->file('images');
-            $path = base_path().'./public/uploads/';
+            $path = public_path().'/uploads/';
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
                 Image::create([
