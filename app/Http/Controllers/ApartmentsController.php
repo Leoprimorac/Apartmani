@@ -31,10 +31,10 @@ class ApartmentsController extends Controller
 
         if ($request->hasfile('images')) {
             $images = $request->file('images');
-            File::makeDirectory(public_path().'/uploads/' .$apartment->id);
+            File::makeDirectory(base_path().'/public/uploads/' .$apartment->id, $mode = 0777, true, true);
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
-                $path = public_path().'/uploads/';
+                $path = base_path().'/public/uploads/';
                 Image::create([
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
