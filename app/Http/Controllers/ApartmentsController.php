@@ -7,6 +7,9 @@ use App\Models\Image;
 use App\Models\Translation;
 use Illuminate\Http\Request;
 
+
+use Illuminate\Support\Facades\File;
+
 //For Mail
 use App\Mail\ApartmentEmail;
 use Illuminate\Http\Response;
@@ -28,14 +31,15 @@ class ApartmentsController extends Controller
 
         if ($request->hasfile('images')) {
             $images = $request->file('images');
-            $path = public_path().'/uploads/';
+            File::makeDirectory(public_path().'/uploads/' .$apartment->id);
             foreach ($images as $image) {
                 $imagename = now()->timestamp . "_" . $image->getClientOriginalName();
+                $path = public_path().'/uploads/';
                 Image::create([
                     'apartments_id' => $apartment->id,
                     'path' => $imagename,
                 ]);
-                $image->move($path . $apartment->id, $imagename);
+                $image->move($path .$apartment->id , $imagename);
             }
         }
         Translation::create([
