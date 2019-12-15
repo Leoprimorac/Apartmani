@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}" >
         <title>Villa Promajna</title>
+        <meta name ="Villa Promajna" content ="Villa Promajna, kuća je sa 8 apartmana, smještena u starom dijelu Promajne." / >
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <?php header('Access-Control-Allow-Origin: *'); ?>
         <base href="/" />
