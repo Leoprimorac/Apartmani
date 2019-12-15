@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-container fluid id="main">
-            <b-container id="pocetna">
+            <b-container id="pocetna" title="Promajna zalazak sunca">
                 <b-row>
                     <b-col cols="12">
                         <div class="viewpoint">
@@ -56,7 +56,7 @@
                         img-width="1024"
                         img-height="480"
                     >
-                        <b-carousel-slide v-for="image in images" v-bind:key="image" :img-src="image"></b-carousel-slide>
+                        <b-carousel-slide v-for="image in images" v-bind:key="image" :img-src="image" tag="Apartmani Villa Promajna"></b-carousel-slide>
 
 
 
@@ -78,7 +78,8 @@
                                         float:'left',
                                         backgroundPosition: 'center center',
                                         backgroundRepeat:'no-repeat',
-                                        backgroundSize:'cover'}">
+                                        backgroundSize:'cover'}"
+                                        title="Villa Promajna">
                                         </div>
 
                                 </b-card>

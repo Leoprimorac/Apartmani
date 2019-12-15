@@ -14,6 +14,7 @@
                             tag="article"
                             style="max-width: 40rem;"
                             class="mb-2"
+                            :title="'Villa Promajna apartman' + apartment.name"
                             >
                             <b-card-text>
 
@@ -45,7 +46,8 @@
                                                                 backgroundPosition: 'center center',
                                                                 backgroundRepeat:'no-repeat',
                                                                 backgroundSize:'cover'
-                                                                }">
+                                                                }"
+                                                                title="Apartman Villa Promajna">
                                                         </div>
 
                                                 </b-card>
