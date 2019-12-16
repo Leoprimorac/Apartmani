@@ -19,25 +19,7 @@
                 <b-dropdown-item href="https://dalmacija-live.com/Promajna/promajna-1">{{ $t('camera2') }}</b-dropdown-item>
             </b-nav-item-dropdown>
       </b-navbar-nav>
-    </b-collapse>
-
-       <b-navbar-nav class="ml-auto">
-
-            <b-nav-item-dropdown right>
-                <template slot="button-content"> <img
-                :src="icons[currentLanguage]"
-                class="country-icon as-toggle"
-            /></template>
-                <b-dropdown-item v-for="lang in supportedLanguages"
-                                :key="lang"
-                                :selected="isCurrentLanguage(lang)"
-                                :class="{ 'is-selected': isCurrentLanguage(lang) }"
-                                :value="lang"
-                                 @click="changeLanguage(lang)"
-                                :img-src="icons[lang]"><img :src="icons[lang]" class="country-icon" /></b-dropdown-item>
-        </b-nav-item-dropdown>
-        <b-collapse is-nav id="nav_collapse">
-                <b-navbar-nav class="ml-auto text-center text-uppercase">
+      <b-navbar-nav class="ml-auto text-uppercase">
                     <template v-if="$parent.isGuest">
                         <li class="nav-item">
                             <router-link to="/auth/login" class="nav-link">Prijava</router-link>
@@ -55,7 +37,28 @@
                         </b-nav-item>
                     </template>
                 </b-navbar-nav>
-            </b-collapse>
+    </b-collapse>
+
+       <b-navbar-nav class="ml-auto pokusaj">
+
+            <b-nav-item-dropdown  right>
+                <template slot="button-content"> <img
+                :src="icons[currentLanguage]"
+                class="country-icon as-toggle"
+            /></template>
+                <b-dropdown-item >
+                    <td v-for="lang in supportedLanguages"
+                                :key="lang"
+                                :selected="isCurrentLanguage(lang)"
+                                :class="{ 'is-selected': isCurrentLanguage(lang) }"
+                                :value="lang"
+                                style=" paddingLeft: 5px;
+                                        height: auto;"
+                                 @click="changeLanguage(lang)"
+                                :img-src="icons[lang]"><img :src="icons[lang]" class="country-icon" /></td>
+                </b-dropdown-item>
+        </b-nav-item-dropdown>
+
     </b-navbar-nav>
 
   </b-navbar>
@@ -150,6 +153,11 @@ import croIcon from './../../img/ikone/cro.png'
     a{
 	text-decoration: none;
     color: black !important;
+    }
+    .pokusaj .dropdown-menu{
+    position: absolute !important;
+    float: none;
+    min-width: 5rem !important;
 }
 
     </style>

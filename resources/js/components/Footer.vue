@@ -3,25 +3,27 @@
         <b-container>
             <b-row sm align-h="center">
                 <b-col>
-                    <div class="tekst">
+                    <div>
                         <h3 class="text-center"> Villa Promajna</h3>
                     </div>
-                        <div class="tekst text-justify">
+                        <div class="text-justify">
                         {{ $t('textFooterPromajna') }}
                         </div>
                 </b-col>
                 <b-col class="text-center">
-                <div class="tekst">
+                <div >
                     <h3> {{ $t('navContact') }}</h3>
                 </div>
 
-                <div class="tekst text">
+                <div class="text-justify">
 
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         {{ $t('footerContactOwner') }}<br>
                     <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
                         {{ $t('footerContactNumber') }}<br>
-                        {{ $t('footerContactNumber2') }}<br>
+                        <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
+                        {{ $t('footerContactNumber') }}<br>
+                        <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
                         {{ $t('footerContactNumber3') }}<br>
                     <img src="./../../img/ikone/at.png" style="width:15px; height:15px;">
                         Email: mladen1101@gmail.com<br>

@@ -41,8 +41,8 @@
                 </b-col>
             </b-row>
         </b-container>
-<b-container id="promajna" class="pt-3">
-            <b-row id="AboutUs">
+        <b-container id="promajna" class="pt-3 pb-5">
+            <b-row >
 
                 <b-col sm>
                     <div class="sort resize-center" >
@@ -278,7 +278,7 @@ methods: {
     }
     #AboutUs{
         min-height:50vh;
-        padding: 30px;
+       // padding: 30px;
         width:auto;
     }
     .Apartments{
@@ -302,7 +302,6 @@ methods: {
     height: 100%;
     font-family: 'Lora', cursive;
     font-size: 20px;
-    align: center;
 
 
     }

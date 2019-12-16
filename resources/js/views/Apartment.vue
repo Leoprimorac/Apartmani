@@ -6,7 +6,7 @@
         <b-container class="mt-2 font">
             <b-row>
                 <b-col>
-                    <h1>{{apartment.name}}</h1>
+                    <h1 class="pt-3 pb-2">{{apartment.name}}</h1>
                         <b-card
                             :img-src="images[0]"
                             img-alt="Image"
@@ -14,7 +14,6 @@
                             tag="article"
                             style="max-width: 40rem;"
                             class="mb-2"
-                            :title="'Villa Promajna apartman' + apartment.name"
                             >
                             <b-card-text>
 
@@ -98,7 +97,7 @@
                                 </b-row>
                                 <b-row>
 
-                                    <b-col  sm>
+                                    <b-col  sm class="mb-3">
                                         <v-calendar is-expanded
                                                     :attributes="attrs"
                                                     :locale="$i18n.locale"
@@ -110,7 +109,7 @@
 
                                     </b-col>
 
-                                    <b-col>
+                                    <b-col sm>
                                         <div class="formBorder p-2 pb-4">
                                             <h5 class="pb-3 pt-1">{{$t('apartmentDatesInput')}}</h5>
                                             <v-date-picker
@@ -125,7 +124,7 @@
 
                                         </div>
 
-                                        <div class="formBorder p-2 mt-3">
+                                        <div class="formBorder p-2 mt-3 mb-3">
                                             <div>
                                             <b-spinner type="grow" small variant="danger" label="rezervirano"></b-spinner>
                                            {{$t('apartmentSpinner')}}
@@ -134,7 +133,7 @@
                                         </div>
                                     </b-col>
 
-                                    <b-col>
+                                    <b-col sm>
                                         <b-form @submit.prevent="sendForm">
                                             <div class="formBorder p-2">
                                                 <h5 class="pb-3 pt-1">{{$t('apartmentFormLabel')}}</h5>
@@ -161,7 +160,7 @@
                                                     ></b-form-textarea>
                                                 </b-form-group>
 
-                                                <b-btn type="submit" color="#31708e" class="mt-1 align-self-center w-50" style="background-color: #31708e;" :disabled="this.hidden">
+                                                <b-btn type="submit" color="#31708e" class="mt-1 content-justify" style="background-color: #31708e;" :disabled="this.hidden">
                                                     {{$t('formButton')}}
                                                 </b-btn>
 
@@ -332,7 +331,7 @@ font-family: 'Lora';
   background-color: #31708e !important;
   border-color: #31708e!important;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 #main{
         background: url(../../img/pozadina.jpg) center;
@@ -341,6 +340,7 @@ font-family: 'Lora';
 h1{
     text-align: center;
     color:#31708e;
+    font-size: 2.5rem !important;
 
 
 
@@ -393,4 +393,5 @@ h1{
     word-wrap: break-word;
 
 }
+
 </style>
