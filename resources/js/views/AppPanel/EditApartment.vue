@@ -78,8 +78,8 @@
                                         <table class="table table-light">
                                             <tbody>
                                                 <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start" >
-                                                    <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
-                                                    <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
+                                                    <td>{{ item.date_start | moment("DD.MM.")}}</td>
+                                                    <td>{{ item.date_end | moment("DD.MM.")}}</td>
                                                     <td>{{ item.price}}</td>
                                                     <td><b-btn v-if="!isHidden" @click="deletePrice(item.id)" >Obriši</b-btn></td>
                                                 </tr>

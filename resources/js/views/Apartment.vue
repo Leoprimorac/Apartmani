@@ -68,7 +68,7 @@
                         <table class="table table-striped">
                             <thead class="thread-color" >
                                 <tr>
-                                    <th scope="col"><h3>{{$t('apartmentPrices')}}</h3></th>
+                                    <th scope="col"><h3>{{$t('apartmentPrices')}} {{ new Date().getFullYear() }}</h3></th>
                                     <th scope="col"></th>
                                     <th></th>
                                 </tr>
@@ -76,8 +76,8 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in orderedApartmentPrices" v-bind:key="item.date_start">
-                                    <td>{{ item.date_start | moment("DD.MM.YYYY.")}}</td>
-                                    <td>{{ item.date_end | moment("DD.MM.YYYY.")}}</td>
+                                    <td>{{ item.date_start | moment("DD.MM.")}}</td>
+                                    <td>{{ item.date_end | moment("DD.MM.")}}</td>
                                     <td>{{ item.price}}</td>
                                 </tr>
                             </tbody>

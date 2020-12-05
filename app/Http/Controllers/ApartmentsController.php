@@ -113,7 +113,7 @@ class ApartmentsController extends Controller
             'end' => 'required',
         ]);
 
-        Mail::to('mladen1101@gmail.com', 'Villa Promajna')->send( new ApartmentEmail($data));
+        Mail::to('leoprimorac96@gmail.com'/*'mladen1101@gmail.com'*/, 'Villa Promajna')->send( new ApartmentEmail($data));
         return response('Success', 200);
 
     }
