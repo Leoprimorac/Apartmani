@@ -283,8 +283,8 @@ components: {
         index: null,
         priceses: null,
         range:{
-            start: null,
-            end: null,
+            start: new Date(),
+            end: new Date,
         },
         selectedDay: null,
         lang: 'cro',
