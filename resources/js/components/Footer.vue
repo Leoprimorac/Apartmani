@@ -15,7 +15,7 @@
                     <h3> {{ $t('navContact') }}</h3>
                 </div>
 
-                <div class="text-justify">
+                <div class="text-justify centrirano">
 
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         {{ $t('footerContactOwner') }}<br>
@@ -31,7 +31,7 @@
                 </b-col>
                 <b-col>
                     <div class="tekst">
-                        <h3 class="text-center">{{ $t('navLocation') }}</h3>
+                        <h3 class="text-center ">{{ $t('navLocation') }}</h3>
                         <div class="mapouter">
                             <div class="gmap_canvas">
 
@@ -70,6 +70,11 @@ export default {
 
 }
 
+.centrirano{
+    margin: 0 auto;
+    width: 80%;
+}
+
 .mapouter{
 position:relative;
 text-align:right;
@@ -80,7 +85,8 @@ width:100%;
 overflow:hidden;
 background:none!important;
 height:100%;
-width:100%;
+width:85%;
+margin: 0 auto;
 }
 
 </style>
