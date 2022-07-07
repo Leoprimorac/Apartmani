@@ -23,7 +23,7 @@
     "dependencies": {
         "bootstrap-vue": "^2.20.1",
         "eslint": "^6.8.0",
-        "moment": "^2.29.1",
+        "moment": "^2.29.4",
         "v-calendar": "^1.0.8",
         "vlightbox": "^2.0.2",
         "vue-axios": "^2.1.5",
