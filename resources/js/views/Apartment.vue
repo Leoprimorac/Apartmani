@@ -31,7 +31,7 @@
                         <div>
                             <b-collapse id="collapse-1" class="mt-2">
                                                 <b-card>
-                                                    <gallery :images="images" :index="index" @close="index = null"></gallery>
+                                                    <gallery :images="images" :index="index" @close="index = null;document.body.style.overflow = '';" ></gallery>
                                                         <div
                                                         class="image"
                                                         v-for="(image, imageIndex) in images"
@@ -46,7 +46,7 @@
                                                                 backgroundRepeat:'no-repeat',
                                                                 backgroundSize:'cover'
                                                                 }"
-                                                                title="Apartman Villa Promajna">
+                                                                title="Apartman Villa Lara">
                                                         </div>
 
                                                 </b-card>
@@ -217,6 +217,7 @@ export default {
     },
     created() {
         this.getApartment();
+        document.body.style.overflow = '';
     },
     watch:{
         range: function(val){
@@ -224,8 +225,9 @@ export default {
             this.form.end = moment(val.end).format('DD.MM.YYYY');
         },
         $route (to, from){
-       this.getApartment()
-    }
+       this.getApartment();
+    },
+ 
     },
      computed: {
         images() {

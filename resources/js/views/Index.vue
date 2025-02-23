@@ -2,15 +2,20 @@
     <div>
         <b-container fluid id="main">
             <b-container id="pocetna" title="Promajna zalazak sunca">
-                <b-row>
+                <!-- <b-row> -->
                     <b-col cols="12">
                         <div class="viewpoint">
-                            <div class="ime mt-5">
-                                <h1> Villa Promajna </h1>
-                            </div>
+                            
                         </div>
                     </b-col>
-                </b-row>
+                <!-- </b-row> -->
+                <div class="ime mt-5">
+                    <div style="display: inline-block;">
+                        <h1 class="ime-title"> Villa Lara </h1>
+                        <h4 class="ime-pr">PROMAJNA</h4>
+                    </div>
+                               
+                            </div>
             </b-container>
         </b-container>
         <b-container id="promajna" class="pt-3">
@@ -56,7 +61,7 @@
                         img-width="1024"
                         img-height="480"
                     >
-                        <b-carousel-slide v-for="image in images" v-bind:key="image" :img-src="image" tag="Apartmani Villa Promajna"></b-carousel-slide>
+                        <b-carousel-slide v-for="image in images" v-bind:key="image" :img-src="image" tag="Apartmani Villa Lara"></b-carousel-slide>
 
 
 
@@ -66,7 +71,7 @@
                         <b-button class="promajna-button" v-b-toggle.collapse-1 block variant="outline-dark" align-self="center" >{{ $t('galleryButton') }}</b-button>
                             <b-collapse id="collapse-1" class="mt-2">
                                 <b-card>
-                                    <gallery :images="images" :index="index" @close="index = null"></gallery>
+                                    <gallery :images="images" :index="index" @close="index = null;document.body.style.overflow = '';"></gallery>
                                         <div
                                         class="image"
                                         v-for="(image, imageIndex) in images"
@@ -79,7 +84,7 @@
                                         backgroundPosition: 'center center',
                                         backgroundRepeat:'no-repeat',
                                         backgroundSize:'cover'}"
-                                        title="Villa Promajna">
+                                        title="Villa Lara">
                                         </div>
 
                                 </b-card>
@@ -89,7 +94,7 @@
                  <b-col sm>
                     <div class="glavna-slova resize-center pt-4" >
                         <blockquote class="blockquote">
-                            <h2>VILLA PROMAJNA</h2>
+                            <h2>Villa Lara</h2>
                             <footer class="blockquote-footer">{{ $t('blackqouteFooter2')}}</footer>
                         </blockquote>
                         {{ $t('textVillaPromajna')}}<br>
@@ -201,6 +206,10 @@ export default {
             },
 
         },
+        mounted() {
+    // In case the modal was opened and overflow was set when the page loads
+    document.body.style.overflow = '';
+  },
 methods: {
      getApartments() {
                     swatApi.get(api.apartments).
@@ -222,27 +231,71 @@ methods: {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Parisienne&display=swap');
+
     .ime{
-          font-family: 'Parisienne', serif;
+          
           text-align: center;
+          vertical-align:middle;
+          width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
            }
+           .ime-title{
+            font-family: 'Parisienne', serif;
+           }
+    .viewpoint {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    width: 100%;
+}
     .glavna-slova{
         font-family: 'Lora', cursive;
     }
     h1{
-        font-size: 5rem !important;
+        font-size: 4rem !important;
     }
+    .ime-pr {
+    display: flex;
+    align-items: center; /* Aligns text and lines in the center */
+    justify-content: center; /* Centers everything */
+    text-align: center;
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: 300; 
+    letter-spacing: 2.5px ;
+    position: relative;
+}
+    .ime-pr::before,
+.ime-pr::after {
+    content: "";
+    flex: 1; /* Makes the lines expand equally */
+    height: 2px; /* Line thickness */
+    background-color: black; /* Line color */
+    margin: 0 15px; /* Space between text and lines */
+}
     #main{
-        background: url(../../img/promajna3.jpeg) no-repeat center;
+        background: url(../../img/naslovna.jpg) no-repeat center;
     }
+    #main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.5); 
+}
     #pocetna{
 
-    padding-top:56px;
     height:100vh;
     -webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover;    /* Mozilla*/
     -o-background-size: cover;      /* Opera*/
     background-size: cover;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center; 
     }
    /* .info-bg {
     background-color: rgba(243, 96, 96, 0.35)!important;
@@ -309,5 +362,16 @@ methods: {
     .card-img{
         object-fit: cover;
     }
+    @media (max-width: 768px) {
+    h1{
+        font-size: 3rem !important;
+    }
+    .ime-pr{
+        font-size: 1rem;
+    }
+    .ime{
+margin-bottom: 100px;
+    }
+}
 
 </style>

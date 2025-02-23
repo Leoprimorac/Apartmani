@@ -5,9 +5,9 @@
         <meta name="google-site-verification" content="M8VLj3iFlTx9HSgce_blhOuvX6tNbNQgML9RzxiIeaA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}" >
-        <title>Villa Promajna</title>
-        <meta name ="description" content ="Najbolje mjesto za odmor- Villa Promajna">
-        <meta name ="keywords" content ="Villa Promajna, Villa, Promajna, Miličević, Milicevic, Apartmani, Apartmani Promajna, Apartmani Makarska,
+        <title>Villa Lara</title>
+        <meta name ="description" content ="Najbolje mjesto za odmor- Villa Lara">
+        <meta name ="keywords" content ="Villa Lara, Villa, Promajna, Miličević, Milicevic, Apartmani, Apartmani Promajna, Apartmani Makarska,
         Makarska, Split, Drvenik, Makarska rivijera, rivijera, rezervacija apartmana, apartmani izdavanje, booking " >
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="distribution" content="global"/>

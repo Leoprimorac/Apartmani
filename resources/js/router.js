@@ -105,7 +105,7 @@ export default new Router({
     {
       path: "*",
       redirect (to) {
-        return Trans.getUserSupportedLang()
+        return "cro/"
       }
     }
   ],

@@ -4,7 +4,7 @@
             <b-row sm align-h="center">
                 <b-col>
                     <div>
-                        <h3 class="text-center"> Villa Promajna</h3>
+                        <h3 class="text-center"> Villa Lara</h3>
                     </div>
                         <div class="text-justify">
                         {{ $t('textFooterPromajna') }}
@@ -20,8 +20,6 @@
                     <img src="./../../img/ikone/contact.png" style="width:15px; height:15px;">
                         {{ $t('footerContactOwner') }}<br>
                     <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
-                        {{ $t('footerContactNumber') }}<br>
-                        <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
                         {{ $t('footerContactNumber') }}<br>
                         <img src="./../../img/ikone/telefon.png" style="width:15px; height:15px;">
                         {{ $t('footerContactNumber3') }}<br>
