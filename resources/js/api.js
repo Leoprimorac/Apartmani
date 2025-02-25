@@ -1,5 +1,5 @@
 // Domain url
-export const apiDomain = 'https://villapromajna.com/api/';
+export const apiDomain = 'https://villalara-hr.com/api/';
 //export const apiDomain = 'http://127.0.0.1:8000/api/';
 
 // Auth
